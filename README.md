@@ -3,8 +3,9 @@ how to use:
 copy paste these codes into your terminal. this is for initial setup only.
 ## Initial setup
 1) ```git clone https://github.com/nasif43/reconditioned-car-import.git```
-2) ```git checkout -b muhtasim``` #(in place of muhtasim add your name)
-3) ```git push -u origin muhtasim``` #(in place of muhtasim add your name)
+2) ```cd reconditioned-car-import```
+3) ```git checkout -b muhtasim``` #(in place of muhtasim add your name)
+4) ```git push -u origin muhtasim``` #(in place of muhtasim add your name)
 ## Regular use
 next work on your code. once you are done working on your part of the code, apply the following command to update it on github:
 1) ```git add .```
