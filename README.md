@@ -2,7 +2,7 @@
 how to use:
 copy paste these codes into your terminal. this is for initial setup only.
 ## Initial setup
-1) ```git clone https://github.com/nasif43/reconditioned-car-import```
+1) ```git clone https://github.com/nasif43/reconditioned-car-import.git```
 2) ```git checkout -b muhtasim``` #(in place of muhtasim add your name)
 3) ```git push -u origin muhtasim``` #(in place of muhtasim add your name)
 ## Regular use
