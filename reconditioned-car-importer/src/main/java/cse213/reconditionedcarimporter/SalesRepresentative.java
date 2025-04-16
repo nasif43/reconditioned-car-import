@@ -1,5 +1,7 @@
 package cse213.reconditionedcarimporter;
 
+import cse213.reconditionedcarimporter.InventoryAndQuality.InventoryReport;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 

@@ -13,6 +13,9 @@ public abstract class User {
         this.userRole = userRole;
     }
 
+    public User() {
+    }
+
     public Boolean login(){
         return null;
     };
