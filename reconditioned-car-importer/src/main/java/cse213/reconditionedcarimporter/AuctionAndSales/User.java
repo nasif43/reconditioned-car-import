@@ -1,4 +1,4 @@
-package cse213.reconditionedcarimporter;
+package cse213.reconditionedcarimporter.AuctionAndSales;
 
 public abstract class User {
     private int userId;

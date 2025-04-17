@@ -1,6 +1,6 @@
 package cse213.reconditionedcarimporter.InventoryAndQuality;
 
-import cse213.reconditionedcarimporter.User;
+import cse213.reconditionedcarimporter.AuctionAndSales.User;
 
 import java.util.ArrayList;
 
