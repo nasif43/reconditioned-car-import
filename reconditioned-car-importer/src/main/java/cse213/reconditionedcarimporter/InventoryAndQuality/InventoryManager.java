@@ -21,7 +21,11 @@ int maxVehiclesToAssignPerDay;
         this.maxVehiclesToAssignPerDay = maxVehiclesToAssignPerDay;
     }
 
-    public void receiveShipment(Shipment shipment){}
+    public void receiveShipment(Shipment shipment,Warehouse storageLocation){
+shipment.setStatus("ARRIVED_UNCHECKED");
+shipment.setStorageLocation(storageLocation);
+storageLocation.addShipment(shipment);
+    }
     public void assignVehicletoShowroom(Vehicle vehicle,Showroom showroom){
 
         }
