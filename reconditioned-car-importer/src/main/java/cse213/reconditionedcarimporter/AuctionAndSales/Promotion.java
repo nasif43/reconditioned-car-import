@@ -1,6 +1,9 @@
 package cse213.reconditionedcarimporter.AuctionAndSales;
 
+import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Promotion {
 private Integer promotionId; 

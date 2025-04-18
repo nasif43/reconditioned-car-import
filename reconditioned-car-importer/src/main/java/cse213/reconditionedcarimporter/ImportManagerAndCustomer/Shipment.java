@@ -11,7 +11,7 @@ public class Shipment {
     private String origin;
     private String destination;
     private LocalDate arrivalDate,departureDate;
-    private ShipmentStatus status;
+    private String status;
     private String carrier;
     private Location storageLocation;
 
@@ -63,11 +63,11 @@ public class Shipment {
         this.departureDate = departureDate;
     }
 
-    public ShipmentStatus getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(ShipmentStatus status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -87,7 +87,7 @@ public class Shipment {
         this.storageLocation = storageLocation;
     }
 
-    public Shipment(int shipmentId, List<Vehicle> vehicles, String origin, String destination, LocalDate arrivalDate, LocalDate departureDate, ShipmentStatus status, String carrier, Location storageLocation) {
+    public Shipment(int shipmentId, List<Vehicle> vehicles, String origin, String destination, LocalDate arrivalDate, LocalDate departureDate, String status, String carrier, Location storageLocation) {
         this.shipmentId = shipmentId;
         this.vehicles = vehicles;
         this.origin = origin;
@@ -98,7 +98,7 @@ public class Shipment {
         this.carrier = carrier;
         this.storageLocation = storageLocation;
     }
-    public void updateStatus(ShipmentStatus status) {
+    public void updateStatus(String status) {
         this.status = status;
     }
 
@@ -107,10 +107,6 @@ public class Shipment {
             return vehicles.add(vehicle);
         }
         return false;
-    }
-
-    public ShippingManifest generateManifest() {
-        return null; // or implement actual logic later
     }
 
 
