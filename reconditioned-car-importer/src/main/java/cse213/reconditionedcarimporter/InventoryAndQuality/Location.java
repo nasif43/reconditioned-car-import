@@ -5,5 +5,5 @@ public abstract class Location {
     protected String name,address;
 
     public abstract boolean isFull();
-    public abstract float calculateUtilization() ;
+    public abstract float calculateutilization();
 }
