@@ -1,15 +1,16 @@
 package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
 public class Parts {
-    private String partId, name, type; String
-    private List<String> compatibleModels;
-    private double cost; double
+    private String partId, name, type;
+    private ArrayList<String> compatibleModels;
+    private Float cost;
     private int quantity,reorderLevel;
 
-    public Parts(String partId, String name, String type, List<String> compatibleModels, double cost, int quantity, int reorderLevel, Supplier supplier) {
+    public Parts(String partId, String name, String type, ArrayList<String> compatibleModels, Float cost, int quantity, int reorderLevel, String supplier) {
         this.partId = partId;
         this.name = name;
         this.type = type;
@@ -49,14 +50,14 @@ public class Parts {
     }
 
     public void setCompatibleModels(List<String> compatibleModels) {
-        this.compatibleModels = compatibleModels;
+        this.compatibleModels = (ArrayList<String>) compatibleModels;
     }
 
-    public double getCost() {
+    public Float getCost() {
         return cost;
     }
 
-    public void setCost(double cost) {
+    public void setCost(Float cost) {
         this.cost = cost;
     }
 
@@ -76,26 +77,26 @@ public class Parts {
         this.reorderLevel = reorderLevel;
     }
 
-    public Supplier getSupplier() {
+    public String getSupplier() {
         return supplier;
     }
 
-    public void setSupplier(Supplier supplier) {
+    public void setSupplier(String supplier) {
         this.supplier = supplier;
     }
 
-    private Supplier supplier;
+    private String supplier;
 
 
-    public void updateStatus(VehicleStatus status) {
+    public void updateStatus(String status) {
 
     }
 
-    private double calculateProfit() {
-        return ;
+    private Float calculateProfit() {
+        return null;
     }
 
-    public VehicleDetails getFullDetails() {
+    public Vehicle getFullDetails() {
         return null;
     }
 
