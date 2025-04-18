@@ -1,5 +1,7 @@
 package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
 
+import cse213.reconditionedcarimporter.InventoryAndQuality.Warehouse;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +15,9 @@ public class Shipment {
     private LocalDate arrivalDate;
     private String status;
     private String carrier;
-    private String storageLocation;
+    private Warehouse storageLocation;
 
-    public Shipment(int shipmentId, ArrayList<Vehicle> vehicles, String origin, String destination, LocalDate departureDate, LocalDate arrivalDate, String status, String carrier, String storageLocation) {
+    public Shipment(int shipmentId, ArrayList<Vehicle> vehicles, String origin, String destination, LocalDate departureDate, LocalDate arrivalDate, String status, String carrier, Warehouse storageLocation) {
         this.shipmentId = shipmentId;
         this.vehicles = vehicles;
         this.origin = origin;
@@ -91,11 +93,11 @@ public class Shipment {
         this.carrier = carrier;
     }
 
-    public String getStorageLocation() {
+    public Warehouse getStorageLocation() {
         return storageLocation;
     }
 
-    public void setStorageLocation(String storageLocation) {
+    public void setStorageLocation(Warehouse storageLocation) {
         this.storageLocation = storageLocation;
     }
 }
