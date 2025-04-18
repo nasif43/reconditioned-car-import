@@ -23,7 +23,7 @@ public class QualityInspector extends User {
     public RepairPlan createRepairPlan(){return null;};
     public boolean approveRepairedVehicle(){return null;};
     public boolean documentHiddenDamage(){return null;};
-    public PartRequest requestAdditionalParts(){return null;};
+    public PartRequests requestAdditionalParts(){return null;};
     public PaintMatchReport generatePaintMatchReport(){return null;};
     public Report generateMonthlyReport(){return null;};
 

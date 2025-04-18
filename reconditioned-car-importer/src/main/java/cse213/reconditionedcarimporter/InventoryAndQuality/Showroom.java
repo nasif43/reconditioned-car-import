@@ -4,14 +4,19 @@ import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 
 import java.util.ArrayList;
 
-public class Showroom extends Location{
-   private FloorPlan floorPlan;
-   private ArrayList<ShowroomSlot> slots;
-   private ArrayList<Vehicle> vehiclesOnDisplay;
-   private int maximumCapacity;
-//methods
+public class Showroom extends Location {
+    private FloorPlan floorPlan;
+    private ArrayList<ShowroomSlot> slots;
+    private ArrayList<Vehicle> vehiclesOnDisplay;
+    private int maximumCapacity;
+
     @Override
-    public boolean assignVehicleToSLot(Vehicle vehicle,ShowroomSlot showroomSlot);
+    public boolean isFull() {
+        return false;
+    }
+
     @Override
-    public ArrayList<ShowroomSlot> getFreeSlots();
+    public float calculateutilization() {
+        return 0;
+    }
 }

@@ -17,7 +17,7 @@ public class Warehouse extends Location{
 
     @Override
     public boolean isFull(){
-        return vehicles.size().equals(capacity);
+        return vehicles.size()==(capacity);
     }
     @Override
     public float calculateutilization(){
