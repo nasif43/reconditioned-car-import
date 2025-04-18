@@ -1,5 +1,8 @@
 package cse213.reconditionedcarimporter.InventoryAndQuality;
 
+import cse213.reconditionedcarimporter.AccouintantandTechnician.RepairTask;
+import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
