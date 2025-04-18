@@ -23,9 +23,9 @@ private Vehicle assignedVehicle;
     public ShowroomSlot() {
     }
 
-    public boolean assignVehicle(){};
+    public boolean assignVehicle(){return false;};
 public void clearSlot(){};
-public boolean isReserved(){};
+public boolean isReserved(){return false;};
 
     public int getSlotId() {
         return slotId;
