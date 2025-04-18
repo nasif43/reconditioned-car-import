@@ -7,6 +7,14 @@ import java.util.ArrayList;
 
 public class Warehouse extends Location{
     private ArrayList<Vehicle> vehicles;
+
+    public Warehouse(ArrayList<Vehicle> vehicles) {
+        this.vehicles = vehicles;
+    }
+
+    public Warehouse() {
+    }
+
     @Override
     public boolean isFull(){
         return vehicles.size().equals(capacity);
@@ -21,5 +29,13 @@ public class Warehouse extends Location{
     public void addShipment(Shipment shipment){
         ArrayList<Vehicle> vehiclesFromShipment = shipment.getVehicles();
         vehicles.addAll(vehiclesFromShipment);
+    }
+
+    public ArrayList<Vehicle> getVehicles() {
+        return vehicles;
+    }
+
+    public void setVehicles(ArrayList<Vehicle> vehicles) {
+        this.vehicles = vehicles;
     }
 }

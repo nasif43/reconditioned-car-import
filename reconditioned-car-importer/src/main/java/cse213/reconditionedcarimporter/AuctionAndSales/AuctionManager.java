@@ -1,5 +1,6 @@
 package cse213.reconditionedcarimporter.AuctionAndSales;
 
+import cse213.reconditionedcarimporter.InventoryAndQuality.InspectionReport;
 import cse213.reconditionedcarimporter.InventoryAndQuality.Location;
 
 public class AuctionManager extends User {
