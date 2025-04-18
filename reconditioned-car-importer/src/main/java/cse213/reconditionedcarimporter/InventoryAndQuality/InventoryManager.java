@@ -2,6 +2,7 @@ package cse213.reconditionedcarimporter.InventoryAndQuality;
 
 import cse213.reconditionedcarimporter.AuctionAndSales.Order;
 import cse213.reconditionedcarimporter.AuctionAndSales.User;
+import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Parts;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Shipment;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 
@@ -46,7 +47,7 @@ storageLocation.addShipment(shipment);
     public RefundRequest handleCustomerReturns(Order order,String reason){
     return null;
     }
-    public void reorderPart(Part part,int quantity){
+    public void reorderPart(Parts part, int quantity){
 
     }
 

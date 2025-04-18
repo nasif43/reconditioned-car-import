@@ -1,5 +1,6 @@
 package cse213.reconditionedcarimporter.InventoryAndQuality;
 
+import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Parts;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 
 import java.time.LocalDate;
@@ -10,9 +11,9 @@ public class InventoryReport extends Report{
     private ArrayList<Vehicle> vehiclesInWarehouses;
     private ArrayList<Vehicle> vehiclesInShowrooms ;
     private ArrayList<Vehicle > agingInventory;
-    private ArrayList<Part> lowStockParts ;
+    private ArrayList<Parts> lowStockParts ;
 
-    public InventoryReport(String reportId, LocalDate reportDate, int totalVehicles, ArrayList<Vehicle> vehiclesInWarehouses, ArrayList<Vehicle> vehiclesInShowrooms, ArrayList<Vehicle> agingInventory, ArrayList<Part> lowStockParts) {
+    public InventoryReport(String reportId, LocalDate reportDate, int totalVehicles, ArrayList<Vehicle> vehiclesInWarehouses, ArrayList<Vehicle> vehiclesInShowrooms, ArrayList<Vehicle> agingInventory, ArrayList<Parts> lowStockParts) {
         super(reportId, reportDate);
         this.totalVehicles = totalVehicles;
         this.vehiclesInWarehouses = vehiclesInWarehouses;
@@ -64,11 +65,11 @@ public class InventoryReport extends Report{
         this.agingInventory = agingInventory;
     }
 
-    public ArrayList<Part> getLowStockParts() {
+    public ArrayList<Parts> getLowStockParts() {
         return lowStockParts;
     }
 
-    public void setLowStockParts(ArrayList<Part> lowStockParts) {
+    public void setLowStockParts(ArrayList<Parts> lowStockParts) {
         this.lowStockParts = lowStockParts;
     }
 

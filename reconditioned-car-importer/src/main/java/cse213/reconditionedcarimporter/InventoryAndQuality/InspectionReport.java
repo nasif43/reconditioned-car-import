@@ -1,12 +1,13 @@
 package cse213.reconditionedcarimporter.InventoryAndQuality;
 
+import cse213.reconditionedcarimporter.AccouintantandTechnician.Defect;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class InspectionReport extends Report{
-    private int reportId,exteriorRating,interiorRating,
+    private int exteriorRating,interiorRating,
             mechanicalRating,finalGrade ;
     private Vehicle vehicle;
     private LocalDate inspectionDate ;
@@ -15,19 +16,6 @@ public class InspectionReport extends Report{
 
     public InspectionReport(String reportId, LocalDate reportDate, int reportId1, int exteriorRating, int interiorRating, int mechanicalRating, int finalGrade, Vehicle vehicle, LocalDate inspectionDate, ArrayList<Defect> defects, ArrayList<String> photos) {
         super(reportId, reportDate);
-        this.reportId = reportId1;
-        this.exteriorRating = exteriorRating;
-        this.interiorRating = interiorRating;
-        this.mechanicalRating = mechanicalRating;
-        this.finalGrade = finalGrade;
-        this.vehicle = vehicle;
-        this.inspectionDate = inspectionDate;
-        this.defects = defects;
-        this.photos = photos;
-    }
-
-    public InspectionReport(int reportId, int exteriorRating, int interiorRating, int mechanicalRating, int finalGrade, Vehicle vehicle, LocalDate inspectionDate, ArrayList<Defect> defects, ArrayList<String> photos) {
-        this.reportId = reportId;
         this.exteriorRating = exteriorRating;
         this.interiorRating = interiorRating;
         this.mechanicalRating = mechanicalRating;
@@ -50,14 +38,6 @@ public class InspectionReport extends Report{
     @Override
     public void sendToAccountant(Report report){};
 
-    @Override
-    public int getReportId() {
-        return reportId;
-    }
-
-    public void setReportId(int reportId) {
-        this.reportId = reportId;
-    }
 
     public int getExteriorRating() {
         return exteriorRating;

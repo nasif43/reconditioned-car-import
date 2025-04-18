@@ -1,5 +1,6 @@
 package cse213.reconditionedcarimporter.InventoryAndQuality;
 
+import cse213.reconditionedcarimporter.AccouintantandTechnician.PartRequests;
 import cse213.reconditionedcarimporter.AuctionAndSales.User;
 
 import java.util.ArrayList;
@@ -19,10 +20,10 @@ public class QualityInspector extends User {
 
     //methods
     public InspectionReport performInitialInspection(){return null;};
-    public boolean verifyPaintMatch(){return null;};
+    public boolean verifyPaintMatch(){return false;};
     public RepairPlan createRepairPlan(){return null;};
-    public boolean approveRepairedVehicle(){return null;};
-    public boolean documentHiddenDamage(){return null;};
+    public boolean approveRepairedVehicle(){return false;};
+    public boolean documentHiddenDamage(){return false;};
     public PartRequests requestAdditionalParts(){return null;};
     public PaintMatchReport generatePaintMatchReport(){return null;};
     public Report generateMonthlyReport(){return null;};
