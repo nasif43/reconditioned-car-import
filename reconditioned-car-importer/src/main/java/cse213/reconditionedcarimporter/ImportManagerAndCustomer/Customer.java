@@ -5,7 +5,15 @@ import cse213.reconditionedcarimporter.Promotion;
 
 import java.util.List;
 
+
 public class Customer {
+    private String Name, Email, Phone, Password;
+    private int Number;
+
+
+
+
+
     public boolean createProfile(CustomerDetails details) { return false; }
     public List<Vehicle> searchAuctionVehicles(SearchCriteria criteria) { return null; }
     public PurchaseRequest placeCarPurchaseRequest(Vehicle vehicle, double maxBid) { return null; }
