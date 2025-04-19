@@ -1,5 +1,10 @@
 package cse213.reconditionedcarimporter.InventoryAndQuality;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TableView;
+
 public class QualityInspectorDashboardController
 {
     @javafx.fxml.FXML

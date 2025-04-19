@@ -1,27 +1,21 @@
 package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
 
-import cse213.reconditionedcarimporter.Order;
-import cse213.reconditionedcarimporter.Promotion;
+import cse213.reconditionedcarimporter.AccouintantandTechnician.Payments;
+import cse213.reconditionedcarimporter.AuctionAndSales.Invoice;
+import cse213.reconditionedcarimporter.AuctionAndSales.Promotion;
+import cse213.reconditionedcarimporter.AuctionAndSales.User;
+import java.util.ArrayList;
 
-import java.util.List;
+public class Customer extends User {
 
-
-public class Customer {
-    private String Name, Email, Phone, Password;
-    private int Number;
-
-
-
-
-
-    public boolean createProfile(CustomerDetails details) { return false; }
-    public List<Vehicle> searchAuctionVehicles(SearchCriteria criteria) { return null; }
-    public PurchaseRequest placeCarPurchaseRequest(Vehicle vehicle, double maxBid) { return null; }
-    public OrderStatus trackOrderStatus(int orderId) { return null; }
-    public Payment processPayment(Invoice invoice, PaymentMethod method) { return null; }
-    public boolean submitReview(Order order, Review review) { return false; }
-    public List<Promotion> viewPromotions() { return null; }
-    public SupportTicket submitSupportQuery(String queryType, String message) { return null; }
+    public boolean createProfile(Customer details) { return false; }
+    public ArrayList<Vehicle> searchAuctionVehicles(String criteria) { return null; }
+    public PurchaseRequest placeCarPurchaseRequest(Vehicle vehicle, float maxBid) { 
+        return new PurchaseRequest(this, vehicle, maxBid);
+    }
+    public String trackOrderStatus(int orderId) { return null; }
+    public Payments processPayment(Invoice invoice, String method) { return null; }
+    public ArrayList<Promotion> viewPromotions() { return null; }
 
 
 }

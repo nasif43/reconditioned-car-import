@@ -44,9 +44,9 @@ storageLocation.addShipment(shipment);
     public void processCustomerPurchase(Order order){
 
     }
-    public RefundRequest handleCustomerReturns(Order order,String reason){
-    return null;
-    }
+//    public RefundRequest handleCustomerReturns(Order order,String reason){
+//    return null;
+//    }
     public void reorderPart(Parts part, int quantity){
 
     }
