@@ -2,6 +2,9 @@ package cse213.reconditionedcarimporter.InventoryAndQuality;
 
 import cse213.reconditionedcarimporter.AuctionAndSales.Order;
 import cse213.reconditionedcarimporter.AuctionAndSales.User;
+import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Parts;
+import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Shipment;
+import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 
 import java.util.ArrayList;
 
@@ -21,8 +24,15 @@ int maxVehiclesToAssignPerDay;
         this.maxVehiclesToAssignPerDay = maxVehiclesToAssignPerDay;
     }
 
-    public void receiveShipment(Shipment shipment){}
-    public void assignVehicletoShowroom(Vehicle vehicle,Showroom showroom){
+    public InventoryManager() {
+    }
+
+    public void receiveShipment(Shipment shipment, Warehouse storageLocation){
+shipment.setStatus("ARRIVED_UNCHECKED");
+shipment.setStorageLocation(storageLocation);
+storageLocation.addShipment(shipment);
+    }
+    public void assignVehicletoShowroom(Vehicle vehicle, Showroom showroom){
 
         }
     public ArrayList<Vehicle> flagAgingInventory(int daysThreshold){
@@ -37,7 +47,47 @@ int maxVehiclesToAssignPerDay;
     public RefundRequest handleCustomerReturns(Order order,String reason){
     return null;
     }
-    public void reorderPart(Part part,int quantity){
+    public void reorderPart(Parts part, int quantity){
 
+    }
+
+    public ArrayList<Warehouse> getWarehouses() {
+        return warehouses;
+    }
+
+    public void setWarehouses(ArrayList<Warehouse> warehouses) {
+        this.warehouses = warehouses;
+    }
+
+    public ArrayList<Showroom> getShowrooms() {
+        return showrooms;
+    }
+
+    public void setShowrooms(ArrayList<Showroom> showrooms) {
+        this.showrooms = showrooms;
+    }
+
+    public ArrayList<Shipment> getCurrentShipments() {
+        return currentShipments;
+    }
+
+    public void setCurrentShipments(ArrayList<Shipment> currentShipments) {
+        this.currentShipments = currentShipments;
+    }
+
+    public ArrayList<Shipment> getPendingShipments() {
+        return pendingShipments;
+    }
+
+    public void setPendingShipments(ArrayList<Shipment> pendingShipments) {
+        this.pendingShipments = pendingShipments;
+    }
+
+    public int getMaxVehiclesToAssignPerDay() {
+        return maxVehiclesToAssignPerDay;
+    }
+
+    public void setMaxVehiclesToAssignPerDay(int maxVehiclesToAssignPerDay) {
+        this.maxVehiclesToAssignPerDay = maxVehiclesToAssignPerDay;
     }
 }

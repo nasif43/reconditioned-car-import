@@ -1,6 +1,7 @@
 module cse213.reconditionedcarimporter {
     requires javafx.controls;
     requires javafx.fxml;
+    requires jdk.jfr;
 
 
     exports cse213.reconditionedcarimporter.InventoryAndQuality;

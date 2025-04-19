@@ -1,19 +1,33 @@
 package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
 
-import cse213.reconditionedcarimporter.InventoryAndQuality.Location;
+import cse213.reconditionedcarimporter.InventoryAndQuality.Warehouse;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Shipment {
     private int shipmentId;
-    private List<Vehicle> vehicles;
+    private ArrayList<Vehicle> vehicles;
     private String origin;
     private String destination;
-    private LocalDate arrivalDate,departureDate;
+    private LocalDate departureDate;
+    private LocalDate arrivalDate;
     private String status;
     private String carrier;
-    private Location storageLocation;
+    private Warehouse storageLocation;
+
+    public Shipment(int shipmentId, ArrayList<Vehicle> vehicles, String origin, String destination, LocalDate departureDate, LocalDate arrivalDate, String status, String carrier, Warehouse storageLocation) {
+        this.shipmentId = shipmentId;
+        this.vehicles = vehicles;
+        this.origin = origin;
+        this.destination = destination;
+        this.departureDate = departureDate;
+        this.arrivalDate = arrivalDate;
+        this.status = status;
+        this.carrier = carrier;
+        this.storageLocation = storageLocation;
+    }
 
     public int getShipmentId() {
         return shipmentId;
@@ -23,11 +37,11 @@ public class Shipment {
         this.shipmentId = shipmentId;
     }
 
-    public List<Vehicle> getVehicles() {
+    public ArrayList<Vehicle> getVehicles() {
         return vehicles;
     }
 
-    public void setVehicles(List<Vehicle> vehicles) {
+    public void setVehicles(ArrayList<Vehicle> vehicles) {
         this.vehicles = vehicles;
     }
 
@@ -47,20 +61,20 @@ public class Shipment {
         this.destination = destination;
     }
 
-    public LocalDate getArrivalDate() {
-        return arrivalDate;
-    }
-
-    public void setArrivalDate(LocalDate arrivalDate) {
-        this.arrivalDate = arrivalDate;
-    }
-
     public LocalDate getDepartureDate() {
         return departureDate;
     }
 
     public void setDepartureDate(LocalDate departureDate) {
         this.departureDate = departureDate;
+    }
+
+    public LocalDate getArrivalDate() {
+        return arrivalDate;
+    }
+
+    public void setArrivalDate(LocalDate arrivalDate) {
+        this.arrivalDate = arrivalDate;
     }
 
     public String getStatus() {
@@ -79,36 +93,11 @@ public class Shipment {
         this.carrier = carrier;
     }
 
-    public Location getStorageLocation() {
+    public Warehouse getStorageLocation() {
         return storageLocation;
     }
 
-    public void setStorageLocation(Location storageLocation) {
+    public void setStorageLocation(Warehouse storageLocation) {
         this.storageLocation = storageLocation;
     }
-
-    public Shipment(int shipmentId, List<Vehicle> vehicles, String origin, String destination, LocalDate arrivalDate, LocalDate departureDate, String status, String carrier, Location storageLocation) {
-        this.shipmentId = shipmentId;
-        this.vehicles = vehicles;
-        this.origin = origin;
-        this.destination = destination;
-        this.arrivalDate = arrivalDate;
-        this.departureDate = departureDate;
-        this.status = status;
-        this.carrier = carrier;
-        this.storageLocation = storageLocation;
-    }
-    public void updateStatus(String status) {
-        this.status = status;
-    }
-
-    public boolean addVehicle(Vehicle vehicle) {
-        if (vehicles != null) {
-            return vehicles.add(vehicle);
-        }
-        return false;
-    }
-
-
 }
-
