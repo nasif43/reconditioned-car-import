@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="323.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.ImportManagerAndCustomer.PurchaseRequestController">
+   <children>
+      <Label layoutX="76.0" layoutY="39.0" text="Purchase Request Form">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="95.0" text="Vechile" />
+      <Label layoutX="46.0" layoutY="135.0" text="Max Bid Amount" />
+      <TextField fx:id="MaxBidAmountTF" layoutX="142.0" layoutY="131.0" />
+      <Label layoutX="41.0" layoutY="179.0" text="Request Date" />
+      <DatePicker fx:id="RequestDatePicker" layoutX="130.0" layoutY="175.0" />
+      <ComboBox fx:id="VehicleComboBox" layoutX="142.0" layoutY="91.0" prefWidth="150.0" />
+      <Button layoutX="142.0" layoutY="233.0" mnemonicParsing="false" onAction="#SubmitRequestOnAction" text="Submit request" />
+   </children>
+</AnchorPane>

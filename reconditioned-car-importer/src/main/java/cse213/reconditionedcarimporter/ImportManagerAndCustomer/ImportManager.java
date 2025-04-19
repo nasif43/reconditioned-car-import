@@ -4,7 +4,9 @@ import java.util.function.Supplier;
 
 import cse213.reconditionedcarimporter.AccouintantandTechnician.Payments;
 import cse213.reconditionedcarimporter.AuctionAndSales.Order;
-public class ImportManager {
+import cse213.reconditionedcarimporter.AuctionAndSales.User;
+
+public class ImportManager extends User {
     public boolean manageCarListings(CarListing listing) { return false; }
     public boolean processCustomerPurchaseRequests(PurchaseRequest request) { return false; }
     public Order manageSupplierOrders(String supplier, Vehicle vehicle) { return null; }
