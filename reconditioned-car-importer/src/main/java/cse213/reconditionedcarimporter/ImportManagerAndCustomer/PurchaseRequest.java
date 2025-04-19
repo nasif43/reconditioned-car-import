@@ -21,6 +21,11 @@ public class PurchaseRequest {
     }
 
     public PurchaseRequest(Customer customer, Vehicle vehicle, float maxBid) {
+        this.customer = customer;
+        this.vehicle = vehicle;
+        this.maxBidAmount = maxBid;
+        this.requestDate = LocalDate.now();
+        this.status = "pending";
     }
 
     // Getters and Setters

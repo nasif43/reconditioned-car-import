@@ -3,14 +3,23 @@ package cse213.reconditionedcarimporter.AuctionAndSales;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class AuctionDetails {
     private String auctionId, comments;
-    private Integer condition_rating;
+    private Integer condition_rating, vehicleId;
     private Character letterGrade;
     private LocalDate inspectionDate;
     private int userId;
+
+    public AuctionDetails(String auctionId, String comments, Integer condition_rating, Integer vehicleId, Character letterGrade, LocalDate inspectionDate, int userId) {
+        this.auctionId = auctionId;
+        this.comments = comments;
+        this.condition_rating = condition_rating;
+        this.vehicleId = vehicleId;
+        this.letterGrade = letterGrade;
+        this.inspectionDate = inspectionDate;
+        this.userId = userId;
+    }
 
     public String getAuctionId() {
         return auctionId;
@@ -36,6 +45,14 @@ public class AuctionDetails {
         this.condition_rating = condition_rating;
     }
 
+    public Integer getVehicleId() {
+        return vehicleId;
+    }
+
+    public void setVehicleId(Integer vehicleId) {
+        this.vehicleId = vehicleId;
+    }
+
     public Character getLetterGrade() {
         return letterGrade;
     }
@@ -57,15 +74,6 @@ public class AuctionDetails {
     }
 
     public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public AuctionDetails(String auctionId, String comments, Integer condition_rating, Character letterGrade, LocalDate inspectionDate, int userId) {
-        this.auctionId = auctionId;
-        this.comments = comments;
-        this.condition_rating = condition_rating;
-        this.letterGrade = letterGrade;
-        this.inspectionDate = inspectionDate;
         this.userId = userId;
     }
 }
