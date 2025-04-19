@@ -6,30 +6,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<AnchorPane prefHeight="450.0" prefWidth="641.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.Dasboard">
+<AnchorPane prefHeight="450.0" prefWidth="641.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.AuctionAndSalesDashboardController">
    <children>
       <BorderPane fx:id="borderPaneAuctionManager" prefHeight="450.0" prefWidth="641.0">
          <top>
-            <MenuBar prefHeight="37.0" prefWidth="641.0" BorderPane.alignment="CENTER">
+            <MenuBar fx:id="auctionManagerMenuBar" prefHeight="37.0" prefWidth="641.0" BorderPane.alignment="TOP_CENTER">
               <menus>
-                <Menu mnemonicParsing="false" onAction="#preBidPrepMenuButtonOnAction" text=" Pre-Auction Bid Preparation" />
-                <Menu mnemonicParsing="false" text="Auction History">
+                <Menu mnemonicParsing="false" onAction="#preBidPrepMenuButtonOnAction" text="Bid">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Pre Auction Bid Preparation" />
+                     </items></Menu>
+                <Menu mnemonicParsing="false" onAction="#auctionHistoryMenuBarOnAction" text="Auction History">
                   <items>
                     <MenuItem mnemonicParsing="false" text="Delete" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Vehicle Inspection">
+                <Menu mnemonicParsing="false" onAction="#vehicleInspectionMenuBarOnAction" text="Vehicle Inspection">
                   <items>
                     <MenuItem mnemonicParsing="false" text="About" />
                   </items>
                 </Menu>
-                  <Menu mnemonicParsing="false" text="Shipping &amp; Logistics">
+                  <Menu mnemonicParsing="false" onAction="#shippingAndLogisticsMenuBarOnAction" text="Shipping &amp; Logistics">
                      <items>
                         <MenuItem mnemonicParsing="false" text="About" />
                      </items>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="Payment Processing">
+                  <Menu mnemonicParsing="false" onAction="#paymentProcessingMenuBarOnAction" text="Payment Processing">
                      <items>
                         <MenuItem mnemonicParsing="false" text="About" />
                      </items>

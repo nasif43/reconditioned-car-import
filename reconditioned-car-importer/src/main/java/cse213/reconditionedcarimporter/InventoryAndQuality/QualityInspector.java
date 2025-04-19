@@ -9,7 +9,7 @@ public class QualityInspector extends User {
     private ArrayList<RepairPlan> activeRepairPlans;
     private int inspectionsCompleted;
 
-    public QualityInspector(int userId, String name, String password, String email, String phone, String userRole, ArrayList<RepairPlan> activeRepairPlans, int inspectionsCompleted) {
+    public QualityInspector(String userId, String name, String password, String email, String phone, String userRole, ArrayList<RepairPlan> activeRepairPlans, int inspectionsCompleted) {
         super(userId, name, password, email, phone, userRole);
         this.activeRepairPlans = activeRepairPlans;
         this.inspectionsCompleted = inspectionsCompleted;

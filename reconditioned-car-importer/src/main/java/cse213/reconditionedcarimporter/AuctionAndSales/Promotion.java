@@ -80,10 +80,27 @@ private Boolean active;
         this.active = active;
     }
 
-public Float applyPromotion(Order order){
-    return null;
-};
-public void activate(){}
-public void deactivate(){}
-private Boolean validateDateRange(LocalDate start, LocalDate end){return null;};
+    public Float applyPromotion(Invoice invoice) {
+        if (active && validateDateRange(startDate, endDate)) {
+            return invoice.getAmount() * (1 - discountPercentage / 100);
+        }
+        return invoice.getAmount();
+    }
+
+    public void activate() {
+        if (validateDateRange(startDate, endDate)) {
+            active = true;
+        }
+    }
+
+    public void deactivate() {
+        active = false;
+    }
+
+    private Boolean validateDateRange(LocalDate start, LocalDate end) {
+        return start != null && 
+               end != null && 
+               !start.isAfter(end) && 
+               !end.isBefore(LocalDate.now());
+    }
 }

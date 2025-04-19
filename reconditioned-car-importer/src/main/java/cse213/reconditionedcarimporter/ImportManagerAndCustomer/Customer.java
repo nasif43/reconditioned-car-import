@@ -1,9 +1,7 @@
 package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
 
 import cse213.reconditionedcarimporter.AccouintantandTechnician.Payments;
-import cse213.reconditionedcarimporter.AuctionAndSales.Invoice;
-import cse213.reconditionedcarimporter.AuctionAndSales.Promotion;
-import cse213.reconditionedcarimporter.AuctionAndSales.User;
+import cse213.reconditionedcarimporter.AuctionAndSales.*;
 import java.util.ArrayList;
 
 public class Customer extends User {
@@ -16,6 +14,5 @@ public class Customer extends User {
     public String trackOrderStatus(int orderId) { return null; }
     public Payments processPayment(Invoice invoice, String method) { return null; }
     public ArrayList<Promotion> viewPromotions() { return null; }
-
 
 }

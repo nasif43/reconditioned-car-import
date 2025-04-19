@@ -139,4 +139,5 @@ private float mileage, purchasePrice,sellingPrice;
     private float calculateProfit() { return sellingPrice - purchasePrice; }
 
     public Vehicle getFullDetails() { return this; }
+
 }

@@ -2,7 +2,6 @@ package cse213.reconditionedcarimporter.AuctionAndSales;
 
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 
-import java.io.File;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -71,7 +70,13 @@ public class SalesReport {
     public void setConversionRate(Float conversionRate) {
         this.conversionRate = conversionRate;
     }
-    public File exportToPDF(){return null;}
-    public File exportToExcel(){return null;}
-    public Order createOrder(){return null;}
+
+    public void exportToPDF() {
+        // In a real implementation, this would generate a PDF file
+    }
+
+    public void exportToExcel() {
+        // In a real implementation, this would generate an Excel file
+    }
+
 }

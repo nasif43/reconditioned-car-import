@@ -29,7 +29,7 @@ public class Login {
         System.out.println("Selected role: " + selectedRole);
         
         if (Objects.equals(selectedRole, "Auction Manager") || Objects.equals(selectedRole, "Sales Manager")) {
-            loadUserDashboardFromFXML("AuctionAndSalesDasboard.fxml");
+            loadUserDashboardFromFXML("AuctionAndSalesDashboard.fxml");
         }
         if (Objects.equals(selectedRole, "Import Manager") || Objects.equals(selectedRole, "Customer")) {
             loadUserDashboardFromFXML("ImportAndSalesDashboard.fxml");

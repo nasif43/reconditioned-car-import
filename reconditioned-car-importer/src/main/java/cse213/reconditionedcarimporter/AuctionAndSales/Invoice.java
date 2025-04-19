@@ -20,6 +20,7 @@ public class Invoice {
         this.dueDate = dueDate;
     }
 
+
     public String getInvoiceId() {
         return invoiceId;
     }
