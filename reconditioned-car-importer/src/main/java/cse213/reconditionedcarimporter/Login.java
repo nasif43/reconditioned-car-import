@@ -35,7 +35,7 @@ public class Login {
             loadUserDashboardFromFXML("ImportAndSalesDashboard.fxml");
         }
         if (Objects.equals(selectedRole, "Inventory Manager") || Objects.equals(selectedRole, "Quality Inspector")) {
-            loadUserDashboardFromFXML("QualityInspectorDashboard.fxml");
+            loadUserDashboardFromFXML("InventoryManagerDashboardView.fxml");
         }
         if (Objects.equals(selectedRole, "Technician") || Objects.equals(selectedRole, "Accountant")) {
             loadUserDashboardFromFXML("TODO.fxml");
