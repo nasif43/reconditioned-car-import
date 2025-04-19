@@ -1,5 +1,7 @@
 package cse213.reconditionedcarimporter.AuctionAndSales;
 
+import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Customer;
+import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 import cse213.reconditionedcarimporter.InventoryAndQuality.InventoryReport;
 
 import java.time.LocalDate;
@@ -12,6 +14,6 @@ public class SalesRepresentative extends User{
     public SalesReport generateSalesAnalytics(LocalDate startDate, LocalDate endDate){return null;}
     public InventoryReport checkInventoryAvailability(){return null;}
     public Boolean manageSalesPromotions(Promotion promotion){return null;}
-    public DeliverySchedule scheduleDelivery(Order order){return null;}
-    private Boolean validateOrderDetails(VehicleDetails vehicleDetails){return null;}
+//    public DeliverySchedule scheduleDelivery(Order order){return null;}
+    private Boolean validateOrderDetails(Vehicle vehicleDetails){return null;}
 }

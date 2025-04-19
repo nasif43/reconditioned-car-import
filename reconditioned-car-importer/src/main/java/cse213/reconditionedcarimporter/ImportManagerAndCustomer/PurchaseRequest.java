@@ -1,35 +1,51 @@
 package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
 
-public class PurchaseRequest {
-    private String requestId;
-    private String customerId;
-    private String vehicleId;
-    private float maxBidAmount;
-    private String status;
-    private String requestDate;
 
-    public String getRequestId() {
+import java.time.LocalDate;
+
+public class PurchaseRequest {
+    private int requestId;
+    private Customer customer;
+    private Vehicle vehicle;
+    private float maxBidAmount;
+    private LocalDate requestDate;
+    private String status; // pending, approved, rejected, completed
+
+    public PurchaseRequest(int requestId, Customer customer, Vehicle vehicle, float maxBidAmount, LocalDate requestDate, String status) {
+        this.requestId = requestId;
+        this.customer = customer;
+        this.vehicle = vehicle;
+        this.maxBidAmount = maxBidAmount;
+        this.requestDate = requestDate;
+        this.status = status;
+    }
+
+    public PurchaseRequest(Customer customer, Vehicle vehicle, float maxBid) {
+    }
+
+    // Getters and Setters
+    public int getRequestId() {
         return requestId;
     }
 
-    public void setRequestId(String requestId) {
+    public void setRequestId(int requestId) {
         this.requestId = requestId;
     }
 
-    public String getCustomerId() {
-        return customerId;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
-    public String getVehicleId() {
-        return vehicleId;
+    public Vehicle getVehicle() {
+        return vehicle;
     }
 
-    public void setVehicleId(String vehicleId) {
-        this.vehicleId = vehicleId;
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 
     public float getMaxBidAmount() {
@@ -40,6 +56,14 @@ public class PurchaseRequest {
         this.maxBidAmount = maxBidAmount;
     }
 
+    public LocalDate getRequestDate() {
+        return requestDate;
+    }
+
+    public void setRequestDate(LocalDate requestDate) {
+        this.requestDate = requestDate;
+    }
+
     public String getStatus() {
         return status;
     }
@@ -47,22 +71,4 @@ public class PurchaseRequest {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    public String getRequestDate() {
-        return requestDate;
-    }
-
-    public void setRequestDate(String requestDate) {
-        this.requestDate = requestDate;
-    }
-
-    public PurchaseRequest(String requestId, String customerId, String vehicleId, float maxBidAmount, String status, String requestDate) {
-        this.requestId = requestId;
-        this.customerId = customerId;
-        this.vehicleId = vehicleId;
-        this.maxBidAmount = maxBidAmount;
-        this.status = status;
-        this.requestDate = requestDate;
-
-    }
-}
+} 

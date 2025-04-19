@@ -1,5 +1,7 @@
 package cse213.reconditionedcarimporter.AuctionAndSales;
 
+import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
+
 public class BidProposal {
      private Integer proposalId;
      private Auction auctionDetails;
