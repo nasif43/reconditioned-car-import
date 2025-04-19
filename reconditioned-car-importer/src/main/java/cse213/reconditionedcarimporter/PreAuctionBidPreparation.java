@@ -1,6 +1,6 @@
 package cse213.reconditionedcarimporter;
 
-public class PreAuctionBidPreperation
+public class PreAuctionBidPreparation
 {
     @javafx.fxml.FXML
     public void initialize() {

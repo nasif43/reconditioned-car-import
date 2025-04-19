@@ -12,4 +12,5 @@ module cse213.reconditionedcarimporter {
     opens cse213.reconditionedcarimporter to javafx.fxml;
     exports cse213.reconditionedcarimporter.ImportManagerAndCustomer;
     opens cse213.reconditionedcarimporter.ImportManagerAndCustomer to javafx.fxml;
+    exports cse213.reconditionedcarimporter.AccouintantandTechnician;
 }
