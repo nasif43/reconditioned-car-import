@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Shipment {
-    private int shipmentId;
+    private String shipmentId;
     private ArrayList<Vehicle> vehicles;
     private String origin;
     private String destination;
@@ -17,7 +17,11 @@ public class Shipment {
     private String carrier;
     private Warehouse storageLocation;
 
-    public Shipment(int shipmentId, ArrayList<Vehicle> vehicles, String origin, String destination, LocalDate departureDate, LocalDate arrivalDate, String status, String carrier, Warehouse storageLocation) {
+    public Shipment(String shipmentId) {
+        this.shipmentId = shipmentId;
+    }
+
+    public Shipment(String shipmentId, ArrayList<Vehicle> vehicles, String origin, String destination, LocalDate departureDate, LocalDate arrivalDate, String status, String carrier, Warehouse storageLocation) {
         this.shipmentId = shipmentId;
         this.vehicles = vehicles;
         this.origin = origin;
@@ -29,11 +33,11 @@ public class Shipment {
         this.storageLocation = storageLocation;
     }
 
-    public int getShipmentId() {
+    public String getShipmentId() {
         return shipmentId;
     }
 
-    public void setShipmentId(int shipmentId) {
+    public void setShipmentId(String shipmentId) {
         this.shipmentId = shipmentId;
     }
 
