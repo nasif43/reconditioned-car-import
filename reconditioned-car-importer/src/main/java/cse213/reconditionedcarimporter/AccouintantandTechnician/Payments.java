@@ -1,10 +1,7 @@
 package cse213.reconditionedcarimporter.AccouintantandTechnician;
-
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Payments {
-    
     private String paymentID;
     private float amount;
     private LocalDate date;

@@ -1,6 +1,4 @@
 package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
-
-
 import java.time.LocalDate;
 
 public class PurchaseRequest {

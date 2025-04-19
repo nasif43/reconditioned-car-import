@@ -52,8 +52,6 @@ public class Login {
             stage.show();
         } catch (Exception e) {
             System.err.println("Error loading " + fxmlName + ": " + e.getMessage());
-            e.printStackTrace();
-            
             // Create alert to show the error to the user
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error Loading Dashboard");

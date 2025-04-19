@@ -1,7 +1,5 @@
 package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
 
-import java.util.function.Supplier;
-
 import cse213.reconditionedcarimporter.AccouintantandTechnician.Payments;
 import cse213.reconditionedcarimporter.AuctionAndSales.Order;
 public class ImportManager {
