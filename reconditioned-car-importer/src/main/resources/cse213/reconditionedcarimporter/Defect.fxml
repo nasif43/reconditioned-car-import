@@ -6,7 +6,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="603.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.DefectController">
    <children>
       <Label layoutX="41.0" layoutY="43.0" prefHeight="20.0" prefWidth="58.0" text="Defect ID:" />
@@ -16,6 +15,6 @@
       <TextField layoutX="99.0" layoutY="41.0" />
       <TextField layoutX="99.0" layoutY="82.0" />
       <TextArea layoutX="452.0" layoutY="43.0" prefHeight="141.0" prefWidth="351.0" />
-      <ComboBox layoutX="99.0" layoutY="126.0" prefWidth="150.0" />
+      <ComboBox fx:id="DefectSeverityComboBox" layoutX="99.0" layoutY="126.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

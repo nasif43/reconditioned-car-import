@@ -4,8 +4,6 @@ import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Shipment;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 
-import java.util.ArrayList;
-
 public class receiveShipmentViewController
 {
     @javafx.fxml.FXML
@@ -18,7 +16,7 @@ public class receiveShipmentViewController
     public void initialize() {
         ShipmentIdNumber.setText("jsnfsjkvn");
         shipmentIdFromView = ShipmentIdNumber.getText();
-        Shipment currentShipment = new Shipment(shipmentIdFromView);
+        Shipment currentShipment = new Shipment();
         Warehouse warehouse = new Warehouse();
 
     }
