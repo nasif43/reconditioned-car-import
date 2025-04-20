@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="603.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.DefectController">
@@ -16,5 +21,24 @@
       <TextField layoutX="99.0" layoutY="82.0" />
       <TextArea layoutX="452.0" layoutY="43.0" prefHeight="141.0" prefWidth="351.0" />
       <ComboBox fx:id="DefectSeverityComboBox" layoutX="99.0" layoutY="126.0" prefWidth="150.0" />
+      <Label layoutX="41.0" layoutY="164.0" prefHeight="20.0" prefWidth="94.0" text="Cost Estimated:" />
+      <TextField layoutX="127.0" layoutY="162.0" prefHeight="25.0" prefWidth="122.0" />
+      <Label layoutX="41.0" layoutY="197.0" prefHeight="20.0" prefWidth="68.0" text="Approval:" />
+      <RadioButton fx:id="YesRadioButton" layoutX="108.0" layoutY="199.0" mnemonicParsing="false" text="Yes">
+         <toggleGroup>
+            <ToggleGroup fx:id="Approval" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="NoRadioButton" layoutX="169.0" layoutY="199.0" mnemonicParsing="false" text="No" toggleGroup="$Approval" />
+      <Button layoutX="276.0" layoutY="195.0" mnemonicParsing="false" text="Add" />
+      <TableView layoutX="-1.0" layoutY="302.0" prefHeight="303.0" prefWidth="842.0">
+        <columns>
+          <TableColumn fx:id="DefectTableview" prefWidth="234.0" text="Defect ID" />
+          <TableColumn fx:id="CategoryTableview" prefWidth="241.0" text="Category" />
+            <TableColumn fx:id="SeverityTableview" prefWidth="92.0" text="Severity" />
+            <TableColumn fx:id="CostTableview" prefWidth="180.0" text="Cost Estimated" />
+            <TableColumn fx:id="ApprovalTableview" prefWidth="94.0" text="Approval" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
