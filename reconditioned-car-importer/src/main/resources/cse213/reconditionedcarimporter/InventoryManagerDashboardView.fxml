@@ -10,14 +10,17 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.InventoryAndQuality.InventoryManagerDashboardController">
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
+            <Menu mnemonicParsing="false" text="Home">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Assign Vehicles to Showroom" />
+               </items>
+            </Menu>
                 <Menu mnemonicParsing="false" text="Showrooms">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Assign Vehicles to Showroom" />
@@ -34,48 +37,29 @@
                         <MenuItem mnemonicParsing="false" text="View Previous Reports" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Purchase Processing">
+                <Menu mnemonicParsing="false" text="Process purchase">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Close" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Notifications">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="gsrgwsrhethjsrtjhsryjhsrjryjsrnbhrtgdbhrgtbh">
-                            <graphic>
-                                <Pane prefHeight="44.0" prefWidth="9.0" />
-                            </graphic>
-                        </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="gsrgwsrhethjsrtjhsryjhsrjryjsrnbhrtgdbhrgtbh">
-                     <graphic>
-                        <Pane prefHeight="44.0" prefWidth="9.0" />
-                     </graphic>
-                  </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="gsrgwsrhethjsrtjhsryjhsrjryjsrnbhrtgdbhrgtbh">
-                     <graphic>
-                        <Pane prefHeight="44.0" prefWidth="9.0" />
-                     </graphic>
-                  </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="gsrgwsrhethjsrtjhsryjhsrjryjsrnbhrtgdbhrgtbh">
-                     <graphic>
-                        <Pane prefHeight="44.0" prefWidth="9.0" />
-                     </graphic>
-                  </MenuItem>
-                    </items>
-                </Menu>
+            <Menu mnemonicParsing="false" text="Test drive requests">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
             </menus>
         </MenuBar>
     </top>
     <center>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-                <TabPane layoutY="76.0" prefHeight="397.0" prefWidth="600.0" style="-fx-background-color: gray;" tabClosingPolicy="UNAVAILABLE">
+                <TabPane layoutY="63.0" prefHeight="361.0" prefWidth="600.0" style="-fx-background-color: gray;" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
                         <Tab text="Shipments">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: turquoise;">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lavender;">
                                     <children>
-                                        <TableView layoutX="3.0" prefHeight="243.0" prefWidth="593.0" style="-fx-background-color: turquoise;">
+                                        <TableView layoutX="3.0" prefHeight="243.0" prefWidth="593.0" style="-fx-background-color: lavender;">
                                             <columns>
                                                 <TableColumn prefWidth="84.0" text="Shipment Id" />
                                                 <TableColumn prefWidth="86.66665649414062" text="Arrival Date" />
@@ -108,22 +92,20 @@
                         </Tab>
                   <Tab text="Notifications">
                      <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: turquoise;">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: skyBlue;">
                            <children>
-                              <VBox layoutX="9.0" layoutY="14.0" prefHeight="352.0" prefWidth="581.0">
-                                 <children>
-                                    <Pane prefHeight="44.0" prefWidth="581.0" style="-fx-background-color: beige;" />
-                                    <Pane layoutX="10.0" layoutY="10.0" prefHeight="53.0" prefWidth="581.0" style="-fx-background-color: beige;" />
-                                    <Pane layoutX="10.0" layoutY="128.0" prefHeight="51.0" prefWidth="581.0" style="-fx-background-color: beige;" />
-                                 </children>
-                              </VBox>
+                              <TableView layoutX="1.0" layoutY="2.0" prefHeight="330.0" prefWidth="600.0">
+                                <columns>
+                                  <TableColumn prefWidth="528.0000000794729" text="Notifications" />
+                                </columns>
+                              </TableView>
                            </children>
                         </AnchorPane>
                      </content>
                   </Tab>
                     </tabs>
                 </TabPane>
-            <Label layoutX="14.0" layoutY="14.0" text="Inventory Manager Dashboard">
+            <Label layoutX="14.0" layoutY="14.0" text="Dashboard">
                <font>
                   <Font size="24.0" />
                </font>

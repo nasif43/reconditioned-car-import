@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.QualityInspectorDashboardViewController">
+   <children>
+      <BorderPane layoutX="-1.0" prefHeight="400.0" prefWidth="600.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                  <Menu mnemonicParsing="false" text="Home" />
+                <Menu mnemonicParsing="false" text="Inspection">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Initial vehicle inspection" />
+                     </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Requests">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Part requests" />
+                     </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Repairs">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Approve Repairs" />
+                        <MenuItem mnemonicParsing="false" text="Create repair plans" />
+                     </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Paint">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Paint Verification" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Report New Damage" />
+                  <Menu mnemonicParsing="false" text="Generate monthly report" />
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TabPane layoutX="5.0" layoutY="52.0" prefHeight="307.0" prefWidth="589.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Notifications">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView layoutX="1.0" layoutY="1.0" prefHeight="238.0" prefWidth="589.0" style="-fx-background-color: lavender;">
+                                      <columns>
+                                        <TableColumn prefWidth="585.3332929611206" text="Notifications" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Active repair plans">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView layoutY="2.0" prefHeight="238.0" prefWidth="587.0" style="-fx-background-color: beige;">
+                                      <columns>
+                                          <TableColumn prefWidth="80.66665887832642" text="Vehicle Id" />
+                                        <TableColumn prefWidth="121.99996185302734" text="Vehicle Name" />
+                                        <TableColumn prefWidth="111.33338928222656" text="Repair plan Id" />
+                                          <TableColumn minWidth="0.0" prefWidth="138.66668701171875" text="Status" />
+                                          <TableColumn minWidth="0.0" prefWidth="133.99990844726562" text="Deadline" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="Vehicles which need repair">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="273.0" prefWidth="589.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <TableView layoutY="39.0" prefHeight="185.0" prefWidth="587.0" style="-fx-background-color: lavender;">
+                                       <columns>
+                                          <TableColumn prefWidth="80.66665887832642" text="Vehicle Id" />
+                                          <TableColumn prefWidth="121.99996185302734" text="Vehicle Name" />
+                                          <TableColumn prefWidth="66.66670227050781" text="Grade" />
+                                          <TableColumn minWidth="0.0" prefWidth="184.6666259765625" text="Status" />
+                                          <TableColumn minWidth="0.0" prefWidth="133.99990844726562" text="Deadline" />
+                                       </columns>
+                                    </TableView>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Select a vehicle to create a repair plan">
+                                       <font>
+                                          <Font name="System Italic" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Button layoutX="184.0" layoutY="234.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="219.0" text="Create repair plan" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Vehicles awaiting initial inspection">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="589.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <TableView layoutY="39.0" prefHeight="189.0" prefWidth="587.0" style="-fx-background-color: skyBlue;">
+                                       <columns>
+                                          <TableColumn prefWidth="80.66665887832642" text="Vehicle Id" />
+                                          <TableColumn minWidth="0.0" prefWidth="125.99996185302734" text="Model" />
+                                          <TableColumn prefWidth="118.66670227050781" text="Make" />
+                                          <TableColumn minWidth="0.0" prefWidth="166.0" text="Warehouse" />
+                                          <TableColumn minWidth="0.0" prefWidth="94.66665649414062" text="Year" />
+                                       </columns>
+                                    </TableView>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Select a vehicle to inspect it">
+                                       <font>
+                                          <Font name="System Italic" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Button layoutX="184.0" layoutY="236.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="219.0" text="Inspect selected vehicle" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+                  <Label layoutX="20.0" layoutY="14.0" text="Dashboard">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="384.0" layoutY="19.0" text="Error message" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
