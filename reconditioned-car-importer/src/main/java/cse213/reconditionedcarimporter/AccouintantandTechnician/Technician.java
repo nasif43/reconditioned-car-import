@@ -1,10 +1,5 @@
 package cse213.reconditionedcarimporter.AccouintantandTechnician;
-
-import javafx.concurrent.Task;
-import jdk.jfr.Event;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class Technician {
 
@@ -15,13 +10,13 @@ public class Technician {
     }
 
     // Method to assign equipment to an event
-    public boolean assignEquipment(Event event, List<Equipment> equipmentList) {
+    public boolean assignEquipment(ArrayList<Equipment> equipmentList) {
         // Add logic to assign equipment to the event
         return true; // or false based on success/failure
     }
 
     // Method to monitor technical status of an event
-    public StatusReport monitorTechnicalStatus(Event event) {
+    public StatusReport monitorTechnicalStatus(StatusReport statusReport) {
         // Generate and return a status report
         return new StatusReport(); // replace with actual report logic
     }

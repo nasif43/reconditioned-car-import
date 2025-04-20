@@ -3,13 +3,13 @@ package cse213.reconditionedcarimporter.AuctionAndSales;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 
 public class BidProposal {
-     private Integer proposalId;
+     private String proposalId;
      private Auction auctionDetails;
      private Vehicle vehicle;
      private Float maxBidLimit;
      private String status;
 
-    public BidProposal(Integer proposalId, Auction auctionDetails, Vehicle vehicle, Float maxBidLimit, String status) {
+    public BidProposal(String proposalId, Auction auctionDetails, Vehicle vehicle, Float maxBidLimit, String status) {
         this.proposalId = proposalId;
         this.auctionDetails = auctionDetails;
         this.vehicle = vehicle;
@@ -17,11 +17,15 @@ public class BidProposal {
         this.status = status;
     }
 
-    public Integer getProposalId() {
+    public BidProposal(String proposalId, Auction auction, Vehicle vehicle, float maxBidLimit, String draft) {
+
+    }
+
+    public String getProposalId() {
         return proposalId;
     }
 
-    public void setProposalId(Integer proposalId) {
+    public void setProposalId(String proposalId) {
         this.proposalId = proposalId;
     }
 
@@ -57,8 +61,28 @@ public class BidProposal {
         this.status = status;
     }
 
-    public Boolean sendForReview(){return null;}
-    public Boolean update(Float newBidLimit){return null;};
-    public Boolean updateProfile(Integer userId){return null;};
-    private Boolean validateBidLimit(Float maxBidLimit){return null;};
+    public Boolean sendForReview() {
+        if (validateBidLimit(maxBidLimit)) {
+            status = "Under Review";
+            return true;
+        }
+        return false;
+    }
+
+    public Boolean update(Float newBidLimit) {
+        if (validateBidLimit(newBidLimit)) {
+            maxBidLimit = newBidLimit;
+            return true;
+        }
+        return false;
+    }
+
+    public Boolean updateProfile(Integer userId) {
+        // In a real implementation, this would update the user profile in a database
+        return userId != null && userId > 0;
+    }
+
+    private Boolean validateBidLimit(Float maxBidLimit) {
+        return maxBidLimit != null && maxBidLimit > 0;
+    }
 }

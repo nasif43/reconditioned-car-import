@@ -1,14 +1,16 @@
 package cse213.reconditionedcarimporter.AccouintantandTechnician;
-
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Payments {
-    
     private String paymentID;
     private float amount;
     private LocalDate date;
     private String method;
+    private String userId;
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
     public Payments(String paymentID, float amount, LocalDate date, String method) {
         this.paymentID = paymentID;
@@ -79,4 +81,11 @@ public class Payments {
         return isConfirmed;
     }
 
+    public String getUserId() {
+        return this.userId;
+    }
+
+    public String getPaymentMethod() {
+    return method;
+    }
 }

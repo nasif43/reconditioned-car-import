@@ -42,7 +42,9 @@ public class Auction {
     }
 
     public void setAuctionDate(LocalDate auctionDate) {
-        this.auctionDate = auctionDate;
+        if (validateAuctionDate(auctionDate)) {
+            this.auctionDate = auctionDate;
+        }
     }
 
     public String getLotNumber() {
@@ -69,6 +71,14 @@ public class Auction {
         this.status = status;
     }
 
-    public Boolean addVehicle(Vehicle vehicle){return null;}
-    private Boolean validateAuctionDate(LocalDate auctionDate){return null;}
+    public Boolean addVehicle(Vehicle vehicle){
+        if (vehicle != null && !vehicles.contains(vehicle)) {
+            vehicles.add(vehicle);
+            return true;
+        }
+        return false;
+    }
+    private Boolean validateAuctionDate(LocalDate auctionDate) {
+        return auctionDate != null && !auctionDate.isBefore(LocalDate.now());
+    }
 }

@@ -15,7 +15,7 @@ ArrayList<Shipment> currentShipments;
 ArrayList<Shipment> pendingShipments;
 int maxVehiclesToAssignPerDay;
 
-    public InventoryManager(int userId, String name, String password, String email, String phone, String userRole, ArrayList<Warehouse> warehouses, ArrayList<Showroom> showrooms, ArrayList<Shipment> currentShipments, ArrayList<Shipment> pendingShipments, int maxVehiclesToAssignPerDay) {
+    public InventoryManager(String userId, String name, String password, String email, String phone, String userRole, ArrayList<Warehouse> warehouses, ArrayList<Showroom> showrooms, ArrayList<Shipment> currentShipments, ArrayList<Shipment> pendingShipments, int maxVehiclesToAssignPerDay) {
         super(userId, name, password, email, phone, userRole);
         this.warehouses = warehouses;
         this.showrooms = showrooms;
