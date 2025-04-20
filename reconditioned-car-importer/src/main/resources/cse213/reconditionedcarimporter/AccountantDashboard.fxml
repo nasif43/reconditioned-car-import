@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.AccountantDashboardController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="168.0" layoutY="6.0" prefHeight="17.0" prefWidth="147.0" text="Accountant Dashboard" />
+         </children>
+      </AnchorPane>
+   </center>
+   <left>
+      <VBox prefHeight="514.0" prefWidth="117.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#PaymentsOnAction" prefHeight="25.0" prefWidth="123.0" text="Payments" />
+            <Button mnemonicParsing="false" onAction="#TransactionHistoryOnAction" text="Transaction History" />
+            <Button mnemonicParsing="false" onAction="#PartRequestsOnAction" prefHeight="25.0" prefWidth="122.0" text="Part Requests" />
+            <Button mnemonicParsing="false" onAction="#StatusReportOnAction" prefHeight="25.0" prefWidth="121.0" text="Status Report" />
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
