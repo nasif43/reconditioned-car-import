@@ -2,6 +2,8 @@ package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
 
 import cse213.reconditionedcarimporter.AccouintantandTechnician.Payments;
 import cse213.reconditionedcarimporter.AuctionAndSales.*;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Customer extends User {
@@ -42,7 +44,7 @@ public class Customer extends User {
 
     public Payments processPayment(Invoice invoice, String method) {
         if (invoice != null && invoice.getTotalAmount() > 0) {
-            Payments payment = new Payments(invoice.getInvoiceId(), invoice.getTotalAmount(), method, "Pending");
+            Payments payment = new Payments(invoice.getInvoiceId(), invoice.getTotalAmount(), LocalDate.now(), method);
             System.out.println("Payment initiated for invoice: " + invoice.getInvoiceId());
             return payment;
         }

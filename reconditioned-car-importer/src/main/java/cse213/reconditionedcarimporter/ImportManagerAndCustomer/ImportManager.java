@@ -3,6 +3,7 @@ package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
 import cse213.reconditionedcarimporter.AccouintantandTechnician.Payments;
 import cse213.reconditionedcarimporter.AuctionAndSales.Order;
 import cse213.reconditionedcarimporter.AuctionAndSales.User;
+import cse213.reconditionedcarimporter.AccouintantandTechnician.PaymentStatus;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class ImportManager extends User {
     // 3️⃣ Place a supplier order
     public Order manageSupplierOrders(String supplier, Vehicle vehicle) {
         if (supplier != null && vehicle != null) {
-            Order order = new Order(1000 + supplierOrders.size(), supplier, vehicle);
+            Order order = new Order(/*1000 + supplierOrders.size(), supplier, vehicle*/);
             supplierOrders.add(order);
             System.out.println("Supplier order placed with: " + supplier);
             return order;
@@ -50,15 +51,14 @@ public class ImportManager extends User {
     public Shipment overseeShippingAndLogistics(Vehicle vehicle) {
         if (vehicle != null) {
             Shipment shipment = new Shipment(
-                    100 + shipments.size(),
-                    new ArrayList<>() {{ add(vehicle); }},
-                    "Tokyo Warehouse",
-                    "Chittagong Port",
-                    LocalDate.now(),
-                    LocalDate.now().plusDays(14),
-                    "In Transit",
-                    "Maersk",
-                    null
+//                    new ArrayList<>() {{ add(vehicle); }},
+//                    "Tokyo Warehouse",
+//                    "Chittagong Port",
+//                    LocalDate.now(),
+//                    LocalDate.now().plusDays(14),
+//                    "In Transit",
+//                    "Maersk",
+//                    null
             );
             shipments.add(shipment);
             System.out.println("Shipment created for: " + vehicle.getModel());
@@ -68,10 +68,10 @@ public class ImportManager extends User {
     }
 
     // 5️⃣ Approve payment if valid
-    public boolean verifyAndApprovePayments(Payments payment) {
+    public boolean verifyAndApprovePayments(PaymentStatus paymentStatus, Payments payment) {
         if (payment != null && payment.getAmount() > 0) {
-            payment.setStatus("Approved");
-            System.out.println("Payment approved for: " + payment.getTransactionId());
+            paymentStatus.setCurrentStatus("Approved");
+            System.out.println("Payment approved for: " + payment.getpaymentId());
             return true;
         }
         return false;
