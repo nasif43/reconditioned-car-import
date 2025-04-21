@@ -26,34 +26,66 @@ public class receiveShipmentViewController
     private ComboBox<Warehouse> selectWHComboBox;
     @javafx.fxml.FXML
     private Label messageLabel;
-    private InventoryManager im = new InventoryManager();
     ArrayList<Shipment> shipments = new ArrayList<>();
     ArrayList<Warehouse> warehouses = new ArrayList<>();
     private Shipment selectedShipment;
-    private InventoryManager inventoryManager;
+    private InventoryManager inventoryManager = new InventoryManager();
+
+    private Shipment shipment;
+
+    public void setShipment(Shipment shipment) {
+        this.shipment = shipment;
+        showShipmentDetails();
+    }
+
+    private void showShipmentDetails() {
+        if (shipment != null) {
+            shipmentIdNumberLabel.setText(shipment.getShipmentId());
+            shipmentOriginLabel.setText(shipment.getOrigin());
+            shipmentStatusLabel.setText(shipment.getStatus());
+        }
+    }
+
 
     @javafx.fxml.FXML
     public void initialize() {
-        messageLabel.setVisible(false);}}
+        messageLabel.setVisible(false);
+    // warehouses.add(new Warehouse("Chittagong_WH1"));
+    //        warehouses.add(new Warehouse("Dhaka_WH1"));
+    //        warehouses.add(new Warehouse("Dhaka_WH2"));
+    //        warehouses.add(new Warehouse("Dhaka_WH3"));
+    //        warehouses.add(new Warehouse("Dhaka_WH4"));
+    selectWHComboBox.getItems().addAll(inventoryManager.warehouses);}
 
-    //public void receiveShipment(Shipment shipment, Warehouse storageLocation){
-    //        shipment.setStatus("ARRIVED_UNCHECKED");
-    //        shipment.setStorageLocation(storageLocation);
-    //        shipment.setArrivalDate(LocalDate.now());
-    //        for (Vehicle v : shipment.getVehicles()){
-    //          v.setStatus("AWAITING_INSPECTION");
-    //        }
-    //        storageLocation.addShipment(shipment);
-    //        //add file code in ocntroler
-    //String shipmentId, ArrayList<Vehicle> vehicles, String origin,
-    // String destination, LocalDate departureDate, LocalDate arrivalDate, String status,
-    // String carrier, Warehouse storageLocation)
-//    @javafx.fxml.FXML
-//    public void receiveShipmentOnActionButton(ActionEvent actionEvent) {
-//        Shipment currentShipment = new Shipment();
-//        im.receiveShipment(
-//
-//        );
-//    }
+
+
+    public InventoryManager getInventoryManager() {
+        return inventoryManager;
+    }
+
+    public void setInventoryManager(InventoryManager inventoryManager) {
+        this.inventoryManager = inventoryManager;
+    }
+
+    @javafx.fxml.FXML
+    public void receiveShipmentOnActionButton(ActionEvent actionEvent) {
+        Warehouse selectedWarehouse = selectWHComboBox.getSelectionModel().getSelectedItem();
+        if (selectedWarehouse != null && shipment != null) {
+            shipment.setStatus("ARRIVED_UNCHECKED");
+            shipment.setStorageLocation(selectedWarehouse);
+            shipment.setArrivalDate(LocalDate.now());
+            for (Vehicle v : shipment.getVehicles()) {
+                v.setStatus("AWAITING_INSPECTION");
+            }
+            selectedWarehouse.addShipment(shipment);
+
+            shipment.saveShipment();
+            messageLabel.setText("Shipment received successfully!");
+            messageLabel.setVisible(true);
+        } else {
+            messageLabel.setText("Please select a warehouse!");
+            messageLabel.setVisible(true);
+        }
+    }}
 
 

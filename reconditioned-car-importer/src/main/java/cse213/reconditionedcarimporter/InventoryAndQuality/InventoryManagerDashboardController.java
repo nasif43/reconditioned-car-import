@@ -114,12 +114,32 @@ public class InventoryManagerDashboardController
     public void seeDashBoardMenuItemOnAction(ActionEvent actionEvent) {
         loadFxmlParentToBorderPaneCenter("InventoryManagerDashboardView.fxml");
     }
+    // loadFxmlParentToBorderPaneCenter("receiveShipmentView.fxml");
 
     @javafx.fxml.FXML
-    public void loadReceiveShipmentViewBTn(ActionEvent actionEvent) {
-        loadFxmlParentToBorderPaneCenter("receiveShipmentView.fxml");
 
+    public void loadReceiveShipmentViewBTn(ActionEvent actionEvent) {
+        Shipment selected = shipmentsTabTableView.getSelectionModel().getSelectedItem();
+        if (selected != null) {
+            loadReceiveShipmentView(selected);
+            System.out.println("selected");
+        } else {
+            System.out.println("Please select a shipment first!");
+        }
     }
+    public void loadReceiveShipmentView(Shipment shipment) {
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("receiveShipmentView.fxml"));
+            Parent root = loader.load();
+            receiveShipmentViewController controller = loader.getController();
+            controller.setShipment(shipment);
+            imDashboardBorderPane.setCenter(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     //dummy shipment
 //String shipmentId, ArrayList<Vehicle> vehicles, String origin, String destination, LocalDate departureDate,
