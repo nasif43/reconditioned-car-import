@@ -1,9 +1,11 @@
 package cse213.reconditionedcarimporter.AccouintantandTechnician;
 
+import cse213.reconditionedcarimporter.AuctionAndSales.User;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Accountant {
+public class Accountant extends User {
 
     // Method to manage financial records
     public ArrayList<Payments> manageFinancialRecords() {
