@@ -10,7 +10,7 @@ public class InvoiceController
     @javafx.fxml.FXML
     private DatePicker dateIssuedPicker;
     @javafx.fxml.FXML
-    private ComboBox PaymentStatusComboBox;
+    private ComboBox<String> PaymentStatusComboBox;
     @javafx.fxml.FXML
     private TextField CustomerIDTF;
     @javafx.fxml.FXML
@@ -26,5 +26,20 @@ public class InvoiceController
 
     @javafx.fxml.FXML
     public void SubmitOnAction(ActionEvent actionEvent) {
+        String invoiceId = InvoiceIDTF.getText();
+        String orderId = OrderIDTF.getText();
+        String customerId = CustomerIDTF.getText();
+        String totalAmount = TotalAmountTF.getText();
+        String paymentStatus = PaymentStatusComboBox.getValue();
+
+
+
+        System.out.println("Invoice Submitted:");
+        System.out.println("Invoice ID: " + invoiceId);
+        System.out.println("Order ID: " + orderId);
+        System.out.println("Customer ID: " + customerId);
+        System.out.println("Total Amount: " + totalAmount);
+        System.out.println("Payment Status: " + paymentStatus);
+
     }
 }

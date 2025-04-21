@@ -24,19 +24,16 @@ public class RegisterForCustomerController
 
     @javafx.fxml.FXML
     public void RegisterOnAction(ActionEvent actionEvent) {
-        // Get values from fields
+
         String name = NameTF.getText();
         String email = EmailTF.getText();
         String password = PasswordTF.getText();
         String address = AddressTF.getText();
 
-        // Create Customer object
-        RegisterForCustomer newRegister = new Customer(name, email, address, password, 0);
 
+        RegisterForCustomer customer = new RegisterForCustomer(name, email, password, address);
+        System.out.println("Registered: " + customer.getName() + " (" + customer.getEmail() + ")");
 
-
-        // Confirm creation
-        System.out.println(" Registered: " + newCustomer.getName() + " (" + newCustomer.getEmail() + ")");
 
 
 

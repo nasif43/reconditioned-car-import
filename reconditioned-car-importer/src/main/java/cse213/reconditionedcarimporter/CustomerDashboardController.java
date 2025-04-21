@@ -39,14 +39,6 @@ public class CustomerDashboardController
 
     }
 
-
-    @Deprecated
-    public void PurchaseOnAction(ActionEvent actionEvent) {
-
-    }
-
-
-
     @javafx.fxml.FXML
     public void SupportCenterOnAction(ActionEvent actionEvent) {
         loadFxmlParentToBorderPaneCenter("Support Ticket.fxml");
@@ -63,13 +55,10 @@ public class CustomerDashboardController
         loadFxmlParentToBorderPaneCenter("TestDrive.fxml");
     }
 
-    @javafx.fxml.FXML
-    public void DiscountonAction(ActionEvent actionEvent) {
-        //loadFxmlParentToBorderPaneCenter("Discount.fxml");
-    }
 
     @javafx.fxml.FXML
     public void CarListingOnAction(ActionEvent actionEvent) {
+
         loadFxmlParentToBorderPaneCenter("CarListing.fxml");
     }
 
