@@ -16,6 +16,7 @@
           <Menu mnemonicParsing="false" text="Transaction History">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#ManageAndGenerateOnAction" text="Manage And Generate Transactions" />
+                  <MenuItem mnemonicParsing="false" onAction="#SetMaxBidOnAction" text="Set Max Bid" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Due Payments">

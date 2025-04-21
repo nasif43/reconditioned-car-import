@@ -70,4 +70,10 @@ public class AccountantDashboardController
         loadFxmlParentToBorderPaneCenter("Login.fxml");
 
     }
+
+    @javafx.fxml.FXML
+    public void SetMaxBidOnAction(ActionEvent actionEvent) {
+        loadFxmlParentToBorderPaneCenter("SetMaxBidLimit.fxml");
+
+    }
 }
