@@ -9,18 +9,18 @@ public class RepairTask {
     private String description;
     private float laborHours;
     private ArrayList<Parts> requiredParts;
-    private Technician assignedTechnician;
+
     private String status;
     private Parts parts;
 //    private ArrayList<Photo> beforePhotos;
 //    private ArrayList<Photo> afterPhotos;
 
-    public RepairTask(String description, int taskId, float laborHours, ArrayList<Parts> requiredParts, Technician assignedTechnician) {
+    public RepairTask(String description, int taskId, float laborHours, ArrayList<Parts> requiredParts) {
         this.description = description;
         this.taskId = taskId;
         this.laborHours = laborHours;
         this.requiredParts = requiredParts;
-        this.assignedTechnician = assignedTechnician;
+
 //        this.beforePhotos = beforePhotos;
 //        this.afterPhotos = afterPhotos;
     }
@@ -57,13 +57,6 @@ public class RepairTask {
         this.requiredParts = requiredParts;
     }
 
-    public Technician getAssignedTechnician() {
-        return assignedTechnician;
-    }
-
-    public void setAssignedTechnician(Technician assignedTechnician) {
-        this.assignedTechnician = assignedTechnician;
-    }
 
 //    public void setBeforePhotos(ArrayList<Photo> beforePhotos) {
 //        this.beforePhotos = beforePhotos;
@@ -74,9 +67,9 @@ public class RepairTask {
 //    }
 
     //adding the methoids hjere
-    private ArrayList<Photo> beforePhotos = new ArrayList<>();
-    private ArrayList<Photo> afterPhotos = new ArrayList<>();
-    private ArrayList<PartRequests> partRequests = new ArrayList<PartRequests>();
+    private final ArrayList<Photo> beforePhotos = new ArrayList<>();
+    private final ArrayList<Photo> afterPhotos = new ArrayList<>();
+    private final ArrayList<PartRequests> partRequests = new ArrayList<PartRequests>();
 
     // Method to update the task status
     public void updateStatus(String status) {

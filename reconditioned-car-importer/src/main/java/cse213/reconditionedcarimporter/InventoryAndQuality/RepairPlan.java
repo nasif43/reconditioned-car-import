@@ -11,7 +11,7 @@ public class RepairPlan {
     private ArrayList<RepairTask> tasks;
     private LocalDate deadline;
     private Vehicle vehicle;
-    //methids
+    //methods
     public void createPlan(){};
     public void updateTask(){};
 }
