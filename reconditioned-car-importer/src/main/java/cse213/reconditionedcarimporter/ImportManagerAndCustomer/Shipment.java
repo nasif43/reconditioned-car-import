@@ -4,7 +4,6 @@ import cse213.reconditionedcarimporter.InventoryAndQuality.Warehouse;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Shipment {
     private String shipmentId;
@@ -17,7 +16,7 @@ public class Shipment {
     private String carrier;
     private Warehouse storageLocation;
 
-    public Shipment(String shipmentId) {
+    public Shipment() {
         this.shipmentId = shipmentId;
     }
 

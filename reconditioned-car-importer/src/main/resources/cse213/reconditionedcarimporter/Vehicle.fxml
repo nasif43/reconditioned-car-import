@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="Infinity" prefWidth="Infinity" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.ImportManagerAndCustomer.VehicleController">
+   <children>
+      <Label layoutX="471.0" layoutY="22.0" text="Vehicle Form">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="176.0" layoutY="79.0" text="VIN" />
+      <TextField fx:id="VinTF" layoutX="246.0" layoutY="75.0" />
+      <Label layoutX="176.0" layoutY="110.0" text="Make" />
+      <TextField fx:id="MakeTF" layoutX="246.0" layoutY="106.0" />
+      <Label layoutX="176.0" layoutY="145.0" text="Model" />
+      <TextField fx:id="ModelTF" layoutX="246.0" layoutY="141.0" />
+      <Label layoutX="155.0" layoutY="179.0" text="Exterior Colour " />
+      <TextField fx:id="ExteriorColourTF" layoutX="246.0" layoutY="175.0" />
+      <Label layoutX="164.0" layoutY="213.0" text="Engine Type" />
+      <Label layoutX="161.0" layoutY="253.0" text="Transmisson" />
+      <Label layoutX="176.0" layoutY="291.0" text="Fuel Type" />
+      <Label layoutX="525.0" layoutY="73.0" text="Status" />
+      <TextField fx:id="StatusTF" layoutX="595.0" layoutY="69.0" />
+      <Label layoutX="525.0" layoutY="110.0" text="Grade" />
+      <TextField fx:id="GradeTF" layoutX="595.0" layoutY="106.0" />
+      <Label layoutX="525.0" layoutY="148.0" text="Location" />
+      <Label layoutX="525.0" layoutY="185.0" text="Year" />
+      <TextField fx:id="YearTF" layoutX="595.0" layoutY="181.0" />
+      <Label layoutX="525.0" layoutY="223.0" text="Mileage" />
+      <TextField fx:id="MileageTF" layoutX="595.0" layoutY="219.0" />
+      <Label layoutX="517.0" layoutY="286.0" text="Selling Price" />
+      <TextField fx:id="SellingPriceTF" layoutX="595.0" layoutY="282.0" />
+      <Label layoutX="511.0" layoutY="254.0" text="Purchase Price" />
+      <TextField fx:id="PurchasePriceTF" layoutX="595.0" layoutY="250.0" />
+      <ComboBox fx:id="EngineTypeComboBox" layoutX="246.0" layoutY="209.0" prefWidth="150.0" />
+      <ComboBox fx:id="TrasmissonCOmboBox" layoutX="246.0" layoutY="249.0" prefWidth="150.0" />
+      <ComboBox fx:id="FuelTypeComboBox" layoutX="246.0" layoutY="287.0" prefWidth="150.0" />
+      <ComboBox fx:id="LocationComboBox" layoutX="595.0" layoutY="144.0" prefWidth="150.0" />
+      <TableView fx:id="TableView" layoutY="333.0" prefHeight="253.0" prefWidth="1068.0">
+        <columns>
+          <TableColumn fx:id="VinCOl" prefWidth="75.0" text="VIN" />
+          <TableColumn fx:id="MakeCol" prefWidth="75.0" text="Make" />
+            <TableColumn fx:id="ModelCol" prefWidth="75.0" text="Model" />
+            <TableColumn fx:id="EcolourCol" prefWidth="75.0" text="E.Colour" />
+            <TableColumn fx:id="EngineTypeCol" prefWidth="75.0" text="Engine type" />
+            <TableColumn fx:id="TransmissionCol" prefWidth="83.0" text="transmission" />
+            <TableColumn fx:id="FuelTypeCol" prefWidth="67.0" text="fuel type" />
+            <TableColumn fx:id="statusCol" prefWidth="75.0" text="status" />
+            <TableColumn fx:id="gradeCol" prefWidth="75.0" text="grade" />
+            <TableColumn fx:id="LocationCol" prefWidth="75.0" text="location" />
+            <TableColumn fx:id="YearCol" prefWidth="75.0" text="year" />
+            <TableColumn fx:id="mileageCol" prefWidth="75.0" text="mileage" />
+            <TableColumn fx:id="PpriceCol" prefWidth="75.0" text="P.Price" />
+            <TableColumn fx:id="SpriceCol" prefWidth="92.0" text="S.Price" />
+        </columns>
+      </TableView>
+      <Button layoutX="792.0" layoutY="281.0" mnemonicParsing="false" onAction="#ShowonTableOnACtion" text="Show on Table" />
+      <Button layoutX="916.0" layoutY="279.0" mnemonicParsing="false" onAction="#ClearOnAction" text="Clear " />
+   </children>
+</AnchorPane>

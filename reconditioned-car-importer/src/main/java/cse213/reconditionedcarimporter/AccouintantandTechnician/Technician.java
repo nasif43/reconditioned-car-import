@@ -1,7 +1,9 @@
 package cse213.reconditionedcarimporter.AccouintantandTechnician;
+import cse213.reconditionedcarimporter.AuctionAndSales.User;
+
 import java.util.ArrayList;
 
-public class Technician {
+public class Technician extends User {
 
     // Method to maintain equipment inventory
     public boolean maintainEquipmentInventory(Equipment equipment) {

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="CustomerDashboardBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="823.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.CustomerDashboardController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Create a Profile">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ResgisterOnAction" text="Register" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Search for Vehicle ">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#CarListingOnAction" text="CarListing" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Purchase Request">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#RequestOnACtion" text="Request" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Test Drive">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#RequestTestDriveOnAction" text="Request Test Drive" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Support and Queries">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#SupportCenterOnAction" text="Support Center" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Promotion">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#DiscountonAction" text="Discounts" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Status">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#MyOrderOnAction" text="My Order" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

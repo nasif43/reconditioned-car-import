@@ -9,41 +9,27 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class AuctionManager extends User {
-    public BidProposal preparePreAuctionBid(AuctionDetails auctionDetails) {
-        if (validateAuctionDetails(auctionDetails)) {
+    public BidProposal preparePreAuctionBid(BidProposal bidProposal) {
+        if (validateAuctionDetails(bidProposal)) {
             // Create a new bid proposal based on auction details
             Auction auction = new Auction(
-                auctionDetails.getAuctionId(),
+                bidProposal.getProposalId(),
                 "Default Auction House", // This should be set based on actual auction house
                 LocalDate.now().plusDays(7), // Default to 7 days from now
-                "LOT-" + auctionDetails.getAuctionId(),
+                "LOT-" + bidProposal.getProposalId(),
                 new ArrayList<>(),
                 "Pending"
             );
             
             return new BidProposal(
-                generateProposalId(),
-                auction,
-                null, // Vehicle will be set later
-                0.0f, // Initial bid limit
-                "Draft"
+                    // Vehicle will be set later
+                    // Initial bid limit
             );
         }
         return null;
     }
 
-    public AuctionDetails auditAuctionResults(String auctionRef) {
-        // In a real implementation, this would fetch auction results from a database
-        return new AuctionDetails(
-            auctionRef,
-            "Auction completed successfully",
-            85, // Example condition rating
-            1, // Example vehicle ID
-            'A', // Example letter grade
-            LocalDate.now(),
-            1 // Example user ID
-        );
-    }
+
 
     public InspectionReport inspectVehicle(String vehicleId) {
         // In a real implementation, this would create an inspection report
@@ -73,15 +59,15 @@ public class AuctionManager extends User {
         return null;
     }
 
-    private Boolean validateAuctionDetails(AuctionDetails auctionDetails) {
-        return auctionDetails != null &&
-               auctionDetails.getAuctionId() != null &&
-               !auctionDetails.getAuctionId().isEmpty() &&
-               auctionDetails.getCondition_rating() != null &&
-               auctionDetails.getCondition_rating() >= 0 &&
-               auctionDetails.getCondition_rating() <= 100 &&
-               auctionDetails.getLetterGrade() != null &&
-               auctionDetails.getInspectionDate() != null;
+    private Boolean validateAuctionDetails(BidProposal bidProposal) {
+        return bidProposal != null &&
+               bidProposal.getProposalId() != null &&
+               !bidProposal.getProposalId().isEmpty() &&
+               bidProposal.getConditionRating() != null &&
+               Integer.parseInt(bidProposal.getConditionRating()) >= 0 &&
+               Integer.parseInt(bidProposal.getConditionRating()) <= 100 &&
+               bidProposal.getLetterGrade() != null &&
+               bidProposal.getInspectionDate() != null;
     }
 
     private String generateProposalId() {

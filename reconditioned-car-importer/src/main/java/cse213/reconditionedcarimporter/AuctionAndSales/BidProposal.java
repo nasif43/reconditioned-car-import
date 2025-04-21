@@ -1,25 +1,25 @@
 package cse213.reconditionedcarimporter.AuctionAndSales;
 
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
+import cse213.reconditionedcarimporter.utility.AppendableObjectOutputStream;
 
-public class BidProposal {
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.time.LocalDate;
+
+public class BidProposal implements Serializable {
      private String proposalId;
-     private Auction auctionDetails;
-     private Vehicle vehicle;
+     private String auctionHouseName;
+     private Integer lotNumber;
+     private String vin;
+     private String conditionRating;
+     private String letterGrade;
+     private String evaluationComments;
+     private LocalDate auctionDate;
+     private LocalDate inspectionDate;
      private Float maxBidLimit;
-     private String status;
-
-    public BidProposal(String proposalId, Auction auctionDetails, Vehicle vehicle, Float maxBidLimit, String status) {
-        this.proposalId = proposalId;
-        this.auctionDetails = auctionDetails;
-        this.vehicle = vehicle;
-        this.maxBidLimit = maxBidLimit;
-        this.status = status;
-    }
-
-    public BidProposal(String proposalId, Auction auction, Vehicle vehicle, float maxBidLimit, String draft) {
-
-    }
 
     public String getProposalId() {
         return proposalId;
@@ -29,20 +29,68 @@ public class BidProposal {
         this.proposalId = proposalId;
     }
 
-    public Auction getAuctionDetails() {
-        return auctionDetails;
+    public String getAuctionHouseName() {
+        return auctionHouseName;
     }
 
-    public void setAuctionDetails(Auction auctionDetails) {
-        this.auctionDetails = auctionDetails;
+    public void setAuctionHouseName(String auctionHouseName) {
+        this.auctionHouseName = auctionHouseName;
     }
 
-    public Vehicle getVehicle() {
-        return vehicle;
+    public Integer getLotNumber() {
+        return lotNumber;
     }
 
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
+    public void setLotNumber(Integer lotNumber) {
+        this.lotNumber = lotNumber;
+    }
+
+    public String getVin() {
+        return vin;
+    }
+
+    public void setVin(String vin) {
+        this.vin = vin;
+    }
+
+    public String getConditionRating() {
+        return conditionRating;
+    }
+
+    public void setConditionRating(String conditionRating) {
+        this.conditionRating = conditionRating;
+    }
+
+    public String getLetterGrade() {
+        return letterGrade;
+    }
+
+    public void setLetterGrade(String letterGrade) {
+        this.letterGrade = letterGrade;
+    }
+
+    public String getEvaluationComments() {
+        return evaluationComments;
+    }
+
+    public void setEvaluationComments(String evaluationComments) {
+        this.evaluationComments = evaluationComments;
+    }
+
+    public LocalDate getAuctionDate() {
+        return auctionDate;
+    }
+
+    public void setAuctionDate(LocalDate auctionDate) {
+        this.auctionDate = auctionDate;
+    }
+
+    public LocalDate getInspectionDate() {
+        return inspectionDate;
+    }
+
+    public void setInspectionDate(LocalDate inspectionDate) {
+        this.inspectionDate = inspectionDate;
     }
 
     public Float getMaxBidLimit() {
@@ -53,36 +101,48 @@ public class BidProposal {
         this.maxBidLimit = maxBidLimit;
     }
 
-    public String getStatus() {
-        return status;
+    public BidProposal(String proposalId, String auctionHouseName, Integer lotNumber, String vin, String conditionRating, String letterGrade, String evaluationComments, LocalDate auctionDate, LocalDate inspectionDate) {
+        this.proposalId = proposalId;
+        this.auctionHouseName = auctionHouseName;
+        this.lotNumber = lotNumber;
+        this.vin = vin;
+        this.conditionRating = conditionRating;
+        this.letterGrade = letterGrade;
+        this.evaluationComments = evaluationComments;
+        this.auctionDate = auctionDate;
+        this.inspectionDate = inspectionDate;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public BidProposal(){
+
     }
 
-    public Boolean sendForReview() {
-        if (validateBidLimit(maxBidLimit)) {
-            status = "Under Review";
-            return true;
+    public void previewBidProposal(){
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try{
+            File f = new File( "temp.bin" );
+                oos = new ObjectOutputStream(new FileOutputStream(f));
+            oos.writeObject(this);
+            oos.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
-        return false;
     }
-
-    public Boolean update(Float newBidLimit) {
-        if (validateBidLimit(newBidLimit)) {
-            maxBidLimit = newBidLimit;
-            return true;
+    public void saveBidProposal(){
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try{
+            File f = new File( "preAuctionBidPreparation.bin" );
+            if(f.exists()){
+                oos = new AppendableObjectOutputStream(new FileOutputStream(f, true));}
+            else{
+                oos = new ObjectOutputStream(new FileOutputStream(f));}
+            oos.writeObject(this);
+            oos.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
-        return false;
     }
 
-    public Boolean updateProfile(Integer userId) {
-        // In a real implementation, this would update the user profile in a database
-        return userId != null && userId > 0;
-    }
-
-    private Boolean validateBidLimit(Float maxBidLimit) {
-        return maxBidLimit != null && maxBidLimit > 0;
-    }
 }
