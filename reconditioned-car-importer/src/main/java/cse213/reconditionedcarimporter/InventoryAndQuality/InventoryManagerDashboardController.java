@@ -65,7 +65,7 @@ public class InventoryManagerDashboardController
         shipmentIdColumn.setCellValueFactory(new PropertyValueFactory<>("shipmentId"));
         shipmentOriginColumn.setCellValueFactory(new PropertyValueFactory<>("origin"));
         shipmentStatusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-        shipmentVehicleCountColumn.setCellValueFactory(new PropertyValueFactory<>("vehicles")); // assuming vehicles.size() is handled in the model or with a custom cell
+        shipmentVehicleCountColumn.setCellValueFactory(new PropertyValueFactory<>("vehicleCount")); // assuming vehicles.size() is handled in the model or with a custom cell
         shipmentLoactionColumn.setCellValueFactory(new PropertyValueFactory<>("storageLocation"));
         arrivalDateColumn.setCellValueFactory(new PropertyValueFactory<>("arrivalDate"));
         //wh
@@ -78,9 +78,7 @@ public class InventoryManagerDashboardController
         notificationsTypeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
         notificationIsReadCol.setCellValueFactory(new PropertyValueFactory<>("read")); // assuming "read" is a boolean
     //loading shipment table
-    readDummyShipment(shipmentsFromBinFile);
-    shipmentsTabTableView.getItems().addAll(shipmentsFromBinFile);
-
+        readShipment();
     }
 
 
@@ -128,80 +126,17 @@ public class InventoryManagerDashboardController
     ArrayList<Vehicle> vehicles = new ArrayList<>();
     Warehouse dummyWarehouse = new Warehouse(vehicles);
     ArrayList<Shipment> shipments = new ArrayList<>();
+    public void readShipment() {
+        shipmentsTabTableView.getItems().clear();
+        File file = new File("Shipments.bin");
 
-        public void makeAndAppendShipmentToBInFIle(){
-            File f = null;
-            FileOutputStream fos = null;
-            ObjectOutputStream oos = null;
-            try{
-                f = new File("Shipments.bin");
-                if(f.exists()){
-                    fos = new FileOutputStream( f,true );
-                    oos = new AppendableObjectOutputStream( fos );
-                }
-                else {
-                    fos = new FileOutputStream(f);
-                    oos = new ObjectOutputStream( fos );
-                }
+        if (!file.exists()) return;
 
-                Shipment shipment2 = new Shipment("1323",vehicles,"origiin",
-                        "dhaka", LocalDate.of(2004, 4, 3),
-                        LocalDate.now(),"UNCHECKED","Carrier",dummyWarehouse);
-
-                oos.writeObject(shipment2);
-
-                oos.writeObject(
-                        new Shipment("123",vehicles,"origin",
-                                "dhaka", LocalDate.of(2003, 8, 3),
-                                LocalDate.now(),"UNCHECKED","Carrier",dummyWarehouse));
-
-                System.out.println(shipment2.toString());
-
-
-            }
-            catch(Exception e){
-                System.out.println(e);
-                System.out.println("Failed to write object to file.....");
-            }
-            finally{
-                try {
-                    if (oos != null) oos.close();
-                }
-                catch(Exception e){
-                    //
-                }
-            }
-
-        }
-    public void readDummyShipment(ArrayList<Shipment> shipmnts) {
-        File f;
-        FileInputStream fis = null;
-        ObjectInputStream ois = null;
-
-        try {
-            f = new File("Shipments.bin");
-            fis = new FileInputStream(f);
-            ois = new ObjectInputStream(fis);
-
-            while (true) {
-                try {
-                    Shipment a = (Shipment) ois.readObject();
-                    shipmnts.add(a);
-                } catch (EOFException eof) {
-                    break;
-                }
-            }
-
-        } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Error" + e);
-            alert.showAndWait();
-        } finally {
-            try {
-                if (ois != null) ois.close();
-            } catch (IOException e) {
-                //
-            }
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
+            ArrayList<Shipment> shipments = (ArrayList<Shipment>) ois.readObject();
+            shipmentsTabTableView.getItems().addAll(shipments);
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace(); // Print the error to debug
         }
     }
 

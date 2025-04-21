@@ -21,9 +21,6 @@ public class Shipment implements Serializable {
         this.shipmentId = shipmentId;
     }
 
-    public Shipment() {
-    }
-
     public Shipment(String shipmentId, ArrayList<Vehicle> vehicles, String origin, String destination, LocalDate departureDate, LocalDate arrivalDate, String status, String carrier, Warehouse storageLocation) {
         this.shipmentId = shipmentId;
         this.vehicles = vehicles;
@@ -35,6 +32,8 @@ public class Shipment implements Serializable {
         this.carrier = carrier;
         this.storageLocation = storageLocation;
     }
+
+
 
     public String getShipmentId() {
         return shipmentId;
@@ -103,7 +102,7 @@ public class Shipment implements Serializable {
     public Warehouse getStorageLocation() {
         return storageLocation;
     }
-
+public int getVehicleCount(){return vehicles != null ? vehicles.size() : 0;}
     public void setStorageLocation(Warehouse storageLocation) {
         this.storageLocation = storageLocation;
     }
