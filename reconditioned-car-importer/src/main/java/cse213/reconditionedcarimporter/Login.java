@@ -31,8 +31,11 @@ public class Login {
         if (Objects.equals(selectedRole, "Import Manager") || Objects.equals(selectedRole, "Customer")) {
             loadUserDashboardFromFXML("ImportAndSalesDashboard.fxml");
         }
-        if (Objects.equals(selectedRole, "Inventory Manager") || Objects.equals(selectedRole, "Quality Inspector")) {
+        if (Objects.equals(selectedRole, "Inventory Manager")) {
             loadUserDashboardFromFXML("InventoryManagerDashboardView.fxml");
+        }
+        if (Objects.equals(selectedRole, "Quality Inspector")) {
+            loadUserDashboardFromFXML("QualityInspectorDashboardView.fxml");
         }
         if (Objects.equals(selectedRole, "Technician")) {
             loadUserDashboardFromFXML("TechnicianDashboard.fxml");
