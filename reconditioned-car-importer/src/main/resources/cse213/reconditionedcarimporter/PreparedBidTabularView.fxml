@@ -7,14 +7,15 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.PreparedBidTabularView">
    <children>
       <TableView fx:id="preAuctionBidTableView" layoutX="15.0" layoutY="20.0" prefHeight="304.0" prefWidth="568.0">
         <columns>
-          <TableColumn fx:id="bidIdTableColumn" prefWidth="226.66665649414062" text="Bid ID" />
-          <TableColumn fx:id="vinTableColumn" prefWidth="157.33331298828125" text="VIN" />
-            <TableColumn fx:id="maxBidLimitTableColumn" minWidth="0.0" prefWidth="182.0" text="Max Bid Limit" />
+          <TableColumn fx:id="bidIdTableColumn" prefWidth="118.0" text="Bid ID" />
+            <TableColumn fx:id="auctionHouseNameTableColumn" prefWidth="133.99996948242188" text="Auction House Name" />
+            <TableColumn fx:id="lotNumberTableColumn" prefWidth="102.0" text="Lot Number" />
+          <TableColumn fx:id="vinTableColumn" prefWidth="93.33328247070312" text="VIN" />
+            <TableColumn fx:id="maxBidLimitTableColumn" minWidth="0.0" prefWidth="101.33331298828125" text="Max Bid Limit" />
         </columns>
       </TableView>
       <TextField fx:id="filterBidIdTextField" layoutX="208.0" layoutY="348.0" />

@@ -32,7 +32,7 @@
          </font>
       </Label>
       <Button layoutX="461.0" layoutY="344.0" mnemonicParsing="false" onAction="#saveBidButtonOnAction" text="Save Bid" />
-      <Button fx:id="clearAllFieldsButtonOnAction" layoutX="291.0" layoutY="344.0" mnemonicParsing="false" text="Clear All Fields" />
+      <Button layoutX="291.0" layoutY="344.0" mnemonicParsing="false" onAction="#clearAllFieldsButtonOnAction" text="Clear All Fields" />
       <Button layoutX="393.0" layoutY="344.0" mnemonicParsing="false" onAction="#previewButtonOnAction" text="Preview" />
       <ComboBox fx:id="letterGradeComboBox" layoutX="105.0" layoutY="250.0" prefHeight="25.0" prefWidth="149.0" />
    </children>

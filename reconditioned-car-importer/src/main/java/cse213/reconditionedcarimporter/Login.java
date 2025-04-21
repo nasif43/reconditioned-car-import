@@ -1,7 +1,4 @@
 package cse213.reconditionedcarimporter;
-
-import cse213.reconditionedcarimporter.AuctionAndSales.AuctionManager;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
