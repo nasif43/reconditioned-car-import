@@ -1,8 +1,13 @@
 package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
 
+import cse213.reconditionedcarimporter.InventoryAndQuality.Location;
+
+import java.time.LocalDate;
+
 public class Vehicle {
 
-private String vin, make,model,exteriorColor,engineType,transmission,fuelType,status,grade,location;
+private String vin, make,model,exteriorColor,engineType,transmission,fuelType,status,grade;
+private Location location;
 private int year;
 private float mileage, purchasePrice,sellingPrice;
 
@@ -78,11 +83,11 @@ private float mileage, purchasePrice,sellingPrice;
         this.status = status;
     }
 
-    public String getLocation() {
+    public Location getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
 
@@ -118,7 +123,7 @@ private float mileage, purchasePrice,sellingPrice;
         this.sellingPrice = sellingPrice;
     }
 
-    public Vehicle(String vin, String make, String model, String exteriorColor, String engineType, String transmission, String fuelType, String status, String grade, String location, int year, float mileage, float sellingPrice, float purchasePrice) {
+    public Vehicle(String vin, String make, String model, String exteriorColor, String engineType, String transmission, String fuelType, String status, String grade, Location location, int year, float mileage, float sellingPrice, float purchasePrice) {
         this.vin = vin;
         this.make = make;
         this.model = model;

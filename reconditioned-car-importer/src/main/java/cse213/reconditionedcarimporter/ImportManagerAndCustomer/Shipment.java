@@ -21,6 +21,9 @@ public class Shipment {
         this.shipmentId = shipmentId;
     }
 
+    public Shipment() {
+    }
+
     public Shipment(String shipmentId, ArrayList<Vehicle> vehicles, String origin, String destination, LocalDate departureDate, LocalDate arrivalDate, String status, String carrier, Warehouse storageLocation) {
         this.shipmentId = shipmentId;
         this.vehicles = vehicles;

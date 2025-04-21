@@ -36,18 +36,24 @@ int maxVehiclesToAssignPerDay;
           v.setStatus("AWAITING_INSPECTION");
         }
         storageLocation.addShipment(shipment);
-        //file code
+        //add file code in ocntroler
 
 
     }
     public void assignVehicletoShowroom(Vehicle vehicle, Showroom showroom){
-
-        }
-    public ArrayList<Vehicle> flagAgingInventory(int daysThreshold){
-        return null;
+        showroom.addVehicle(vehicle);
+        vehicle.setStatus("READY_FOR_SALE");
+        vehicle.setLocation(showroom);
     }
-    public  InventoryReport generateMonthlyReport(){
-    return null;
+    public void flagAgingInventory(Vehicle vehicle, int daysThreshold,
+                                                 String vehicleID,Showroom outletShowroom ,
+                                                 Showroom currentShowroom){
+        for (Vehicle v : currentShowroom.getVehiclesOnDisplay()){
+        v.setLocation(outletShowroom);
+        }
+    }
+    public  Location generateMonthlyReport(Location location){
+    return location;
     }
     public void processCustomerPurchase(Order order){
 
