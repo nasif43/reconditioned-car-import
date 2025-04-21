@@ -78,6 +78,8 @@ public class InventoryManagerDashboardController
         notificationsTypeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
         notificationIsReadCol.setCellValueFactory(new PropertyValueFactory<>("read")); // assuming "read" is a boolean
     //loading shipment table
+    createDummyShipment();
+    System.out.println("Dummy shipment created");
         readShipment();
     }
 
@@ -128,16 +130,58 @@ public class InventoryManagerDashboardController
     ArrayList<Shipment> shipments = new ArrayList<>();
     public void readShipment() {
         shipmentsTabTableView.getItems().clear();
-        File file = new File("Shipments.bin");
+        
+        try {
+            File f = new File("Shipment.bin");
+            if (!f.exists()) {
+                System.out.println("Shipment.bin not found");
+                return;
+            }
+            
+            try (FileInputStream fis = new FileInputStream(f);
+                 ObjectInputStream ois = new ObjectInputStream(fis)) {
+                
+                System.out.println("Reading from Shipment.bin");
+                
+                while (true) {
+                    try {
+                        Object obj = ois.readObject();
+                        if (obj instanceof Shipment) {
+                            Shipment shipment = (Shipment) obj;
+                            System.out.println("Loaded shipment: " + shipment.getShipmentId());
+                            shipmentsTabTableView.getItems().add(shipment);
+                        } else {
+                            System.out.println("Found non-shipment object: " + obj.getClass().getName());
+                        }
+                    } catch (EOFException eof) {
+                        // End of file reached
+                        System.out.println("Finished reading shipments");
+                        break;
+                    } catch (ClassNotFoundException | InvalidClassException e) {
+                        System.out.println("Class error: " + e.getMessage());
+                        break;
+                    }
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("I/O error: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
 
-        if (!file.exists()) return;
-
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
-            ArrayList<Shipment> shipments = (ArrayList<Shipment>) ois.readObject();
-            shipmentsTabTableView.getItems().addAll(shipments);
-            System.out.println("opned shipmentbin" + shipments);
-        } catch (IOException | ClassNotFoundException e) {
-            //
+    // Method to clear the shipment file if needed
+    public void clearShipmentFile() {
+        try {
+            File f = new File("Shipment.bin");
+            if (f.exists()) {
+                if (f.delete()) {
+                    System.out.println("Shipment.bin file deleted successfully");
+                } else {
+                    System.out.println("Failed to delete Shipment.bin file");
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error clearing shipment file: " + e.getMessage());
         }
     }
 
@@ -150,5 +194,36 @@ public class InventoryManagerDashboardController
             //
         }
     }
-
+    
+    private void createDummyShipment() {
+        try {
+            // Create a basic dummy shipment with initialized objects
+            ArrayList<Vehicle> vehicleList = new ArrayList<>();
+            
+            // Use the default constructor to avoid null fields
+            Warehouse warehouse = new Warehouse();
+            warehouse.setName("Main Warehouse");
+            warehouse.setCapacity(100);
+            
+            // Create dummy shipment with proper initialization
+            Shipment dummyShipment = new Shipment(
+                "SHIP123", 
+                vehicleList, 
+                "Japan", 
+                "Bangladesh", 
+                LocalDate.now().minusDays(10), 
+                LocalDate.now(), 
+                "Pending", 
+                "BDAIR", 
+                warehouse
+            );
+            
+            // Save the properly initialized shipment
+            dummyShipment.saveShipment();
+            System.out.println("Dummy shipment created and saved successfully");
+        } catch (Exception e) {
+            System.out.println("Error creating dummy shipment: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
 }

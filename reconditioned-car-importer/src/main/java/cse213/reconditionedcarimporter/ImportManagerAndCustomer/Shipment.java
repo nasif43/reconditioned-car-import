@@ -1,7 +1,11 @@
 package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
 
 import cse213.reconditionedcarimporter.InventoryAndQuality.Warehouse;
+import cse213.reconditionedcarimporter.utility.AppendableObjectOutputStream;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,6 +19,22 @@ public class Shipment implements Serializable {
     private LocalDate arrivalDate;
     private String status;
     private String carrier;
+
+    @Override
+    public String toString() {
+        return "Shipment{" +
+                "shipmentId='" + shipmentId + '\'' +
+                ", vehicles=" + vehicles +
+                ", origin='" + origin + '\'' +
+                ", destination='" + destination + '\'' +
+                ", departureDate=" + departureDate +
+                ", arrivalDate=" + arrivalDate +
+                ", status='" + status + '\'' +
+                ", carrier='" + carrier + '\'' +
+                ", storageLocation=" + storageLocation +
+                '}';
+    }
+
     private Warehouse storageLocation;
 
     public Shipment() {
@@ -104,8 +124,24 @@ public class Shipment implements Serializable {
     public Warehouse getStorageLocation() {
         return storageLocation;
     }
-public int getVehicleCount(){return vehicles != null ? vehicles.size() : 0;}
+    public int getVehicleCount(){return vehicles != null ? vehicles.size() : 0;}
     public void setStorageLocation(Warehouse storageLocation) {
         this.storageLocation = storageLocation;
+    }
+
+    public void saveShipment(){
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try{
+            File f = new File( "Shipment.bin" );
+            if(f.exists()){
+                oos = new AppendableObjectOutputStream(new FileOutputStream(f, true));}
+            else{
+                oos = new ObjectOutputStream(new FileOutputStream(f));}
+            oos.writeObject(this);
+            oos.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
