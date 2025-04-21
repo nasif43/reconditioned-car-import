@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane fx:id="commonDashboardBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.AccountantDashboardController">
    <top>
@@ -19,29 +20,12 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Due Payments">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#ChechPaymentsOnAction" text="Check Payments">
-                     <graphic>
-                        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
-                          <tabs>
-                            <Tab text="Untitled Tab 1">
-                              <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                              </content>
-                            </Tab>
-                            <Tab text="Untitled Tab 2">
-                              <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                              </content>
-                            </Tab>
-                          </tabs>
-                        </TabPane>
-                     </graphic>
-                  </MenuItem>
+              <MenuItem mnemonicParsing="false" onAction="#ChechPaymentsOnAction" text="Check Payments" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Tax Management">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#CheckTaxesOnAction" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#CheckTaxesOnAction" text="Open Tax Rates" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Audit Log">
@@ -52,4 +36,20 @@
         </menus>
       </MenuBar>
    </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="62.0" layoutY="501.0" mnemonicParsing="false" onAction="#logoutOnAction" prefHeight="46.0" prefWidth="106.0" text="LogOut">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Button>
+            <Label layoutX="362.0" layoutY="39.0" prefHeight="78.0" prefWidth="159.0" text="Welcome!">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>

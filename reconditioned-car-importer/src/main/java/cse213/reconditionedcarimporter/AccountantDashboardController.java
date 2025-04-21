@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 
+import java.awt.*;
+
 public class AccountantDashboardController
 {
     @javafx.fxml.FXML
@@ -38,17 +40,18 @@ public class AccountantDashboardController
 
     @javafx.fxml.FXML
     public void CheckTaxesOnAction(ActionEvent actionEvent) {
-        loadFxmlParentToBorderPaneCenter("TransactionHistory.fxml");
+        loadFxmlParentToBorderPaneCenter("TaxManagement.fxml");
     }
 
     @javafx.fxml.FXML
     public void ChechPaymentsOnAction(ActionEvent actionEvent) {
-        loadFxmlParentToBorderPaneCenter("TransactionHistory.fxml");
+        loadFxmlParentToBorderPaneCenter("DuePayments.fxml");
     }
 
     @javafx.fxml.FXML
     public void AuditLogOnAction(ActionEvent actionEvent) {
         loadFxmlParentToBorderPaneCenter("TransactionHistory.fxml");
+
     }
 
 
@@ -62,4 +65,9 @@ public class AccountantDashboardController
     }
 
 
+    @javafx.fxml.FXML
+    public void logoutOnAction(ActionEvent actionEvent) {
+        loadFxmlParentToBorderPaneCenter("Login.fxml");
+
+    }
 }
