@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="351.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.ImportManagerAndCustomer.InvoiceController">
    <children>
       <Label layoutX="141.0" layoutY="33.0" text="Invoice">
@@ -28,6 +27,6 @@
       <DatePicker fx:id="dateIssuedPicker" layoutX="140.0" layoutY="200.0" prefHeight="25.0" prefWidth="135.0" />
       <TextField fx:id="TotalAmountTF" layoutX="140.0" layoutY="234.0" prefHeight="25.0" prefWidth="135.0" />
       <ComboBox fx:id="PaymentStatusComboBox" layoutX="151.0" layoutY="274.0" prefHeight="25.0" prefWidth="129.0" />
-      <Button layoutX="140.0" layoutY="321.0" mnemonicParsing="false" onAction="#SubmitOnAction" prefHeight="32.0" prefWidth="62.0" text="Button" />
+      <Button layoutX="140.0" layoutY="321.0" mnemonicParsing="false" onAction="#SubmitOnAction" prefHeight="32.0" prefWidth="62.0" text="Submit" />
    </children>
 </AnchorPane>

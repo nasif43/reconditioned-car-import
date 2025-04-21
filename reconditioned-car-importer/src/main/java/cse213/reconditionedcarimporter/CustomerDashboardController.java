@@ -6,7 +6,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
 public class CustomerDashboardController
-{    private void loadFxmlParentToBorderPaneCenter(String fxmlName) {
+{   private void loadFxmlParentToBorderPaneCenter(String fxmlName) {
     try {
         FXMLLoader nextFxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlName));
         CustomerDashboardBorderPane.setCenter(nextFxmlLoader.load());
@@ -39,46 +39,31 @@ public class CustomerDashboardController
 
     }
 
-
-    @Deprecated
-    public void PurchaseOnAction(ActionEvent actionEvent) {
-        loadFxmlParentToBorderPaneCenter("PurchaseRequest.fxml");
-    }
-
-    @Deprecated
-    public void TrackOrderOnAction(ActionEvent actionEvent) {
-    }
-
     @javafx.fxml.FXML
     public void SupportCenterOnAction(ActionEvent actionEvent) {
         loadFxmlParentToBorderPaneCenter("Support Ticket.fxml");
     }
 
-    @javafx.fxml.FXML
-    public void RequestOnACtion(ActionEvent actionEvent) {
-        loadFxmlParentToBorderPaneCenter("PurchaseRequests.fxml");
-    }
-
-    @javafx.fxml.FXML
-    public void MyOrderOnAction(ActionEvent actionEvent) {
-        //loadFxmlParentToBorderPaneCenter("MyOrders.fxml");
-    }
 
     @javafx.fxml.FXML
     public void ResgisterOnAction(ActionEvent actionEvent) {
+        loadFxmlParentToBorderPaneCenter("RegisterForCustomer.fxml");
     }
 
     @javafx.fxml.FXML
     public void RequestTestDriveOnAction(ActionEvent actionEvent) {
+        loadFxmlParentToBorderPaneCenter("TestDrive.fxml");
     }
 
-    @javafx.fxml.FXML
-    public void DiscountonAction(ActionEvent actionEvent) {
-        //loadFxmlParentToBorderPaneCenter("Discount.fxml");
-    }
 
     @javafx.fxml.FXML
     public void CarListingOnAction(ActionEvent actionEvent) {
+
         loadFxmlParentToBorderPaneCenter("CarListing.fxml");
+    }
+
+    @javafx.fxml.FXML
+    public void PurchaseRequestOnACtion(ActionEvent actionEvent) {
+        loadFxmlParentToBorderPaneCenter("PurchaseRequest.fxml");
     }
 }

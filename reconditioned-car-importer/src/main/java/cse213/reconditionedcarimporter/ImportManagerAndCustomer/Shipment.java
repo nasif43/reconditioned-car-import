@@ -9,7 +9,16 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import cse213.reconditionedcarimporter.utility.AppendableObjectOutputStream;
 
+<<<<<<< HEAD
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+=======
+>>>>>>> dabb4713cabffc76f86dbaa1becdfdbb933c0f18
 public class Shipment implements Serializable {
     private String shipmentId;
     private ArrayList<Vehicle> vehicles;
@@ -144,4 +153,8 @@ public class Shipment implements Serializable {
             throw new RuntimeException(e);
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> dabb4713cabffc76f86dbaa1becdfdbb933c0f18

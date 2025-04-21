@@ -1,46 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="918.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.ImportManagerDashboardController">
+<BorderPane fx:id="ImportManagerDashboardBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="918.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.ImportManagerDashboardController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="Car List">
             <items>
-              <MenuItem mnemonicParsing="false" text="Vehicle" />
+              <MenuItem mnemonicParsing="false" onAction="#VehicleOnAction" text="Vehicle" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Purchase Request">
             <items>
-              <MenuItem mnemonicParsing="false" text="Process Purchase Request" />
+              <MenuItem mnemonicParsing="false" onAction="#ProcessPurchaseReqOnAction" text="Process Purchase Request" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text=" Manage Supplier Orders">
             <items>
-              <MenuItem mnemonicParsing="false" text="Order to Supplier" />
+              <MenuItem mnemonicParsing="false" onAction="#OrderToShippingOnACction" text="Order to Supplier" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Shipping">
               <items>
-                <MenuItem mnemonicParsing="false" text="Shipping Dashboard" />
+                <MenuItem mnemonicParsing="false" onAction="#ShipmentOnAction" text="Shipping Dashboard" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Verify and Approve Payments">
               <items>
-                <MenuItem mnemonicParsing="false" text="Pending Payments" />
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Generate Reports and Analytics">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Reports &amp; Analytics" />
+                <MenuItem mnemonicParsing="false" onAction="#PendingOnACtion" text="Pending Payments" />
               </items>
             </Menu>
         </menus>
       </MenuBar>
    </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="324.0" layoutY="50.0" text="Import Manager Dashboard">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>

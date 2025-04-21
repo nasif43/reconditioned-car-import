@@ -15,7 +15,7 @@ public class ImportManager extends User implements Serializable {
     private ArrayList<Order> supplierOrders = new ArrayList<>();
     private ArrayList<Shipment> shipments = new ArrayList<>();
 
-    // 1️⃣ Add a new car listing
+
     public boolean manageCarListings(CarListing listing) {
         if (listing != null) {
             listings.add(listing);
@@ -25,7 +25,7 @@ public class ImportManager extends User implements Serializable {
         return false;
     }
 
-    // 2️⃣ Approve a pending customer request
+
     public boolean processCustomerPurchaseRequests(PurchaseRequest request) {
         if (request != null && "Pending".equalsIgnoreCase(request.getStatus())) {
             request.setStatus("Approved");
@@ -36,7 +36,7 @@ public class ImportManager extends User implements Serializable {
         return false;
     }
 
-    // 3️⃣ Place a supplier order
+
     public Order manageSupplierOrders(String supplier, Vehicle vehicle) {
         if (supplier != null && vehicle != null) {
             Order order = new Order(1000 + supplierOrders.size(), supplier, vehicle);
@@ -47,7 +47,7 @@ public class ImportManager extends User implements Serializable {
         return null;
     }
 
-    // 4️⃣ Create a shipment for a vehicle
+
     public Shipment overseeShippingAndLogistics(Vehicle vehicle) {
         if (vehicle != null) {
             Shipment shipment = new Shipment(
@@ -68,6 +68,17 @@ public class ImportManager extends User implements Serializable {
         return null;
     }
 
+<<<<<<< HEAD
+
+    public boolean verifyAndApprovePayments(PaymentStatus paymentStatus, Payments payment) {
+        if (payment != null && payment.getAmount() > 0) {
+            paymentStatus.setCurrentStatus("Approved");
+            System.out.println("Payment approved for: " + payment.getpaymentId());
+            return true;
+        }
+        return false;
+    }
+=======
     // 5️⃣ Approve payment if valid
 //    public boolean verifyAndApprovePayments(Payments payment) {
 //        if (payment != null && payment.getAmount() > 0) {
@@ -77,4 +88,5 @@ public class ImportManager extends User implements Serializable {
 //        }
 //        return false;
 //    }
+>>>>>>> dabb4713cabffc76f86dbaa1becdfdbb933c0f18
 }
