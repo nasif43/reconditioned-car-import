@@ -54,13 +54,7 @@ public class PartRequests {
         this.status = status;
     }
 
-    public void approveRequest() {
-        // TODO: implement
-    }
 
-    public void rejectRequest(String reason) {
-        // TODO: implement
-    }
 
 
 

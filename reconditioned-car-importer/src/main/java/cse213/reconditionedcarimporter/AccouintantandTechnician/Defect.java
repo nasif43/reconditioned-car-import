@@ -63,24 +63,7 @@ public class Defect {
         isApprovedForRepair = approvedForRepair;
     }
 
-//    //adding methods here
-//    private ArrayList<Photo> photos = new ArrayList<>();
-//    private int severity;
-//
-//    // Method to add a photo to the defect
-//    public void addPhoto(Photo photo) {
-//        photos.add(photo);
-//    }
-//
-//    // Method to update the severity of the defect
-//    public void updateSeverity(int severity) {
-//        this.severity = severity;
-//    }
-//
-//    // Optional: Getters for verification or use elsewhere
-//    public ArrayList<Photo> getPhotos() {
-//        return photos;
-//    }
+
 
     public int getSeverity() {
         return severity;
