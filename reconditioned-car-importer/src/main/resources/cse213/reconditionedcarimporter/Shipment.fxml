@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="538.0" prefWidth="448.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.ImportManagerAndCustomer.ShipmentController">
    <children>
       <Label layoutX="149.0" layoutY="32.0" text="Shipment Form">
@@ -36,5 +35,6 @@
       <TextField fx:id="ShipmentIDTF" layoutX="165.0" layoutY="90.0" />
       <ComboBox fx:id="StorageLocationTF" layoutX="164.0" layoutY="437.0" prefWidth="150.0" />
       <Button layoutX="262.0" layoutY="476.0" mnemonicParsing="false" onAction="#SubmitOnAction" text="Submit" />
+      <Button layoutX="73.0" layoutY="476.0" mnemonicParsing="false" onAction="#SaveShipmentOnAction" text="Save" />
    </children>
 </AnchorPane>

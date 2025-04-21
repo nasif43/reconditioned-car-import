@@ -1,25 +1,23 @@
 package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
 
-import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
-public class PurchaseRequestController
+public class TestDriveController
 {
     @javafx.fxml.FXML
-    private TextField MaxBidAmountTF;
+    private TextField MOdelTF;
     @javafx.fxml.FXML
-    private ComboBox<String> VehicleComboBox;
+    private DatePicker dateSlotpciker;
     @javafx.fxml.FXML
-    private DatePicker RequestDatePicker;
+    private ComboBox<String> EnginetypeComboBox;
 
     @javafx.fxml.FXML
     public void initialize() {
-
     }
 
-    @javafx.fxml.FXML
-    public void SubmitRequestOnAction(ActionEvent actionEvent) {
-    }
+    //@javafx.fxml.FXML
+    //public void BookaTestDriveOnACtion(ActionEvent actionEvent) {
+    //}
 }

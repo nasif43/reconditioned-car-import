@@ -4,8 +4,14 @@ import cse213.reconditionedcarimporter.InventoryAndQuality.Warehouse;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import cse213.reconditionedcarimporter.utility.AppendableObjectOutputStream;
 
-public class Shipment {
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+public class Shipment implements Serializable {
     private String shipmentId;
     private ArrayList<Vehicle> vehicles;
     private String origin;
@@ -102,5 +108,21 @@ public class Shipment {
 
     public void setStorageLocation(Warehouse storageLocation) {
         this.storageLocation = storageLocation;
+    }
+
+    public void saveShipment(){
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try{
+            File f = new File( "Shipment.bin" );
+            if(f.exists()){
+                oos = new AppendableObjectOutputStream(new FileOutputStream(f, true));}
+            else{
+                oos = new ObjectOutputStream(new FileOutputStream(f));}
+            oos.writeObject(this);
+            oos.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
