@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.ImportManagerAndCustomer.RegisterForCustomerController">
+   <children>
+      <Label layoutX="54.0" layoutY="41.0" prefHeight="32.0" prefWidth="312.0" text="Create a New Customer profile">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="128.0" text="Name" />
+      <TextField fx:id="NameTF" layoutX="108.0" layoutY="124.0" />
+      <Label layoutX="271.0" layoutY="128.0" text="Email" />
+      <TextField fx:id="EmailTF" layoutX="321.0" layoutY="124.0" />
+      <Label layoutX="271.0" layoutY="181.0" text="Address" />
+      <Label layoutX="53.0" layoutY="180.0" text="Password" />
+      <TextField fx:id="PasswordTF" layoutX="108.0" layoutY="176.0" prefHeight="25.0" prefWidth="138.0" />
+      <Button layoutX="197.0" layoutY="233.0" mnemonicParsing="false" onAction="#RegisterOnAction" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: lavender;" text="Register" />
+      <TextArea fx:id="AddressTF" layoutX="321.0" layoutY="164.0" prefHeight="50.0" prefWidth="138.0" />
+   </children>
+</AnchorPane>

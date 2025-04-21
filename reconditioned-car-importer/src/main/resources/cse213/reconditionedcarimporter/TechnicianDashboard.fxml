@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="commonDashboardBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="874.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.TechnicianDashboardController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Equipments">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#CheckequipmentsOnAction" text="Check Equipments" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Events">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#AssignEventsOnAction" text="Assign Event" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Task">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#MyAssignmentsOnAction" text="My Assignments" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Maintenance Scheduler">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#OpenSchedulerOnAction" text="Open Scheduler" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="System Log">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#SystemLogOnAction" text="Log" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <Button mnemonicParsing="false" onAction="#LogoutOnAction" text="Logout" BorderPane.alignment="CENTER" />
+   </left>
+   <bottom>
+      <Label prefHeight="67.0" prefWidth="195.0" text="Technician" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Label>
+   </bottom>
+</BorderPane>

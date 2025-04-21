@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.ApproveTestDriveRequestViewController">
+   <children>
+      <Label layoutX="29.0" layoutY="25.0" text="Pending test drive requests">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="testDriveReqsTableView" layoutX="29.0" layoutY="68.0" prefHeight="200.0" prefWidth="547.0">
+        <columns>
+          <TableColumn fx:id="customerNameCol" prefWidth="119.33333778381348" text="Customer Name" />
+          <TableColumn fx:id="vehicleNameCol" minWidth="5.33331298828125" prefWidth="191.33328247070312" text="Vehicle Name" />
+            <TableColumn fx:id="testDriveSlotCol" minWidth="5.33331298828125" prefWidth="235.3333740234375" text="Test drive slot" />
+        </columns>
+      </TableView>
+      <Button layoutX="34.0" layoutY="320.0" mnemonicParsing="false" onAction="#confirmTestDriveBtn" prefHeight="45.0" prefWidth="533.0" text="Confirm test drive" />
+      <Button layoutX="341.0" layoutY="282.0" mnemonicParsing="false" onAction="#rescheduleTestDriveDateOnActionBtn" prefHeight="25.0" prefWidth="225.0" text="Reschedule time for test drive" />
+      <DatePicker fx:id="rescheduleDtaePicker" layoutX="199.0" layoutY="282.0" prefHeight="25.0" prefWidth="127.0" />
+      <Label layoutX="41.0" layoutY="286.0" text="Change date to reschedule :" />
+      <Label fx:id="errorLabel" layoutX="415.0" layoutY="30.0" text="error" textFill="RED">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

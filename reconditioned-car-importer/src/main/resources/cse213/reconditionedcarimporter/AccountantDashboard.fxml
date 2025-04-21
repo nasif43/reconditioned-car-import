@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="commonDashboardBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.AccountantDashboardController">
+   <top>
+      <MenuBar prefHeight="30.0" prefWidth="882.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Transaction History">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ManageAndGenerateOnAction" text="Manage And Generate Transactions" />
+                  <MenuItem mnemonicParsing="false" onAction="#SetMaxBidOnAction" text="Set Max Bid" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Due Payments">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ChechPaymentsOnAction" text="Check Payments" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Tax Management">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#CheckTaxesOnAction" text="Open Tax Rates" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Audit Log">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#AuditLogOnAction" text="View Audit Log" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="62.0" layoutY="501.0" mnemonicParsing="false" onAction="#logoutOnAction" prefHeight="46.0" prefWidth="106.0" text="LogOut">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Button>
+            <Label layoutX="362.0" layoutY="39.0" prefHeight="78.0" prefWidth="159.0" text="Welcome!">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

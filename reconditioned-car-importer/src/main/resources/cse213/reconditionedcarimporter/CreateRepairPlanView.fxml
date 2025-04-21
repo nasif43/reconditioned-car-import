@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.CreateRepairPlanViewController">
+   <children>
+      <Button fx:id="addRepairTaskOnactionBTn" layoutX="196.0" layoutY="200.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="207.0" text="Add repair task" />
+      <Label layoutX="23.0" layoutY="20.0" text="Create repair plan">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="selectDeadlineDatePicker" layoutX="401.0" layoutY="83.0" prefHeight="25.0" prefWidth="157.0" />
+      <Label layoutX="300.0" layoutY="87.0" text="Select deadline" />
+      <Label layoutX="23.0" layoutY="128.0" text="Select labor hours " />
+      <ComboBox fx:id="selectEstimatedHoursComboboc" layoutX="144.0" layoutY="124.0" prefHeight="25.0" prefWidth="129.0" promptText="Estimated hours" />
+      <ComboBox fx:id="selectdefectedPartCombobox" layoutX="144.0" layoutY="83.0" prefHeight="25.0" prefWidth="129.0" promptText="Issue" />
+      <Label layoutX="23.0" layoutY="87.0" text="Select defected part" />
+      <Label layoutX="23.0" layoutY="57.0" text="Vehicle ID :" />
+      <Label fx:id="vehicleIdLabel" layoutX="144.0" layoutY="57.0" text="37213" />
+      <TextArea fx:id="descriptionTextArea" layoutX="401.0" layoutY="128.0" prefHeight="34.0" prefWidth="157.0" />
+      <Label layoutX="300.0" layoutY="128.0" text="Add a description" />
+      <Label layoutX="300.0" layoutY="57.0" text="Vehicle model :" />
+      <Label fx:id="vehicleModelLabel" layoutX="401.0" layoutY="57.0" text="37213" />
+      <Button fx:id="createRepairPlanOnACtionBTn" layoutX="144.0" layoutY="247.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="303.0" text="Create plan with added tasks" />
+      <Label fx:id="errorMessageLabel" layoutX="273.0" layoutY="332.0" text="error" textFill="RED">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="imDashboardBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="453.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.InventoryAndQuality.InventoryManagerDashboardController">
+   <center>
+        <AnchorPane prefHeight="400.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+            <Label layoutX="5.0" layoutY="-14.0" text="Dashboard">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+                <TabPane layoutY="21.0" prefHeight="339.0" prefWidth="600.0" style="-fx-background-color: gray;" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab fx:id="shipmentTab" text="Shipments">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="273.0" prefWidth="600.0" style="-fx-background-color: lavender;">
+                                    <children>
+                                        <TableView fx:id="shipmentsTabTableView" layoutX="3.0" prefHeight="243.0" prefWidth="593.0" style="-fx-background-color: lavender;">
+                                            <columns>
+                                                <TableColumn fx:id="shipmentIdColumn" prefWidth="84.0" text="Shipment Id" />
+                                                <TableColumn fx:id="arrivalDateColumn" prefWidth="86.66665649414062" text="Arrival Date" />
+                                                <TableColumn fx:id="shipmentStatusColumn" prefWidth="115.33331298828125" text="Status" />
+                                                <TableColumn fx:id="shipmentOriginColumn" minWidth="3.33331298828125" prefWidth="62.66668701171875" text="Origin" />
+                                                <TableColumn fx:id="shipmentLoactionColumn" prefWidth="94.66668701171875" text="Location" />
+                                                <TableColumn fx:id="shipmentVehicleCountColumn" prefWidth="146.6666259765625" text="Vehicle Count" />
+                                            </columns>
+                                        </TableView>
+                              <Button layoutX="245.0" layoutY="261.0" mnemonicParsing="false" onAction="#loadReceiveShipmentViewBTn" prefHeight="37.0" prefWidth="109.0" text="Receive shipment" />
+                              <Label layoutX="29.0" layoutY="273.0" text="Click on shipment to select it">
+                                 <font>
+                                    <Font name="System Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="warehouseTab" text="Warehouses">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="321.0" style="-fx-background-color: lightBlue;">
+                                    <children>
+                                        <TableView fx:id="warhousesTableView" layoutX="3.0" prefHeight="441.0" prefWidth="593.0" style="-fx-background-color: lightBlue;">
+                                            <columns>
+                                                <TableColumn fx:id="warehouseNameCol" prefWidth="153.33331298828125" text="Name" />
+                                                <TableColumn fx:id="warehouseCapacityCol" prefWidth="104.00003051757812" text="Capacity" />
+                                                <TableColumn fx:id="warehouseStatusCol" prefWidth="232.00003051757812" text="Status" />
+                                                <TableColumn fx:id="warehouseVehicleCountCol" prefWidth="103.333251953125" text="Vehicle Count" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                  <Tab fx:id="notificationsTab" text="Notifications">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: skyBlue;">
+                           <children>
+                              <TableView fx:id="notificationsTableView" layoutX="1.0" layoutY="2.0" prefHeight="330.0" prefWidth="600.0">
+                                <columns>
+                                  <TableColumn fx:id="notificationsBarColu" prefWidth="439.3333435058594" text="Notifications" />
+                                    <TableColumn fx:id="notificationsTypeCol" minWidth="0.0" prefWidth="68.0" text="Type" />
+                                    <TableColumn fx:id="notificationIsReadCol" prefWidth="91.33334350585938" text="Is read" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="78.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#seeDashBoardMenuItemOnAction" text="See dashboard " />
+            <Button layoutX="135.0" layoutY="9.0" mnemonicParsing="false" onAction="#processVehiclePurchaseMenuItemOnAction" text="Process vehicle purchase" />
+            <Button layoutX="300.0" layoutY="9.0" mnemonicParsing="false" onAction="#flagAgingVehiclesMenuItemOnAction" prefHeight="27.0" prefWidth="122.0" text="Flag aging vehicles" />
+            <Button layoutX="432.0" layoutY="9.0" mnemonicParsing="false" onAction="#generateIMreportMenuItemOnAction" prefHeight="27.0" prefWidth="122.0" text="Generate Report" />
+            <Button layoutX="14.0" layoutY="39.0" mnemonicParsing="false" onAction="#assignVehiclesToShowroomMenuItemOnAction" prefHeight="27.0" prefWidth="193.0" text="Assign Vehicles to showroom" />
+            <Button layoutX="221.0" layoutY="39.0" mnemonicParsing="false" onAction="#testDriveRequestMenuItemOnAction" prefHeight="27.0" prefWidth="122.0" text="Test drive requests" />
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

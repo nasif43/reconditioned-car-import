@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="538.0" prefWidth="448.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.ImportManagerAndCustomer.ShipmentController">
+   <children>
+      <Label layoutX="149.0" layoutY="32.0" text="Shipment Form">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="94.0" text="Shipment ID" />
+      <TextField fx:id="CarrierTF" layoutX="163.0" layoutY="398.0" />
+      <Label layoutX="70.0" layoutY="139.0" text="Vehicle" />
+      <ListView fx:id="vehiclesListView" layoutX="163.0" layoutY="139.0" prefHeight="61.0" prefWidth="150.0" />
+      <TextField fx:id="OriginTF" layoutX="164.0" layoutY="215.0" />
+      <Label layoutX="70.0" layoutY="219.0" text="Origin" />
+      <TextField fx:id="DestinstionTF" layoutX="164.0" layoutY="254.0" />
+      <Label layoutX="70.0" layoutY="258.0" text="Destinstion" />
+      <Label layoutX="70.0" layoutY="320.0" text="Arrival Date" />
+      <Label layoutX="70.0" layoutY="293.0" text="Departure Date" />
+      <DatePicker fx:id="DepartureDatePicker" layoutX="162.0" layoutY="290.0" />
+      <DatePicker fx:id="ArrivalDatePicker" layoutX="162.0" layoutY="326.0" />
+      <Label layoutX="73.0" layoutY="361.0" text="Status" />
+      <ComboBox fx:id="StatusComboBox" layoutX="162.0" layoutY="357.0" prefWidth="150.0" />
+      <Label layoutX="73.0" layoutY="402.0" text="Carrier" />
+      <Label layoutX="66.0" layoutY="441.0" text="Storage Location" />
+      <TextField fx:id="ShipmentIDTF" layoutX="165.0" layoutY="90.0" />
+      <ComboBox fx:id="StorageLocationTF" layoutX="164.0" layoutY="437.0" prefWidth="150.0" />
+      <Button layoutX="262.0" layoutY="476.0" mnemonicParsing="false" onAction="#SubmitOnAction" text="Submit" />
+      <Button layoutX="73.0" layoutY="476.0" mnemonicParsing="false" onAction="#SaveShipmentOnAction" text="Save" />
+   </children>
+</AnchorPane>

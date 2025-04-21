@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="351.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.ImportManagerAndCustomer.InvoiceController">
+   <children>
+      <Label layoutX="141.0" layoutY="33.0" text="Invoice">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="90.0" text="Invoice ID" />
+      <TextField fx:id="InvoiceIDTF" layoutX="140.0" layoutY="86.0" prefHeight="25.0" prefWidth="129.0" />
+      <Label layoutX="59.0" layoutY="129.0" text="Order ID" />
+      <TextField fx:id="OrderIDTF" layoutX="140.0" layoutY="125.0" prefHeight="25.0" prefWidth="129.0" />
+      <Label layoutX="59.0" layoutY="167.0" text="Customer ID" />
+      <TextField fx:id="CustomerIDTF" layoutX="140.0" layoutY="163.0" prefHeight="25.0" prefWidth="129.0" />
+      <Label layoutX="59.0" layoutY="204.0" text="Date Issued" />
+      <Label layoutX="59.0" layoutY="238.0" text="Total Amount" />
+      <Label layoutX="59.0" layoutY="278.0" text="Payment Status" />
+      <DatePicker fx:id="dateIssuedPicker" layoutX="140.0" layoutY="200.0" prefHeight="25.0" prefWidth="135.0" />
+      <TextField fx:id="TotalAmountTF" layoutX="140.0" layoutY="234.0" prefHeight="25.0" prefWidth="135.0" />
+      <ComboBox fx:id="PaymentStatusComboBox" layoutX="151.0" layoutY="274.0" prefHeight="25.0" prefWidth="129.0" />
+      <Button layoutX="140.0" layoutY="321.0" mnemonicParsing="false" onAction="#SubmitOnAction" prefHeight="32.0" prefWidth="62.0" text="Submit" />
+   </children>
+</AnchorPane>
