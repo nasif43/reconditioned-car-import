@@ -8,7 +8,6 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Scanner;
 
 public class BidProposal implements Serializable {
      private String proposalId;
@@ -118,9 +117,6 @@ public class BidProposal implements Serializable {
 
     }
 
-    public void viewBidProposal(){
-
-    }
     public void previewBidProposal(){
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;

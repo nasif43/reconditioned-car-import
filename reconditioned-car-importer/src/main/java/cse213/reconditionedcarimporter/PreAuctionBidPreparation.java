@@ -41,7 +41,7 @@ public class PreAuctionBidPreparation
 
     @javafx.fxml.FXML
     public void previewButtonOnAction(ActionEvent actionEvent) {
-        BidProposal tempBidProposal = new BidProposal(generateId(),
+        BidProposal tempBidProposal = new BidProposal("Preview",
                 auctionHouseNameTextField.getText(),
                 Integer.parseInt(lotNumberTextField.getText()),
                 vinTextField.getText(),
@@ -59,7 +59,7 @@ public class PreAuctionBidPreparation
     public void saveBidButtonOnAction(ActionEvent actionEvent) {
         try {
             // Create the BidProposal object when the save button is clicked
-            BidProposal newBidProposal = new BidProposal("Preview",
+            BidProposal newBidProposal = new BidProposal(generateId(),
                 auctionHouseNameTextField.getText(),
                 Integer.parseInt(lotNumberTextField.getText()), 
                 vinTextField.getText(), 

@@ -72,5 +72,6 @@ public class AuctionAndSalesDashboardController
 
     @FXML
     public void preparedBidsMenuButtonOnAction(ActionEvent actionEvent) {
+        loadFxmlParentToBorderPaneCenter("PreparedBidTabularView.fxml");
     }
 }
