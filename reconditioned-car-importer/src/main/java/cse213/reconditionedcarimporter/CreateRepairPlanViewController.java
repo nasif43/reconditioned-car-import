@@ -1,11 +1,14 @@
 package cse213.reconditionedcarimporter;
 
+import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Parts;
+import javafx.scene.control.*;
+
 public class CreateRepairPlanViewController
 {
     @javafx.fxml.FXML
     private Button addRepairTaskOnactionBTn;
     @javafx.fxml.FXML
-    private ComboBox selectEstimatedHoursComboboc;
+    private ComboBox<Integer> selectEstimatedHoursComboboc;
     @javafx.fxml.FXML
     private Label vehicleIdLabel;
     @javafx.fxml.FXML
@@ -15,7 +18,7 @@ public class CreateRepairPlanViewController
     @javafx.fxml.FXML
     private DatePicker selectDeadlineDatePicker;
     @javafx.fxml.FXML
-    private ComboBox selectdefectedPartCombobox;
+    private ComboBox<String> selectdefectedPartCombobox;
     @javafx.fxml.FXML
     private TextArea descriptionTextArea;
     @javafx.fxml.FXML

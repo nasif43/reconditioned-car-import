@@ -9,6 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
+import java.time.LocalDate;
+
 public class ApproveTestDriveRequestViewController
 {
     @javafx.fxml.FXML
@@ -18,11 +20,11 @@ public class ApproveTestDriveRequestViewController
     @javafx.fxml.FXML
     private TableView<TestDrive> testDriveReqsTableView;
     @javafx.fxml.FXML
-    private TableColumn customerNameCol;
+    private TableColumn<TestDrive, String> customerNameCol;
     @javafx.fxml.FXML
     private Label errorLabel;
     @javafx.fxml.FXML
-    private TableColumn testDriveSlotCol;
+    private TableColumn<TestDrive, LocalDate> testDriveSlotCol;
 
     @javafx.fxml.FXML
     public void initialize() {

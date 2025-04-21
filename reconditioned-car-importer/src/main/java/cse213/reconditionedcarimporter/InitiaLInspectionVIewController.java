@@ -1,5 +1,10 @@
 package cse213.reconditionedcarimporter;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+
 public class InitiaLInspectionVIewController
 {
     @javafx.fxml.FXML
@@ -7,7 +12,7 @@ public class InitiaLInspectionVIewController
     @javafx.fxml.FXML
     private Label vehicleYearLabel;
     @javafx.fxml.FXML
-    private ComboBox chooseExterRatingComboBox;
+    private ComboBox<Integer> chooseExterRatingComboBox;
     @javafx.fxml.FXML
     private CheckBox smellCheckBox;
     @javafx.fxml.FXML
@@ -23,7 +28,7 @@ public class InitiaLInspectionVIewController
     @javafx.fxml.FXML
     private CheckBox paintCheckBox;
     @javafx.fxml.FXML
-    private ComboBox chooseMechRatingComboBox;
+    private ComboBox<Integer>  chooseMechRatingComboBox;
     @javafx.fxml.FXML
     private Label vehicleModelLabel;
     @javafx.fxml.FXML
@@ -35,7 +40,7 @@ public class InitiaLInspectionVIewController
     @javafx.fxml.FXML
     private Label vehicleMakeLabel;
     @javafx.fxml.FXML
-    private ComboBox chooseInterrRatingComboBox;
+    private ComboBox<Integer>  chooseInterrRatingComboBox;
 
     @javafx.fxml.FXML
     public void initialize() {

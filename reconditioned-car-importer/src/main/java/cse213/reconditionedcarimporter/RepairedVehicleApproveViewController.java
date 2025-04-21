@@ -1,5 +1,10 @@
 package cse213.reconditionedcarimporter;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+
 public class RepairedVehicleApproveViewController
 {
     @javafx.fxml.FXML

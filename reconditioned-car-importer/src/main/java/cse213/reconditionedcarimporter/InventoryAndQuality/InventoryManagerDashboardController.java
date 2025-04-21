@@ -19,8 +19,6 @@ public class InventoryManagerDashboardController
     @javafx.fxml.FXML
     private TableColumn<Warehouse,Integer> warehouseVehicleCountCol;
     @javafx.fxml.FXML
-    private TableColumn<Warehouse,String> warehouseLocationCol;
-    @javafx.fxml.FXML
     private TableColumn<Warehouse,String> warehouseNameCol;
     @javafx.fxml.FXML
     private TableColumn<Shipment,Integer> shipmentVehicleCountColumn;
@@ -50,6 +48,10 @@ public class InventoryManagerDashboardController
     private TableView<Shipment> shipmentsTabTableView;
     @javafx.fxml.FXML
     private TableColumn<Shipment,String> shipmentOriginColumn;
+    @javafx.fxml.FXML
+    private TableColumn notificationIsReadCol;
+    @javafx.fxml.FXML
+    private TableColumn notificationsTypeCol;
 
     @javafx.fxml.FXML
     public void initialize() {

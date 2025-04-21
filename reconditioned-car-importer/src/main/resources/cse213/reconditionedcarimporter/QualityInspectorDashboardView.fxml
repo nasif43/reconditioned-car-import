@@ -60,7 +60,9 @@
                                  <children>
                                     <TableView fx:id="notificationTableView" layoutX="1.0" layoutY="1.0" prefHeight="238.0" prefWidth="589.0" style="-fx-background-color: lavender;">
                                       <columns>
-                                        <TableColumn fx:id="notificationsBArCol" prefWidth="585.3332929611206" text="Notifications" />
+                                        <TableColumn fx:id="notificationsBArCol" prefWidth="415.3333230018616" text="Notifications" />
+                                          <TableColumn fx:id="notificationsTypeCol1" prefWidth="107.99996948242188" text="Type" />
+                                          <TableColumn fx:id="notificationsIsReadCol" prefWidth="64.0" text="Is read" />
                                       </columns>
                                     </TableView>
                                  </children>
@@ -73,11 +75,10 @@
                                  <children>
                                     <TableView fx:id="repairPlanTableView" layoutY="2.0" prefHeight="231.0" prefWidth="587.0" style="-fx-background-color: beige;">
                                       <columns>
-                                          <TableColumn fx:id="vehicleIdColRepairPlan" prefWidth="80.66665887832642" text="Vehicle Id" />
                                         <TableColumn fx:id="vehicleNameColRepairPlan" prefWidth="121.99996185302734" text="Vehicle Name" />
                                         <TableColumn fx:id="RepairPlanId" prefWidth="111.33338928222656" text="Repair plan Id" />
                                           <TableColumn fx:id="rapirPlanSatusColRepairPlan" minWidth="0.0" prefWidth="138.66668701171875" text="Status" />
-                                          <TableColumn fx:id="RepairPlanDaedlineCol" minWidth="0.0" prefWidth="133.99990844726562" text="Deadline" />
+                                          <TableColumn fx:id="RepairPlanDaedlineCol" minWidth="0.0" prefWidth="212.66667683919275" text="Deadline" />
                                       </columns>
                                     </TableView>
                                     <Button layoutX="182.0" layoutY="239.0" mnemonicParsing="false" onAction="#showRepairDetailsBtn" prefHeight="35.0" prefWidth="225.0" text="Show selected repaired vehicle's details" />
@@ -92,9 +93,8 @@
                                     <TableView fx:id="needRepairTableView" layoutY="39.0" prefHeight="185.0" prefWidth="587.0" style="-fx-background-color: lavender;">
                                        <columns>
                                           <TableColumn fx:id="vehicleIdColRepair" prefWidth="80.66665887832642" text="Vehicle Id" />
-                                          <TableColumn fx:id="vehicleNameColRepair" prefWidth="228.66666412353516" text="Vehicle Name" />
-                                          <TableColumn fx:id="vehicleGradeColRepair" prefWidth="114.0" text="Grade" />
-                                          <TableColumn fx:id="vehicleRepairDeadlineColRepair" minWidth="0.0" prefWidth="162.66665649414062" text="Deadline" />
+                                          <TableColumn fx:id="vehicleNameColRepair" prefWidth="407.3333511352539" text="Vehicle Name" />
+                                          <TableColumn fx:id="vehicleGradeColRepair" prefWidth="99.33328247070312" text="Grade" />
                                        </columns>
                                     </TableView>
                                     <Label layoutX="14.0" layoutY="14.0" text="Select a vehicle to create a repair plan">

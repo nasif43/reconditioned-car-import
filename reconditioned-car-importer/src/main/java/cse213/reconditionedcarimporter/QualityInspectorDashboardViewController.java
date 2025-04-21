@@ -1,57 +1,70 @@
 package cse213.reconditionedcarimporter;
 
+import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
+import cse213.reconditionedcarimporter.InventoryAndQuality.Notification;
+import cse213.reconditionedcarimporter.InventoryAndQuality.RepairPlan;
+import cse213.reconditionedcarimporter.InventoryAndQuality.Warehouse;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.layout.BorderPane;
+
+import java.time.LocalDate;
+
 public class QualityInspectorDashboardViewController
 {
     @javafx.fxml.FXML
-    private TableColumn RepairPlanDaedlineCol;
+    private TableColumn<RepairPlan, LocalDate> RepairPlanDaedlineCol;
     @javafx.fxml.FXML
     private Label eroromessage;
     @javafx.fxml.FXML
-    private TableColumn vehicleYearColAwaitingInspection;
+    private TableColumn<Vehicle, Integer> vehicleYearColAwaitingInspection;
     @javafx.fxml.FXML
-    private TableColumn RepairPlanId;
+    private TableColumn<RepairPlan, String> RepairPlanId;
     @javafx.fxml.FXML
-    private TableColumn vehicleIdColAwaitingInspection;
+    private TableColumn<Vehicle, String> vehicleIdColAwaitingInspection;
     @javafx.fxml.FXML
-    private TableView needRepairTableView;
+    private TableView<Vehicle> needRepairTableView;
     @javafx.fxml.FXML
     private Tab awaiitngInspectionTab;
     @javafx.fxml.FXML
-    private TableView repairPlanTableView;
-    @javafx.fxml.FXML
-    private TableColumn vehicleIdColRepairPlan;
+    private TableView<RepairPlan> repairPlanTableView;
     @javafx.fxml.FXML
     private Tab notificationsTab;
     @javafx.fxml.FXML
-    private TableView notificationTableView;
+    private TableView<Notification> notificationTableView;
     @javafx.fxml.FXML
     private BorderPane QIDashBoardBorderPane;
     @javafx.fxml.FXML
-    private TableColumn vehicleNameColRepairPlan;
+    private TableColumn<RepairPlan, String> vehicleNameColRepairPlan;
     @javafx.fxml.FXML
-    private TableColumn vehicleRepairDeadlineColRepair;
+    private TableView<Vehicle> awaitingInspectionTableView;
     @javafx.fxml.FXML
-    private TableView awaitingInspectionTableView;
+    private TableColumn<Vehicle, String> vehicleModelColAwaitingInspection;
     @javafx.fxml.FXML
-    private TableColumn vehicleModelColAwaitingInspection;
+    private TableColumn<Vehicle, String> vehicleMakeColAwaitingInspection;
     @javafx.fxml.FXML
-    private TableColumn vehicleMakeColAwaitingInspection;
+    private TableColumn<Vehicle, String> vehicleIdColRepair;
     @javafx.fxml.FXML
-    private TableColumn vehicleIdColRepair;
+    private TableColumn<Vehicle, Integer> vehicleGradeColRepair;
     @javafx.fxml.FXML
-    private TableColumn vehicleGradeColRepair;
-    @javafx.fxml.FXML
-    private TableColumn notificationsBArCol;
+    private TableColumn<Notification, String> notificationsBArCol;
     @javafx.fxml.FXML
     private Tab activeRepairsTab;
     @javafx.fxml.FXML
     private Tab vehiclesNeededRepairTab;
     @javafx.fxml.FXML
-    private TableColumn vehicleWHColAwaitingInspection;
+    private TableColumn<Vehicle, Warehouse> vehicleWHColAwaitingInspection;
     @javafx.fxml.FXML
-    private TableColumn vehicleNameColRepair;
+    private TableColumn<Vehicle, String> vehicleNameColRepair;
     @javafx.fxml.FXML
-    private TableColumn rapirPlanSatusColRepairPlan;
+    private TableColumn<RepairPlan, String> rapirPlanSatusColRepairPlan;
+    @javafx.fxml.FXML
+    private TableColumn<Notification, String> notificationsTypeCol1;
+    @javafx.fxml.FXML
+    private TableColumn<Notification, Boolean> notificationsIsReadCol;
 
     @javafx.fxml.FXML
     public void initialize() {
