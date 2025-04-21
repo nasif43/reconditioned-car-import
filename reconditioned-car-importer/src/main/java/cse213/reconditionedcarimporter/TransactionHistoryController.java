@@ -10,27 +10,37 @@ public class TransactionHistoryController
     @javafx.fxml.FXML
     private DatePicker UserDatePicker;
     @javafx.fxml.FXML
-    private TextField AmountFXID;
-    @javafx.fxml.FXML
     private TextField PaymentIDFXID;
     @javafx.fxml.FXML
     private TextField UserIDFXID;
     @javafx.fxml.FXML
-    private TableColumn manageDateTableView;
+    private TableColumn manageExpensesTableColumn;
     @javafx.fxml.FXML
-    private TableColumn DateTableView;
+    private TableColumn paymentIDtableColumn;
     @javafx.fxml.FXML
-    private TableColumn managepaymentIDtableview;
+    private TextField RevenueFXID;
     @javafx.fxml.FXML
-    private TableColumn manageAmountTableview;
+    private TableColumn manageUserIDTableColumn;
     @javafx.fxml.FXML
-    private TableColumn UserID;
+    private TextField FilterPaymentIDFXID;
     @javafx.fxml.FXML
-    private TableColumn AmountTableview;
+    private TableColumn RevenueTableColumn;
     @javafx.fxml.FXML
-    private TableColumn manageUserID;
+    private TableColumn manageDateTableColumn;
     @javafx.fxml.FXML
-    private TableColumn paymentIDtableview;
+    private TextField FilterInvoiceIDFXID;
+    @javafx.fxml.FXML
+    private TableColumn DateTableColumn;
+    @javafx.fxml.FXML
+    private TableColumn InvoiceIDTableColumn;
+    @javafx.fxml.FXML
+    private TextField ExpensesFXID;
+    @javafx.fxml.FXML
+    private TableColumn manageRevenueTableColumn;
+    @javafx.fxml.FXML
+    private TableColumn AmountTableColumn;
+    @javafx.fxml.FXML
+    private TableColumn managepaymentIDtableColumn;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -42,5 +52,17 @@ public class TransactionHistoryController
 
     @javafx.fxml.FXML
     public void YesRadioButtononAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void ManageDisplayAllTransactionsOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void GenerateOnTableOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void SearchFilterOnAction(ActionEvent actionEvent) {
     }
 }
