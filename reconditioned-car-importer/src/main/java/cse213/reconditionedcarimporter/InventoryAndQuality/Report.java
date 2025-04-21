@@ -1,8 +1,9 @@
 package cse213.reconditionedcarimporter.InventoryAndQuality;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public abstract class Report {
+public abstract class Report implements Serializable {
     protected String reportId;
     protected LocalDate reportDate;
 

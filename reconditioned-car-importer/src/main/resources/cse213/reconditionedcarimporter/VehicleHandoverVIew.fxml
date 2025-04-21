@@ -8,17 +8,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.VehicleHandoverVIewController">
    <children>
-      <TableView layoutX="21.0" layoutY="47.0" prefHeight="139.0" prefWidth="556.0">
+      <TableView fx:id="vehiclesRdyToHandoverTableView" layoutX="21.0" layoutY="47.0" prefHeight="139.0" prefWidth="556.0">
         <columns>
-          <TableColumn prefWidth="65.99996948242188" text="Id" />
-          <TableColumn prefWidth="108.0" text="Name" />
-            <TableColumn prefWidth="42.0" text="Grade" />
-            <TableColumn prefWidth="142.66668701171875" text="Showroom" />
-            <TableColumn prefWidth="61.33331298828125" text="Year" />
-            <TableColumn prefWidth="136.0" text="Price" />
+          <TableColumn fx:id="vehicleIDCol" prefWidth="65.99996948242188" text="Id" />
+          <TableColumn fx:id="vehicleNameCol" prefWidth="108.0" text="Name" />
+            <TableColumn fx:id="vehicleGradeCol" prefWidth="42.0" text="Grade" />
+            <TableColumn fx:id="vehiclSHowroomCol" prefWidth="142.66668701171875" text="Showroom" />
+            <TableColumn fx:id="vehicleYearCol" prefWidth="61.33331298828125" text="Year" />
+            <TableColumn fx:id="vehiclePriceCol" prefWidth="136.0" text="Price" />
         </columns>
       </TableView>
       <Label layoutX="35.0" layoutY="14.0" text="Reserved vehicles list : (Select a vehicle to view it)">
@@ -28,6 +27,6 @@
       </Label>
       <Button layoutX="257.0" layoutY="221.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="318.0" text="Verify Documents " />
       <Button layoutX="257.0" layoutY="281.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="318.0" text="Confirm Handover" />
-      <ImageView fitHeight="173.0" fitWidth="200.0" layoutX="21.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="vehicleImage" fitHeight="173.0" fitWidth="200.0" layoutX="21.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

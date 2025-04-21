@@ -29,6 +29,10 @@ public class Notification implements Serializable {
     public Notification() {
     }
 
+    public void markAsRead() {
+        this.isRead = true;
+    }
+
 
     public String getMessage() {
         return message;

@@ -1,35 +1,42 @@
 package cse213.reconditionedcarimporter.AccouintantandTechnician;
 
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Parts;
+import cse213.reconditionedcarimporter.utility.AppendableObjectOutputStream;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class RepairTask {
-    private int taskId;
+public class RepairTask implements Serializable {
+    private String vin;
+    private String taskId;
     private String description;
-    private float laborHours;
-    private ArrayList<Parts> requiredParts;
+    private String beforephoto;
+    private String afterphoto;
 
-    private String status;
-    private Parts parts;
-//    private ArrayList<Photo> beforePhotos;
-//    private ArrayList<Photo> afterPhotos;
-
-    public RepairTask(String description, int taskId, float laborHours, ArrayList<Parts> requiredParts) {
-        this.description = description;
+    public RepairTask(String vin, String taskId, String description, String beforephoto, String afterphoto) {
+        this.vin = vin;
         this.taskId = taskId;
-        this.laborHours = laborHours;
-        this.requiredParts = requiredParts;
-
-//        this.beforePhotos = beforePhotos;
-//        this.afterPhotos = afterPhotos;
+        this.description = description;
+        this.beforephoto = beforephoto;
+        this.afterphoto = afterphoto;
     }
 
-    public int getTaskId() {
+    public String getVin() {
+        return vin;
+    }
+
+    public void setVin(String vin) {
+        this.vin = vin;
+    }
+
+    public String getTaskId() {
         return taskId;
     }
 
-    public void setTaskId(int taskId) {
+    public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
 
@@ -41,75 +48,41 @@ public class RepairTask {
         this.description = description;
     }
 
-    public float getLaborHours() {
-        return laborHours;
+    public String getBeforephoto() {
+        return beforephoto;
     }
 
-    public void setLaborHours(float laborHours) {
-        this.laborHours = laborHours;
+    public void setBeforephoto(String beforephoto) {
+        this.beforephoto = beforephoto;
     }
 
-    public ArrayList<Parts> getRequiredParts() {
-        return requiredParts;
+    public String getAfterphoto() {
+        return afterphoto;
     }
 
-    public void setRequiredParts(ArrayList<Parts> requiredParts) {
-        this.requiredParts = requiredParts;
+    public void setAfterphoto(String afterphoto) {
+        this.afterphoto = afterphoto;
     }
 
-
-//    public void setBeforePhotos(ArrayList<Photo> beforePhotos) {
-//        this.beforePhotos = beforePhotos;
-//    }
-//
-//    public void setAfterPhotos(ArrayList<Photo> afterPhotos) {
-//        this.afterPhotos = afterPhotos;
-//    }
-
-    //adding the methoids hjere
-    private final ArrayList<Photo> beforePhotos = new ArrayList<>();
-    private final ArrayList<Photo> afterPhotos = new ArrayList<>();
-    private final ArrayList<PartRequests> partRequests = new ArrayList<PartRequests>();
-
-    // Method to update the task status
-    public void updateStatus(String status) {
-        this.status = status;
-        System.out.println("Task status updated to: " + status);
-    }
-
-    // Method to add a photo (before or after repair)
-    public void addPhoto(Photo photo, boolean isBefore) {
-        if (isBefore) {
-            beforePhotos.add(photo);
-            System.out.println("Added a 'before' photo.");
-        } else {
-            afterPhotos.add(photo);
-            System.out.println("Added an 'after' photo.");
+    public void saveRepairTask() {
+            FileOutputStream fos = null;
+            ObjectOutputStream oos = null;
+            try{
+                File f = new File( "RepairTask.bin" );
+                if(f.exists()){
+                    oos = new AppendableObjectOutputStream(new FileOutputStream(f, true));}
+                else{
+                    oos = new ObjectOutputStream(new FileOutputStream(f));}
+                oos.writeObject(this);
+                oos.close();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
+
     }
 
-    // Method to request additional parts
-    public void requestAdditionalParts(Parts part, int quantity) {
-        String Parts = "";
-        PartRequests request = new PartRequests(Parts, quantity);
-        partRequests.add(request);
-        System.out.println("Requested " + quantity + " of part: " + Parts);
-    }
 
-    // Optional: Getters for internal tracking
-    public String getStatus() {
-        return status;
-    }
 
-    public ArrayList<Photo> getBeforePhotos() {
-        return beforePhotos;
-    }
 
-    public ArrayList<Photo> getAfterPhotos() {
-        return afterPhotos;
-    }
 
-    public ArrayList<PartRequests> getPartRequests() {
-        return partRequests;
-    }
-}

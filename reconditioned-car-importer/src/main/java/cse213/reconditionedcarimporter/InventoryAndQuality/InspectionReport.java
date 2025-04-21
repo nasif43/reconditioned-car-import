@@ -3,10 +3,11 @@ package cse213.reconditionedcarimporter.InventoryAndQuality;
 import cse213.reconditionedcarimporter.AccouintantandTechnician.Defect;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class InspectionReport extends Report{
+public class InspectionReport extends Report implements Serializable {
     private int exteriorRating,interiorRating,
             mechanicalRating,finalGrade ;
     private Vehicle vehicle;

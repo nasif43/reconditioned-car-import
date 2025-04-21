@@ -19,19 +19,19 @@
                <children>
                   <TableView layoutX="10.0" layoutY="267.0" prefHeight="251.0" prefWidth="797.0">
                     <columns>
-                      <TableColumn fx:id="managepaymentIDtableview" prefWidth="142.0" text="Payment ID" />
-                      <TableColumn fx:id="manageUserID" prefWidth="124.0" text="User ID" />
-                        <TableColumn fx:id="manageAmountTableview" prefWidth="198.0" text="Amount" />
-                        <TableColumn fx:id="manageDateTableView" prefWidth="187.0" text="Date" />
-                        <TableColumn prefWidth="145.0" text="Column X" />
+                      <TableColumn fx:id="managepaymentIDtableColumn" prefWidth="165.0" text="Payment ID" />
+                      <TableColumn fx:id="manageUserIDTableColumn" prefWidth="183.0" text="Invoice ID" />
+                        <TableColumn fx:id="manageExpensesTableColumn" prefWidth="192.0" text="Expenses" />
+                        <TableColumn fx:id="manageRevenueTableColumn" prefWidth="129.0" text="Revenue" />
+                        <TableColumn fx:id="manageDateTableColumn" minWidth="0.0" prefWidth="127.0" text="Date" />
                     </columns>
                   </TableView>
-                  <Button layoutX="10.0" layoutY="230.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Display All Transactions" />
+                  <Button layoutX="10.0" layoutY="230.0" mnemonicParsing="false" onAction="#ManageDisplayAllTransactionsOnAction" prefHeight="25.0" prefWidth="150.0" text="Display All Transactions" />
                   <Button layoutX="559.0" layoutY="41.0" mnemonicParsing="false" text="Button" />
                   <Button layoutX="540.0" layoutY="186.0" mnemonicParsing="false" text="Submit" />
-                  <Button layoutX="276.0" layoutY="73.0" mnemonicParsing="false" text="Search" />
-                  <TextField layoutX="111.0" layoutY="29.0" />
-                  <TextField layoutX="111.0" layoutY="73.0" />
+                  <Button layoutX="276.0" layoutY="73.0" mnemonicParsing="false" onAction="#SearchFilterOnAction" text="Search" />
+                  <TextField fx:id="FilterPaymentIDFXID" layoutX="111.0" layoutY="29.0" />
+                  <TextField fx:id="FilterInvoiceIDFXID" layoutX="111.0" layoutY="73.0" />
                   <RadioButton layoutX="540.0" layoutY="154.0" mnemonicParsing="false" onAction="#YesRadioButtononAction" text="Yes" />
                   <RadioButton layoutX="592.0" layoutY="154.0" mnemonicParsing="false" onAction="#NoRadioButtonOnAction" text="No" />
                   <Label layoutX="462.0" layoutY="154.0" prefHeight="17.0" prefWidth="64.0" text="Approve?" />
@@ -46,20 +46,24 @@
                <children>
                   <Label layoutX="27.0" layoutY="26.0" prefHeight="21.0" prefWidth="81.0" text="Payment ID:" />
                   <TextField fx:id="PaymentIDFXID" layoutX="108.0" layoutY="24.0" />
-                  <Label layoutX="27.0" layoutY="60.0" prefHeight="21.0" prefWidth="81.0" text="User ID:" />
+                  <Label layoutX="27.0" layoutY="60.0" prefHeight="21.0" prefWidth="81.0" text="Invoice ID:" />
                   <TextField fx:id="UserIDFXID" layoutX="108.0" layoutY="58.0" />
-                  <Label layoutX="27.0" layoutY="93.0" prefHeight="21.0" prefWidth="81.0" text="Amount:" />
-                  <TextField fx:id="AmountFXID" layoutX="108.0" layoutY="91.0" />
+                  <Label layoutX="27.0" layoutY="93.0" prefHeight="21.0" prefWidth="81.0" text="Expenses:" />
+                  <TextField fx:id="ExpensesFXID" layoutX="108.0" layoutY="91.0" />
                   <DatePicker fx:id="UserDatePicker" layoutX="385.0" layoutY="24.0" prefHeight="81.0" prefWidth="170.0" />
                   <Label layoutX="294.0" layoutY="26.0" prefHeight="21.0" prefWidth="81.0" text="Date:" />
                   <TableView layoutX="27.0" layoutY="176.0" prefHeight="312.0" prefWidth="774.0">
                     <columns>
-                      <TableColumn fx:id="paymentIDtableview" prefWidth="185.0" text="Payment ID" />
-                      <TableColumn fx:id="UserID" prefWidth="195.0" text="User ID" />
-                        <TableColumn fx:id="AmountTableview" prefWidth="194.0" text="Amount" />
-                        <TableColumn fx:id="DateTableView" prefWidth="199.0" text="Date" />
+                      <TableColumn fx:id="paymentIDtableColumn" prefWidth="149.0" text="Payment ID" />
+                      <TableColumn fx:id="InvoiceIDTableColumn" prefWidth="175.0" text="Invoice ID" />
+                        <TableColumn fx:id="AmountTableColumn" prefWidth="165.0" text="Amount" />
+                        <TableColumn fx:id="RevenueTableColumn" prefWidth="103.0" text="Revenue" />
+                        <TableColumn fx:id="DateTableColumn" prefWidth="181.0" text="Date" />
                     </columns>
                   </TableView>
+                  <Button layoutX="294.0" layoutY="135.0" mnemonicParsing="false" onAction="#GenerateOnTableOnAction" text="Generate" />
+                  <TextField fx:id="RevenueFXID" layoutX="108.0" layoutY="123.0" />
+                  <Label layoutX="27.0" layoutY="125.0" prefHeight="21.0" prefWidth="81.0" text="Revenue:" />
                </children></AnchorPane>
       </content>
     </Tab>

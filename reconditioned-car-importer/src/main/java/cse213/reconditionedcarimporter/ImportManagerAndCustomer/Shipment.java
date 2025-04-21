@@ -2,10 +2,11 @@ package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
 
 import cse213.reconditionedcarimporter.InventoryAndQuality.Warehouse;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Shipment {
+public class Shipment implements Serializable {
     private String shipmentId;
     private ArrayList<Vehicle> vehicles;
     private String origin;
@@ -17,8 +18,10 @@ public class Shipment {
     private Warehouse storageLocation;
 
     public Shipment() {
-        this.shipmentId = shipmentId;
+        this.shipmentId = "";
+        this.vehicles = new ArrayList<>();
     }
+
 
     public Shipment(String shipmentId, ArrayList<Vehicle> vehicles, String origin, String destination, LocalDate departureDate, LocalDate arrivalDate, String status, String carrier, Warehouse storageLocation) {
         this.shipmentId = shipmentId;
@@ -31,6 +34,8 @@ public class Shipment {
         this.carrier = carrier;
         this.storageLocation = storageLocation;
     }
+
+
 
     public String getShipmentId() {
         return shipmentId;
@@ -99,7 +104,7 @@ public class Shipment {
     public Warehouse getStorageLocation() {
         return storageLocation;
     }
-
+public int getVehicleCount(){return vehicles != null ? vehicles.size() : 0;}
     public void setStorageLocation(Warehouse storageLocation) {
         this.storageLocation = storageLocation;
     }
