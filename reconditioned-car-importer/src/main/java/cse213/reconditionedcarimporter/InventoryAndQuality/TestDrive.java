@@ -3,9 +3,10 @@ package cse213.reconditionedcarimporter.InventoryAndQuality;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Customer;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class TestDrive {
+public class TestDrive implements Serializable {
     private String customerName;
     private Vehicle vehicle;
     private LocalDate scheduledTime;

@@ -1,14 +1,15 @@
 package cse213.reconditionedcarimporter.InventoryAndQuality;
 
+import cse213.reconditionedcarimporter.HelloApplication;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Shipment;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.time.LocalDate;
@@ -84,35 +85,40 @@ public class InventoryManagerDashboardController
 
 
     @javafx.fxml.FXML
-    public void testDriveRequestMenuItemOnAction(ActionEvent actionEvent) {
+    public void testDriveRequestMenuItemOnAction(ActionEvent actionEvent) throws IOException {
+        loadFxmlParentToBorderPaneCenter("ApproveTestDriveRequestView.fxml");
     }
 
-    @javafx.fxml.FXML
-    public void viewPrevReportsMenuItemOnAction(ActionEvent actionEvent) {
-    }
 
     @javafx.fxml.FXML
     public void generateIMreportMenuItemOnAction(ActionEvent actionEvent) {
+        loadFxmlParentToBorderPaneCenter("InventoryReportView.fxml");
     }
 
     @javafx.fxml.FXML
     public void processVehiclePurchaseMenuItemOnAction(ActionEvent actionEvent) {
+        loadFxmlParentToBorderPaneCenter("VehicleHandoverVIew.fxml");
     }
 
     @javafx.fxml.FXML
     public void flagAgingVehiclesMenuItemOnAction(ActionEvent actionEvent) {
+        loadFxmlParentToBorderPaneCenter("FlagAgingInventoryView.fxml");
     }
 
     @javafx.fxml.FXML
     public void assignVehiclesToShowroomMenuItemOnAction(ActionEvent actionEvent) {
+        loadFxmlParentToBorderPaneCenter("AssignVehiclesToShowroomView.fxml");
     }
 
     @javafx.fxml.FXML
     public void seeDashBoardMenuItemOnAction(ActionEvent actionEvent) {
+        loadFxmlParentToBorderPaneCenter("InventoryManagerDashboardView.fxml");
     }
 
     @javafx.fxml.FXML
     public void loadReceiveShipmentViewBTn(ActionEvent actionEvent) {
+        loadFxmlParentToBorderPaneCenter("receiveShipmentView.fxml");
+
     }
 
     //dummy shipment
@@ -167,33 +173,46 @@ public class InventoryManagerDashboardController
             }
 
         }
-        public void readDummyShipment(ArrayList<Shipment> shipmnts){
-            File f = null;
-            FileInputStream fis = null;
-            ObjectInputStream ois = null;
-            String shipmentIdFromView;
-            try{
-                f = new File("Shipments.bin");
-                fis = new FileInputStream( f );
-                ois = new ObjectInputStream( fis );
+    public void readDummyShipment(ArrayList<Shipment> shipmnts) {
+        File f;
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
 
-                Shipment a = null;
-                while(true){
-                    a = (Shipment) ois.readObject();
+        try {
+            f = new File("Shipments.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
 
-                    shipmnts.add(a);
-                }
-            } catch (Exception e) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("Error reading shipment: " + e.getMessage());
-                alert.showAndWait();
-            }
-            finally{
+            while (true) {
                 try {
-                    if (ois != null) ois.close();
+                    Shipment a = (Shipment) ois.readObject();
+                    shipmnts.add(a);
+                } catch (EOFException eof) {
+                    break;
                 }
-                catch(Exception e){
-                    //
-                }
-            }}
+            }
+
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Error" + e);
+            alert.showAndWait();
+        } finally {
+            try {
+                if (ois != null) ois.close();
+            } catch (IOException e) {
+                //
+            }
+        }
     }
+
+    private void loadFxmlParentToBorderPaneCenter(String fxmlName){
+        try {
+            FXMLLoader nextFxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlName));
+            imDashboardBorderPane.setCenter(nextFxmlLoader.load());
+        }
+        catch(Exception e){
+            //
+        }
+    }
+
+}

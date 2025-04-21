@@ -2,9 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -13,48 +10,16 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="imDashboardBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.InventoryAndQuality.InventoryManagerDashboardController">
-    <top>
-        <MenuBar BorderPane.alignment="CENTER">
-            <menus>
-            <Menu mnemonicParsing="false" text="Home">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#seeDashBoardMenuItemOnAction" text="See dashboard " />
-               </items>
-            </Menu>
-                <Menu mnemonicParsing="false" text="Showrooms">
-                    <items>
-                        <MenuItem mnemonicParsing="false" onAction="#assignVehiclesToShowroomMenuItemOnAction" text="Assign Vehicles to Showroom" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Inventory">
-                    <items>
-                        <MenuItem mnemonicParsing="false" onAction="#flagAgingVehiclesMenuItemOnAction" text="Flag aging vehicles" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Reports">
-                    <items>
-                        <MenuItem mnemonicParsing="false" onAction="#generateIMreportMenuItemOnAction" text="Generate Report" />
-                        <MenuItem mnemonicParsing="false" onAction="#viewPrevReportsMenuItemOnAction" text="View Previous Reports" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Vehicle purchase">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#processVehiclePurchaseMenuItemOnAction" text="Process vehicle purchase" />
-               </items>
-                </Menu>
-            <Menu mnemonicParsing="false" text="Requests">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#testDriveRequestMenuItemOnAction" text="Test drive requests" />
-               </items>
-            </Menu>
-            </menus>
-        </MenuBar>
-    </top>
-    <center>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+<BorderPane fx:id="imDashboardBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="453.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.InventoryAndQuality.InventoryManagerDashboardController">
+   <center>
+        <AnchorPane prefHeight="400.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <children>
-                <TabPane layoutY="64.0" prefHeight="360.0" prefWidth="600.0" style="-fx-background-color: gray;" tabClosingPolicy="UNAVAILABLE">
+            <Label layoutX="5.0" layoutY="-14.0" text="Dashboard">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+                <TabPane layoutY="21.0" prefHeight="339.0" prefWidth="600.0" style="-fx-background-color: gray;" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
                         <Tab fx:id="shipmentTab" text="Shipments">
                             <content>
@@ -113,12 +78,19 @@
                   </Tab>
                     </tabs>
                 </TabPane>
-            <Label layoutX="14.0" layoutY="14.0" text="Dashboard">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
             </children>
         </AnchorPane>
-    </center>
+   </center>
+   <top>
+      <AnchorPane prefHeight="78.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#seeDashBoardMenuItemOnAction" text="See dashboard " />
+            <Button layoutX="135.0" layoutY="9.0" mnemonicParsing="false" onAction="#processVehiclePurchaseMenuItemOnAction" text="Process vehicle purchase" />
+            <Button layoutX="300.0" layoutY="9.0" mnemonicParsing="false" onAction="#flagAgingVehiclesMenuItemOnAction" prefHeight="27.0" prefWidth="122.0" text="Flag aging vehicles" />
+            <Button layoutX="432.0" layoutY="9.0" mnemonicParsing="false" onAction="#generateIMreportMenuItemOnAction" prefHeight="27.0" prefWidth="122.0" text="Generate Report" />
+            <Button layoutX="14.0" layoutY="39.0" mnemonicParsing="false" onAction="#assignVehiclesToShowroomMenuItemOnAction" prefHeight="27.0" prefWidth="193.0" text="Assign Vehicles to showroom" />
+            <Button layoutX="221.0" layoutY="39.0" mnemonicParsing="false" onAction="#testDriveRequestMenuItemOnAction" prefHeight="27.0" prefWidth="122.0" text="Test drive requests" />
+         </children>
+      </AnchorPane>
+   </top>
 </BorderPane>

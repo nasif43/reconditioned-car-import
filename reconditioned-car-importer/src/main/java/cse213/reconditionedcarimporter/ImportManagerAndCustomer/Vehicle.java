@@ -2,9 +2,10 @@ package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
 
 import cse213.reconditionedcarimporter.InventoryAndQuality.Location;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Vehicle {
+public class Vehicle implements Serializable {
 
 private String vin, make,model,exteriorColor,engineType,transmission,fuelType,status,grade;
 private Location location;

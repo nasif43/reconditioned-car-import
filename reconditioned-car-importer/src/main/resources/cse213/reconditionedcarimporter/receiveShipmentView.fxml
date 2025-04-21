@@ -23,6 +23,7 @@
             <Label fx:id="shipmentCarrierLabel" layoutX="342.0" layoutY="33.0" text="Carrier" />
             <Label layoutX="225.0" layoutY="59.0" text="Status :" />
             <Label fx:id="shipmentStatusLabel" layoutX="343.0" layoutY="60.0" text="Status" />
+            <Label fx:id="messageLabel" layoutX="265.0" layoutY="200.0" text="Message" />
          </children>
       </AnchorPane>
    </center>

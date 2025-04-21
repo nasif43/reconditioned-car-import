@@ -3,10 +3,11 @@ package cse213.reconditionedcarimporter.InventoryAndQuality;
 import cse213.reconditionedcarimporter.AccouintantandTechnician.RepairTask;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class RepairPlan {
+public class RepairPlan implements Serializable {
     private String planId,status;
     private ArrayList<RepairTask> tasks;
     private LocalDate deadline;

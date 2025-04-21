@@ -1,6 +1,8 @@
 package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
 
-public class CarListing {
+import java.io.Serializable;
+
+public class CarListing implements Serializable {
     private String listingId, vehicleId;
     private float price;
     private Vehicle vehicle;

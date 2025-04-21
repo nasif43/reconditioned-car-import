@@ -14,13 +14,11 @@ public class receiveShipmentViewController
     @javafx.fxml.FXML
     private Label ShipmentIdNumber;
 
-
+    ArrayList<Shipment> shipments = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void receiveShipmentOnActionButton(ActionEvent actionEvent) {
-   // InventoryManager.receiveShipment(currentShipment,warehouse);
-    //System.out.println(InventoryManager.getNotifications());
-        System.out.println(shipmentIdFromView);
+
     }
 
 

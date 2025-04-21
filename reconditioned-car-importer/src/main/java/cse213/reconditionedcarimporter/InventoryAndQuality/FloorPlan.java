@@ -2,9 +2,10 @@ package cse213.reconditionedcarimporter.InventoryAndQuality;
 
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public abstract class FloorPlan  {
+public abstract class FloorPlan implements Serializable {
     private String planId;
     private String name;
     private int rows;

@@ -6,10 +6,11 @@ import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Parts;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Shipment;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class InventoryManager extends User {
+public class InventoryManager extends User implements Serializable {
 ArrayList<Warehouse> warehouses;
 ArrayList<Showroom> showrooms;
 ArrayList<Shipment> currentShipments;
@@ -23,6 +24,19 @@ int maxVehiclesToAssignPerDay;
         this.currentShipments = currentShipments;
         this.pendingShipments = pendingShipments;
         this.maxVehiclesToAssignPerDay = maxVehiclesToAssignPerDay;
+        warehouses = new ArrayList<>();
+        warehouses.add(new Warehouse("Chittagong_WH1"));
+        warehouses.add(new Warehouse("Dhaka_WH1"));
+        warehouses.add(new Warehouse("Dhaka_WH2"));
+        warehouses.add(new Warehouse("Dhaka_WH3"));
+        warehouses.add(new Warehouse("Dhaka_WH4"));
+        //
+        showrooms = new ArrayList<>();
+        showrooms.add(new Showroom("Chittagong_Showroom"));
+        showrooms.add(new Showroom("Dhaka_Showroom"));
+        showrooms.add(new Showroom("Dhaka_Showroom_premium"));
+        showrooms.add(new Showroom("Outlet_showroom"));
+        showrooms.add(new Showroom("Sylhet_Showroom"));
     }
 
     public InventoryManager() {

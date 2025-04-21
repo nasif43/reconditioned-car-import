@@ -2,10 +2,11 @@ package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
 
 import cse213.reconditionedcarimporter.InventoryAndQuality.Warehouse;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Shipment {
+public class Shipment implements Serializable {
     private String shipmentId;
     private ArrayList<Vehicle> vehicles;
     private String origin;

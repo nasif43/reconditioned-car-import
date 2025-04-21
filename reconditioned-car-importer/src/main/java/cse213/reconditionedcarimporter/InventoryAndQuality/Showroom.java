@@ -3,9 +3,10 @@ package cse213.reconditionedcarimporter.InventoryAndQuality;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 import javafx.scene.control.Alert;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Showroom extends Location {
+public class Showroom extends Location implements Serializable {
     private FloorPlan floorPlan;
     private ArrayList<ShowroomSlot> slots = new ArrayList<>();
     private ArrayList<Vehicle> vehiclesOnDisplay = new ArrayList<>();
@@ -21,6 +22,10 @@ public class Showroom extends Location {
     public Showroom() {
         this.slots = new ArrayList<>();
         this.vehiclesOnDisplay = new ArrayList<>();
+    }
+
+    public Showroom(String dhakaShowroom) {
+        super();
     }
 
     @Override

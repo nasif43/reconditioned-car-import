@@ -2,9 +2,10 @@ package cse213.reconditionedcarimporter.InventoryAndQuality;
 
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public abstract class Location {
+public abstract class Location implements Serializable {
     protected int locationId,capacity, currentCount ;
     protected String name,address;
 
