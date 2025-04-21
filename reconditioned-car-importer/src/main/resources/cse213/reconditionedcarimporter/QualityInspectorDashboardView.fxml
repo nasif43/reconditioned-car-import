@@ -13,28 +13,30 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.QualityInspectorDashboardViewController">
    <children>
-      <BorderPane layoutX="-1.0" prefHeight="400.0" prefWidth="600.0">
+      <BorderPane fx:id="QIDashBoardBorderPane" layoutX="-1.0" prefHeight="400.0" prefWidth="600.0">
          <top>
             <MenuBar BorderPane.alignment="CENTER">
               <menus>
-                  <Menu mnemonicParsing="false" text="Home" />
+                  <Menu mnemonicParsing="false" text="Home">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#loadDashboardMenuItem" text="Go to dashboard" />
+                     </items></Menu>
                 <Menu mnemonicParsing="false" text="Inspection">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Initial vehicle inspection" />
+                        <MenuItem mnemonicParsing="false" onAction="#initialInspectionMenuItem" text="Initial vehicle inspection" />
                      </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Requests">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Part requests" />
+                        <MenuItem mnemonicParsing="false" onAction="#partRequestsMenuItem" text="Part requests" />
                      </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Repairs">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Approve Repairs" />
-                        <MenuItem mnemonicParsing="false" text="Create repair plans" />
+                        <MenuItem mnemonicParsing="false" onAction="#approveRepairMenuItem" text="Approve Repairs" />
+                        <MenuItem mnemonicParsing="false" onAction="#createRepairPlanMenuItem" text="Create repair plans" />
                      </items>
                 </Menu>
                   <Menu mnemonicParsing="false" text="Paint">
@@ -42,8 +44,8 @@
                         <MenuItem mnemonicParsing="false" text="Paint Verification" />
                      </items>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="Report New Damage" />
-                  <Menu mnemonicParsing="false" text="Generate monthly report" />
+                  <Menu mnemonicParsing="false" onAction="#reportnewDamageMenuItem" text="Report New Damage" />
+                  <Menu mnemonicParsing="false" onAction="#generatereportMenuItem" text="Generate monthly report" />
               </menus>
             </MenuBar>
          </top>
@@ -52,47 +54,47 @@
                <children>
                   <TabPane layoutX="5.0" layoutY="52.0" prefHeight="307.0" prefWidth="589.0" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
-                      <Tab text="Notifications">
+                      <Tab fx:id="notificationsTab" text="Notifications">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <TableView layoutX="1.0" layoutY="1.0" prefHeight="238.0" prefWidth="589.0" style="-fx-background-color: lavender;">
+                                    <TableView fx:id="notificationTableView" layoutX="1.0" layoutY="1.0" prefHeight="238.0" prefWidth="589.0" style="-fx-background-color: lavender;">
                                       <columns>
-                                        <TableColumn prefWidth="585.3332929611206" text="Notifications" />
+                                        <TableColumn fx:id="notificationsBArCol" prefWidth="585.3332929611206" text="Notifications" />
                                       </columns>
                                     </TableView>
                                  </children>
                               </AnchorPane>
                         </content>
                       </Tab>
-                      <Tab text="Active repair plans">
+                      <Tab fx:id="activeRepairsTab" text="Active repair plans">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <TableView layoutY="2.0" prefHeight="238.0" prefWidth="587.0" style="-fx-background-color: beige;">
+                                    <TableView fx:id="repairPlanTableView" layoutY="2.0" prefHeight="231.0" prefWidth="587.0" style="-fx-background-color: beige;">
                                       <columns>
-                                          <TableColumn prefWidth="80.66665887832642" text="Vehicle Id" />
-                                        <TableColumn prefWidth="121.99996185302734" text="Vehicle Name" />
-                                        <TableColumn prefWidth="111.33338928222656" text="Repair plan Id" />
-                                          <TableColumn minWidth="0.0" prefWidth="138.66668701171875" text="Status" />
-                                          <TableColumn minWidth="0.0" prefWidth="133.99990844726562" text="Deadline" />
+                                          <TableColumn fx:id="vehicleIdColRepairPlan" prefWidth="80.66665887832642" text="Vehicle Id" />
+                                        <TableColumn fx:id="vehicleNameColRepairPlan" prefWidth="121.99996185302734" text="Vehicle Name" />
+                                        <TableColumn fx:id="RepairPlanId" prefWidth="111.33338928222656" text="Repair plan Id" />
+                                          <TableColumn fx:id="rapirPlanSatusColRepairPlan" minWidth="0.0" prefWidth="138.66668701171875" text="Status" />
+                                          <TableColumn fx:id="RepairPlanDaedlineCol" minWidth="0.0" prefWidth="133.99990844726562" text="Deadline" />
                                       </columns>
                                     </TableView>
+                                    <Button layoutX="182.0" layoutY="239.0" mnemonicParsing="false" onAction="#showRepairDetailsBtn" prefHeight="35.0" prefWidth="225.0" text="Show selected repaired vehicle's details" />
                                  </children>
                               </AnchorPane>
                         </content>
                       </Tab>
-                        <Tab text="Vehicles which need repair">
+                        <Tab fx:id="vehiclesNeededRepairTab" text="Vehicles which need repair">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="273.0" prefWidth="589.0" style="-fx-background-color: white;">
                                  <children>
-                                    <TableView layoutY="39.0" prefHeight="185.0" prefWidth="587.0" style="-fx-background-color: lavender;">
+                                    <TableView fx:id="needRepairTableView" layoutY="39.0" prefHeight="185.0" prefWidth="587.0" style="-fx-background-color: lavender;">
                                        <columns>
-                                          <TableColumn prefWidth="80.66665887832642" text="Vehicle Id" />
-                                          <TableColumn prefWidth="121.99996185302734" text="Vehicle Name" />
-                                          <TableColumn prefWidth="66.66670227050781" text="Grade" />
-                                          <TableColumn minWidth="0.0" prefWidth="184.6666259765625" text="Status" />
-                                          <TableColumn minWidth="0.0" prefWidth="133.99990844726562" text="Deadline" />
+                                          <TableColumn fx:id="vehicleIdColRepair" prefWidth="80.66665887832642" text="Vehicle Id" />
+                                          <TableColumn fx:id="vehicleNameColRepair" prefWidth="228.66666412353516" text="Vehicle Name" />
+                                          <TableColumn fx:id="vehicleGradeColRepair" prefWidth="114.0" text="Grade" />
+                                          <TableColumn fx:id="vehicleRepairDeadlineColRepair" minWidth="0.0" prefWidth="162.66665649414062" text="Deadline" />
                                        </columns>
                                     </TableView>
                                     <Label layoutX="14.0" layoutY="14.0" text="Select a vehicle to create a repair plan">
@@ -100,22 +102,22 @@
                                           <Font name="System Italic" size="13.0" />
                                        </font>
                                     </Label>
-                                    <Button layoutX="184.0" layoutY="234.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="219.0" text="Create repair plan" />
+                                    <Button layoutX="184.0" layoutY="234.0" mnemonicParsing="false" onAction="#createRepairplanBtn" prefHeight="41.0" prefWidth="219.0" text="Create repair plan" />
                                  </children>
                               </AnchorPane>
                            </content>
                         </Tab>
-                        <Tab text="Vehicles awaiting initial inspection">
+                        <Tab fx:id="awaiitngInspectionTab" text="Vehicles awaiting initial inspection">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="589.0" style="-fx-background-color: white;">
                                  <children>
-                                    <TableView layoutY="39.0" prefHeight="189.0" prefWidth="587.0" style="-fx-background-color: skyBlue;">
+                                    <TableView fx:id="awaitingInspectionTableView" layoutY="39.0" prefHeight="189.0" prefWidth="587.0" style="-fx-background-color: skyBlue;">
                                        <columns>
-                                          <TableColumn prefWidth="80.66665887832642" text="Vehicle Id" />
-                                          <TableColumn minWidth="0.0" prefWidth="125.99996185302734" text="Model" />
-                                          <TableColumn prefWidth="118.66670227050781" text="Make" />
-                                          <TableColumn minWidth="0.0" prefWidth="166.0" text="Warehouse" />
-                                          <TableColumn minWidth="0.0" prefWidth="94.66665649414062" text="Year" />
+                                          <TableColumn fx:id="vehicleIdColAwaitingInspection" prefWidth="80.66665887832642" text="Vehicle Id" />
+                                          <TableColumn fx:id="vehicleModelColAwaitingInspection" minWidth="0.0" prefWidth="125.99996185302734" text="Model" />
+                                          <TableColumn fx:id="vehicleMakeColAwaitingInspection" prefWidth="118.66670227050781" text="Make" />
+                                          <TableColumn fx:id="vehicleWHColAwaitingInspection" minWidth="0.0" prefWidth="166.0" text="Warehouse" />
+                                          <TableColumn fx:id="vehicleYearColAwaitingInspection" minWidth="0.0" prefWidth="94.66665649414062" text="Year" />
                                        </columns>
                                     </TableView>
                                     <Label layoutX="14.0" layoutY="14.0" text="Select a vehicle to inspect it">
@@ -123,7 +125,7 @@
                                           <Font name="System Italic" size="13.0" />
                                        </font>
                                     </Label>
-                                    <Button layoutX="184.0" layoutY="236.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="219.0" text="Inspect selected vehicle" />
+                                    <Button layoutX="184.0" layoutY="236.0" mnemonicParsing="false" onAction="#isnpectSelectedVehicleBtnOnaction" prefHeight="41.0" prefWidth="219.0" text="Inspect selected vehicle" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -135,7 +137,11 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="384.0" layoutY="19.0" text="Error message" />
+                  <Label fx:id="eroromessage" layoutX="384.0" layoutY="19.0" text="Error message" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </center>

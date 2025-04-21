@@ -37,5 +37,5 @@ public class PaintMatchReport extends Report {
     public Vehicle getVehicle() { return vehicle; }
     public boolean isPaintMatched() { return paintMatched; }
     public String getAnnotations() { return annotations; }
-    public LocalDate getInspectionDate() { return reportDate; }
+    public LocalDate getInspectionDate() { return reportDate ; }
 }
