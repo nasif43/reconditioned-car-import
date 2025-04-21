@@ -18,8 +18,10 @@ public class Shipment implements Serializable {
     private Warehouse storageLocation;
 
     public Shipment() {
-        this.shipmentId = shipmentId;
+        this.shipmentId = "";
+        this.vehicles = new ArrayList<>();
     }
+
 
     public Shipment(String shipmentId, ArrayList<Vehicle> vehicles, String origin, String destination, LocalDate departureDate, LocalDate arrivalDate, String status, String carrier, Warehouse storageLocation) {
         this.shipmentId = shipmentId;

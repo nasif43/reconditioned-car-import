@@ -135,8 +135,9 @@ public class InventoryManagerDashboardController
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
             ArrayList<Shipment> shipments = (ArrayList<Shipment>) ois.readObject();
             shipmentsTabTableView.getItems().addAll(shipments);
+            System.out.println("opned shipmentbin" + shipments);
         } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace(); // Print the error to debug
+            //
         }
     }
 
