@@ -1,21 +1,25 @@
 package cse213.reconditionedcarimporter.AccouintantandTechnician;
 
-public class Equipment {
+import cse213.reconditionedcarimporter.utility.AppendableObjectOutputStream;
+import javafx.collections.ObservableList;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+public class Equipment implements Serializable {
 
     private String equipmentId;
     private String name;
     private String type;
     private String status;
-    private String location;
-    private String lastMaintenanceDate;
 
-    public Equipment(String equipmentId, String name, String type, String status, String location, String lastMaintenanceDate) {
+    public Equipment(String equipmentId, String name, String type, ObservableList<String> status) {
         this.equipmentId = equipmentId;
         this.name = name;
         this.type = type;
-        this.status = status;
-        this.location = location;
-        this.lastMaintenanceDate = lastMaintenanceDate;
+        this.status = String.valueOf(status);
     }
 
     public String getEquipmentId() {
@@ -50,31 +54,21 @@ public class Equipment {
         this.status = status;
     }
 
-    public String getLocation() {
-        return location;
+
+    public void saveEquipment() {
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try{
+            File f = new File( "Equipment.bin" );
+            if(f.exists()){
+                oos = new AppendableObjectOutputStream(new FileOutputStream(f, true));}
+            else{
+                oos = new ObjectOutputStream(new FileOutputStream(f));}
+            oos.writeObject(this);
+            oos.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getLastMaintenanceDate() {
-        return lastMaintenanceDate;
-    }
-
-    public void setLastMaintenanceDate(String lastMaintenanceDate) {
-        this.lastMaintenanceDate = lastMaintenanceDate;
-    }
-
-    public void updateStatus(String status) {
-        // TODO: implement
-    }
-
-    public void scheduleMaintenance(String date) {
-        // TODO: implement
-    }
-
-    public void logMalfunction(String issue) {
-        // TODO: implement
-    }
 }
