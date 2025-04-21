@@ -129,6 +129,7 @@ public class BidProposal implements Serializable {
             throw new RuntimeException(e);
         }
     }
+
     public void saveBidProposal(){
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;

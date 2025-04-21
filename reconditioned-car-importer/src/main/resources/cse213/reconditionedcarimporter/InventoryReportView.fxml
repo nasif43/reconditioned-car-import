@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.InventoryReportViewController">
    <children>
       <Label layoutX="14.0" layoutY="14.0" text="Inventory Report">
@@ -16,19 +15,19 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <ComboBox layoutX="194.0" layoutY="61.0" prefWidth="150.0" promptText="Location" />
+      <ComboBox fx:id="chooseStorageCOmboBox" layoutX="194.0" layoutY="61.0" onAction="#chooseStorageCOmboBoxAction" prefWidth="150.0" promptText="Location" />
       <Label layoutX="14.0" layoutY="65.0" prefHeight="17.0" prefWidth="171.0" text="Choose vehicle storage location" />
-      <TableView layoutX="8.0" layoutY="100.0" prefHeight="200.0" prefWidth="586.0">
+      <TableView fx:id="inventoryReportTableView" layoutX="8.0" layoutY="100.0" prefHeight="200.0" prefWidth="586.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Vehicle Id" />
-          <TableColumn prefWidth="127.33334350585938" text="Vehicle name" />
-            <TableColumn prefWidth="42.0" text="Grade" />
-            <TableColumn prefWidth="64.0" text="Location" />
-            <TableColumn prefWidth="118.0" text="Price" />
-            <TableColumn prefWidth="158.0" text="Vehicle Status" />
+          <TableColumn fx:id="vehicelIDCol" prefWidth="75.0" text="Vehicle Id" />
+          <TableColumn fx:id="vehicelNameCol" prefWidth="127.33334350585938" text="Vehicle name" />
+            <TableColumn fx:id="vehicelGradeCol" prefWidth="42.0" text="Grade" />
+            <TableColumn fx:id="vehicelLocationCol" prefWidth="64.0" text="Location" />
+            <TableColumn fx:id="vehicelPriceCol" prefWidth="118.0" text="Price" />
+            <TableColumn fx:id="vehicelStatusCol" prefWidth="158.0" text="Vehicle Status" />
         </columns>
       </TableView>
-      <Button layoutX="365.0" layoutY="61.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="227.0" text="Generate Report in tabular format" />
-      <Button layoutX="164.0" layoutY="318.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="274.0" text="Send report " />
+      <Button layoutX="365.0" layoutY="61.0" mnemonicParsing="false" onAction="#generateInventpryReportButton" prefHeight="25.0" prefWidth="227.0" text="Generate Report in tabular format" />
+      <Button layoutX="164.0" layoutY="318.0" mnemonicParsing="false" onAction="#sendReportToAcoountantOnAction" prefHeight="57.0" prefWidth="274.0" text="Send report " />
    </children>
 </AnchorPane>

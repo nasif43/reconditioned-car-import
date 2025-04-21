@@ -3,9 +3,10 @@ package cse213.reconditionedcarimporter.InventoryAndQuality;
 import cse213.reconditionedcarimporter.AccouintantandTechnician.PartRequests;
 import cse213.reconditionedcarimporter.AuctionAndSales.User;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class QualityInspector extends User {
+public class QualityInspector extends User implements Serializable {
     private ArrayList<RepairPlan> activeRepairPlans;
     private int inspectionsCompleted;
 
