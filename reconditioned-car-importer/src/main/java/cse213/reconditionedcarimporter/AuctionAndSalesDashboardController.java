@@ -13,7 +13,7 @@ public class AuctionAndSalesDashboardController
 {
     @javafx.fxml.FXML
     private BorderPane borderPaneAuctionManager;
-    @javafx.fxml.FXML
+    @FXML
     private MenuBar auctionManagerMenuBar;
 
     @javafx.fxml.FXML
@@ -52,7 +52,7 @@ public class AuctionAndSalesDashboardController
         loadFxmlParentToBorderPaneCenter("VehicleInspection.fxml");
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void auctionHistoryMenuBarOnAction(ActionEvent actionEvent) {
         loadFxmlParentToBorderPaneCenter("AuctionHistory.fxml");
     }
@@ -60,5 +60,17 @@ public class AuctionAndSalesDashboardController
     @javafx.fxml.FXML
     public void shippingAndLogisticsMenuBarOnAction(ActionEvent actionEvent) {
         loadFxmlParentToBorderPaneCenter("ShippingAndLogistics.fxml");
+    }
+
+    @FXML
+    public void vehicleListForInspectionAuctionManagerOnAction(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void auctionHistoryMenuButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void preparedBidsMenuButtonOnAction(ActionEvent actionEvent) {
     }
 }
