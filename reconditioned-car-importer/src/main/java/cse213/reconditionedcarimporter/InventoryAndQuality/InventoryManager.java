@@ -6,6 +6,7 @@ import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Parts;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Shipment;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class InventoryManager extends User {
@@ -28,9 +29,16 @@ int maxVehiclesToAssignPerDay;
     }
 
     public void receiveShipment(Shipment shipment, Warehouse storageLocation){
-shipment.setStatus("ARRIVED_UNCHECKED");
-shipment.setStorageLocation(storageLocation);
-storageLocation.addShipment(shipment);
+        shipment.setStatus("ARRIVED_UNCHECKED");
+        shipment.setStorageLocation(storageLocation);
+        shipment.setArrivalDate(LocalDate.now());
+        for (Vehicle v : shipment.getVehicles()){
+          v.setStatus("AWAITING_INSPECTION");
+        }
+        storageLocation.addShipment(shipment);
+        //file code
+
+
     }
     public void assignVehicletoShowroom(Vehicle vehicle, Showroom showroom){
 

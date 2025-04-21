@@ -34,7 +34,9 @@ public class Warehouse extends Location{
     public ArrayList<Vehicle> getVehicles() {
         return vehicles;
     }
-
+    public int getcurrentCount(){
+        return getVehicles().size();
+    }
     public void setVehicles(ArrayList<Vehicle> vehicles) {
         this.vehicles = vehicles;
     }

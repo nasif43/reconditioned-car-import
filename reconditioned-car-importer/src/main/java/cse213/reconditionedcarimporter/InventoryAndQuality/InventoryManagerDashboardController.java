@@ -1,51 +1,55 @@
 package cse213.reconditionedcarimporter.InventoryAndQuality;
 
+import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Shipment;
+import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
 
+import java.time.LocalDate;
+
 public class InventoryManagerDashboardController
 {
     @javafx.fxml.FXML
-    private TableColumn shipmentIdColumn;
+    private TableColumn<Shipment,String> shipmentIdColumn;
     @javafx.fxml.FXML
-    private TableView notificationsTableView;
+    private TableView<Notification> notificationsTableView;
     @javafx.fxml.FXML
-    private TableColumn warehouseVehicleCountCol;
+    private TableColumn<Warehouse,Integer> warehouseVehicleCountCol;
     @javafx.fxml.FXML
-    private TableColumn warehouseLocationCol;
+    private TableColumn<Warehouse,String> warehouseLocationCol;
     @javafx.fxml.FXML
-    private TableColumn warehouseNameCol;
+    private TableColumn<Warehouse,String> warehouseNameCol;
     @javafx.fxml.FXML
-    private TableColumn shipmentVehicleCountColumn;
+    private TableColumn<Shipment,Integer> shipmentVehicleCountColumn;
     @javafx.fxml.FXML
     private BorderPane imDashboardBorderPane;
     @javafx.fxml.FXML
-    private TableColumn shipmentStatusColumn;
+    private TableColumn<Shipment,String> shipmentStatusColumn;
     @javafx.fxml.FXML
-    private TableColumn notificationsBarColu;
+    private TableColumn<Notification,String> notificationsBarColu;
     @javafx.fxml.FXML
     private Tab notificationsTab;
     @javafx.fxml.FXML
     private Tab shipmentTab;
     @javafx.fxml.FXML
-    private TableColumn warehouseCapacityCol;
+    private TableColumn<Warehouse,Integer> warehouseCapacityCol;
     @javafx.fxml.FXML
     private Tab warehouseTab;
     @javafx.fxml.FXML
-    private TableColumn shipmentLoactionColumn;
+    private TableColumn<Shipment,Warehouse> shipmentLoactionColumn;
     @javafx.fxml.FXML
-    private TableView warhousesTableView;
+    private TableView<Warehouse> warhousesTableView;
     @javafx.fxml.FXML
-    private TableColumn warehouseStatusCol;
+    private TableColumn<Warehouse,String> warehouseStatusCol;
     @javafx.fxml.FXML
-    private TableColumn arrivalDateColumn;
+    private TableColumn<Shipment, LocalDate> arrivalDateColumn;
     @javafx.fxml.FXML
-    private TableView shipmentsTabTableView;
+    private TableView<Shipment> shipmentsTabTableView;
     @javafx.fxml.FXML
-    private TableColumn shipmentOriginColumn;
+    private TableColumn<Shipment,String> shipmentOriginColumn;
 
     @javafx.fxml.FXML
     public void initialize() {

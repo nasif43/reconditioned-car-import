@@ -1,5 +1,8 @@
 package cse213.reconditionedcarimporter;
 
+import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
+import cse213.reconditionedcarimporter.InventoryAndQuality.TestDrive;
+import cse213.reconditionedcarimporter.InventoryAndQuality.Warehouse;
 import javafx.event.ActionEvent;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -11,9 +14,9 @@ public class ApproveTestDriveRequestViewController
     @javafx.fxml.FXML
     private DatePicker rescheduleDtaePicker;
     @javafx.fxml.FXML
-    private TableColumn vehicleNameCol;
+    private TableColumn<Vehicle,String> vehicleNameCol;
     @javafx.fxml.FXML
-    private TableView testDriveReqsTableView;
+    private TableView<TestDrive> testDriveReqsTableView;
     @javafx.fxml.FXML
     private TableColumn customerNameCol;
     @javafx.fxml.FXML

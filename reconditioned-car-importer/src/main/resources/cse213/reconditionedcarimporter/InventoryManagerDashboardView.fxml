@@ -86,11 +86,10 @@
                                     <children>
                                         <TableView fx:id="warhousesTableView" layoutX="3.0" prefHeight="441.0" prefWidth="593.0" style="-fx-background-color: lightBlue;">
                                             <columns>
-                                                <TableColumn fx:id="warehouseNameCol" prefWidth="84.0" text="Name" />
-                                                <TableColumn fx:id="warehouseCapacityCol" prefWidth="86.66665649414062" text="Capacity" />
-                                                <TableColumn fx:id="warehouseLocationCol" prefWidth="115.33331298828125" text="Location" />
-                                                <TableColumn fx:id="warehouseStatusCol" prefWidth="194.00006103515625" text="Status" />
-                                                <TableColumn fx:id="warehouseVehicleCountCol" prefWidth="111.99993896484375" text="Vehicle Count" />
+                                                <TableColumn fx:id="warehouseNameCol" prefWidth="153.33331298828125" text="Name" />
+                                                <TableColumn fx:id="warehouseCapacityCol" prefWidth="104.00003051757812" text="Capacity" />
+                                                <TableColumn fx:id="warehouseStatusCol" prefWidth="232.00003051757812" text="Status" />
+                                                <TableColumn fx:id="warehouseVehicleCountCol" prefWidth="103.333251953125" text="Vehicle Count" />
                                             </columns>
                                         </TableView>
                                     </children>
@@ -103,7 +102,9 @@
                            <children>
                               <TableView fx:id="notificationsTableView" layoutX="1.0" layoutY="2.0" prefHeight="330.0" prefWidth="600.0">
                                 <columns>
-                                  <TableColumn fx:id="notificationsBarColu" prefWidth="598.6666564941406" text="Notifications" />
+                                  <TableColumn fx:id="notificationsBarColu" prefWidth="439.3333435058594" text="Notifications" />
+                                    <TableColumn fx:id="notificationsTypeCol" minWidth="0.0" prefWidth="68.0" text="Type" />
+                                    <TableColumn fx:id="notificationIsReadCol" prefWidth="91.33334350585938" text="Is read" />
                                 </columns>
                               </TableView>
                            </children>
