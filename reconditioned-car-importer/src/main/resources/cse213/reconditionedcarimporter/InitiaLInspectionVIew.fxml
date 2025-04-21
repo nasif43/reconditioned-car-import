@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="444.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.InitiaLInspectionVIewController">
    <children>
       <Label layoutX="17.0" layoutY="6.0" text="Initial Inspection">
@@ -19,44 +18,44 @@
       <Label layoutX="148.0" layoutY="43.0" text="Make :" />
       <Label layoutX="278.0" layoutY="43.0" text="Model :" />
       <Label layoutX="468.0" layoutY="43.0" text="Year :" />
-      <Label layoutX="76.0" layoutY="41.0" text="vin" />
-      <Label layoutX="199.0" layoutY="43.0" text="vin" />
-      <Label layoutX="329.0" layoutY="43.0" text="vin" />
-      <Label layoutX="519.0" layoutY="43.0" text="vin" />
+      <Label fx:id="vehicleIdLabel" layoutX="76.0" layoutY="41.0" text="vin" />
+      <Label fx:id="vehicleMakeLabel" layoutX="199.0" layoutY="43.0" text="vin" />
+      <Label fx:id="vehicleModelLabel" layoutX="329.0" layoutY="43.0" text="vin" />
+      <Label fx:id="vehicleYearLabel" layoutX="519.0" layoutY="43.0" text="vin" />
       <Label layoutX="19.0" layoutY="68.0" text="Exterior Inspection:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <CheckBox layoutX="185.0" layoutY="93.0" mnemonicParsing="false" text="Scratches" />
-      <CheckBox layoutX="281.0" layoutY="93.0" mnemonicParsing="false" text="Dents" />
-      <CheckBox layoutX="358.0" layoutY="93.0" mnemonicParsing="false" text="Rust" />
-      <CheckBox layoutX="449.0" layoutY="93.0" mnemonicParsing="false" text="Paint" />
+      <CheckBox fx:id="scratchesCheckBox" layoutX="185.0" layoutY="93.0" mnemonicParsing="false" text="Scratches" />
+      <CheckBox fx:id="dentsCheckBox" layoutX="281.0" layoutY="93.0" mnemonicParsing="false" text="Dents" />
+      <CheckBox fx:id="rustCheckBox" layoutX="358.0" layoutY="93.0" mnemonicParsing="false" text="Rust" />
+      <CheckBox fx:id="paintCheckBox" layoutX="449.0" layoutY="93.0" mnemonicParsing="false" text="Paint" />
       <Label layoutX="19.0" layoutY="93.0" text="Select visible exterior defects :" />
-      <ComboBox layoutX="146.0" layoutY="122.0" prefWidth="150.0" promptText="1-5 stars" />
+      <ComboBox fx:id="chooseExterRatingComboBox" layoutX="146.0" layoutY="122.0" prefWidth="150.0" promptText="1-5 stars" />
       <Label layoutX="21.0" layoutY="126.0" text="Choose exterior rating" />
       <Label layoutX="21.0" layoutY="159.0" text="Interior Inspection:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <CheckBox layoutX="187.0" layoutY="184.0" mnemonicParsing="false" text="Upholstery" />
-      <CheckBox layoutX="277.0" layoutY="184.0" mnemonicParsing="false" text="Electronics" />
-      <CheckBox layoutX="378.0" layoutY="184.0" mnemonicParsing="false" text="Smell" />
+      <CheckBox fx:id="upholsteryCheckBox" layoutX="187.0" layoutY="184.0" mnemonicParsing="false" text="Upholstery" />
+      <CheckBox fx:id="electronicsCheckBox" layoutX="277.0" layoutY="184.0" mnemonicParsing="false" text="Electronics" />
+      <CheckBox fx:id="smellCheckBox" layoutX="378.0" layoutY="184.0" mnemonicParsing="false" text="Smell" />
       <Label layoutX="21.0" layoutY="184.0" text="Select visible interior defects :" />
-      <ComboBox layoutX="148.0" layoutY="213.0" prefWidth="150.0" promptText="1-5 stars" />
+      <ComboBox fx:id="chooseInterrRatingComboBox" layoutX="148.0" layoutY="213.0" prefWidth="150.0" promptText="1-5 stars" />
       <Label layoutX="23.0" layoutY="217.0" text="Choose interior rating" />
       <Label layoutX="23.0" layoutY="252.0" text="Mechanical Inspection:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <CheckBox layoutX="126.0" layoutY="277.0" mnemonicParsing="false" text="Engine" />
-      <CheckBox layoutX="216.0" layoutY="277.0" mnemonicParsing="false" text="Brakes" />
-      <CheckBox layoutX="317.0" layoutY="277.0" mnemonicParsing="false" text="Smell" />
+      <CheckBox fx:id="engineCheckBox" layoutX="126.0" layoutY="277.0" mnemonicParsing="false" text="Engine" />
+      <CheckBox fx:id="brakesCheckBox" layoutX="216.0" layoutY="277.0" mnemonicParsing="false" text="Brakes" />
+      <CheckBox fx:id="suspensionComboBox" layoutX="317.0" layoutY="277.0" mnemonicParsing="false" text="Suspension" />
       <Label layoutX="23.0" layoutY="277.0" text="Issue found in :" />
-      <ComboBox layoutX="172.0" layoutY="306.0" prefWidth="150.0" promptText="1-5 stars" />
+      <ComboBox fx:id="chooseMechRatingComboBox" layoutX="172.0" layoutY="306.0" prefWidth="150.0" promptText="1-5 stars" />
       <Label layoutX="25.0" layoutY="310.0" text="Choose mechanical rating" />
-      <Button layoutX="28.0" layoutY="358.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="549.0" text="Calculate final grade and complete inspection" />
+      <Button layoutX="28.0" layoutY="358.0" mnemonicParsing="false" onAction="#calculateFinalGradeOnActionBTN" prefHeight="43.0" prefWidth="549.0" text="Calculate final grade and complete inspection" />
    </children>
 </AnchorPane>

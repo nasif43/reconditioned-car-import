@@ -1,9 +1,14 @@
 package cse213.reconditionedcarimporter.AuctionAndSales;
 
+import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
+
 public class Order {
     private String orderId, customerId, vehicleId, status, paymentMethod, paymentStatus;
 
     public Order() {
+    }
+
+    public Order(int i, String supplier, Vehicle vehicle) {
     }
 
     public String getOrderId() {

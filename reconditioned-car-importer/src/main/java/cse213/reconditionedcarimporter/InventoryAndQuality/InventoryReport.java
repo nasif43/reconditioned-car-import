@@ -3,10 +3,11 @@ package cse213.reconditionedcarimporter.InventoryAndQuality;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Parts;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class InventoryReport extends Report{
+public class InventoryReport extends Report implements Serializable {
     private int totalVehicles;
     private ArrayList<Vehicle> vehiclesInWarehouses;
     private ArrayList<Vehicle> vehiclesInShowrooms ;

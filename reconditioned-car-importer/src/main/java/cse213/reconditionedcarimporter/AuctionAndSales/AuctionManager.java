@@ -37,9 +37,7 @@ public class AuctionManager extends User {
     }
 
     public Shipment arrangeTransportation(Vehicle vehicle, Location location) {
-        if (vehicle != null && location != null) {
-            return new Shipment();
-        }
+        if (vehicle != null && location != null) return new Shipment();
         return null;
     }
 

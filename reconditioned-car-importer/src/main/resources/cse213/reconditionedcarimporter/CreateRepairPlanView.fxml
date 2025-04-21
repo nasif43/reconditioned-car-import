@@ -8,27 +8,31 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.reconditionedcarimporter.CreateRepairPlanViewController">
    <children>
-      <Button layoutX="196.0" layoutY="200.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="207.0" text="Add repair task" />
+      <Button fx:id="addRepairTaskOnactionBTn" layoutX="196.0" layoutY="200.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="207.0" text="Add repair task" />
       <Label layoutX="23.0" layoutY="20.0" text="Create repair plan">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <DatePicker layoutX="401.0" layoutY="83.0" prefHeight="25.0" prefWidth="157.0" />
+      <DatePicker fx:id="selectDeadlineDatePicker" layoutX="401.0" layoutY="83.0" prefHeight="25.0" prefWidth="157.0" />
       <Label layoutX="300.0" layoutY="87.0" text="Select deadline" />
       <Label layoutX="23.0" layoutY="128.0" text="Select labor hours " />
-      <ComboBox layoutX="144.0" layoutY="124.0" prefHeight="25.0" prefWidth="129.0" promptText="Estimated hours" />
-      <ComboBox layoutX="144.0" layoutY="83.0" prefHeight="25.0" prefWidth="129.0" promptText="Issue" />
+      <ComboBox fx:id="selectEstimatedHoursComboboc" layoutX="144.0" layoutY="124.0" prefHeight="25.0" prefWidth="129.0" promptText="Estimated hours" />
+      <ComboBox fx:id="selectdefectedPartCombobox" layoutX="144.0" layoutY="83.0" prefHeight="25.0" prefWidth="129.0" promptText="Issue" />
       <Label layoutX="23.0" layoutY="87.0" text="Select defected part" />
       <Label layoutX="23.0" layoutY="57.0" text="Vehicle ID :" />
-      <Label layoutX="144.0" layoutY="57.0" text="37213" />
-      <TextArea layoutX="401.0" layoutY="128.0" prefHeight="34.0" prefWidth="157.0" />
+      <Label fx:id="vehicleIdLabel" layoutX="144.0" layoutY="57.0" text="37213" />
+      <TextArea fx:id="descriptionTextArea" layoutX="401.0" layoutY="128.0" prefHeight="34.0" prefWidth="157.0" />
       <Label layoutX="300.0" layoutY="128.0" text="Add a description" />
       <Label layoutX="300.0" layoutY="57.0" text="Vehicle model :" />
-      <Label layoutX="401.0" layoutY="57.0" text="37213" />
-      <Button layoutX="144.0" layoutY="247.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="303.0" text="Create plan with added tasks" />
+      <Label fx:id="vehicleModelLabel" layoutX="401.0" layoutY="57.0" text="37213" />
+      <Button fx:id="createRepairPlanOnACtionBTn" layoutX="144.0" layoutY="247.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="303.0" text="Create plan with added tasks" />
+      <Label fx:id="errorMessageLabel" layoutX="273.0" layoutY="332.0" text="error" textFill="RED">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

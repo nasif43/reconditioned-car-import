@@ -1,16 +1,24 @@
 package cse213.reconditionedcarimporter.ImportManagerAndCustomer;
 
 import cse213.reconditionedcarimporter.InventoryAndQuality.Warehouse;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
 import cse213.reconditionedcarimporter.utility.AppendableObjectOutputStream;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import cse213.reconditionedcarimporter.utility.AppendableObjectOutputStream;
 
+<<<<<<< HEAD
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+=======
+>>>>>>> dabb4713cabffc76f86dbaa1becdfdbb933c0f18
 public class Shipment implements Serializable {
     private String shipmentId;
     private ArrayList<Vehicle> vehicles;
@@ -20,11 +28,29 @@ public class Shipment implements Serializable {
     private LocalDate arrivalDate;
     private String status;
     private String carrier;
+
+    @Override
+    public String toString() {
+        return "Shipment{" +
+                "shipmentId='" + shipmentId + '\'' +
+                ", vehicles=" + vehicles +
+                ", origin='" + origin + '\'' +
+                ", destination='" + destination + '\'' +
+                ", departureDate=" + departureDate +
+                ", arrivalDate=" + arrivalDate +
+                ", status='" + status + '\'' +
+                ", carrier='" + carrier + '\'' +
+                ", storageLocation=" + storageLocation +
+                '}';
+    }
+
     private Warehouse storageLocation;
 
     public Shipment() {
-        this.shipmentId = shipmentId;
+        this.shipmentId = "";
+        this.vehicles = new ArrayList<>();
     }
+
 
     public Shipment(String shipmentId, ArrayList<Vehicle> vehicles, String origin, String destination, LocalDate departureDate, LocalDate arrivalDate, String status, String carrier, Warehouse storageLocation) {
         this.shipmentId = shipmentId;
@@ -37,6 +63,8 @@ public class Shipment implements Serializable {
         this.carrier = carrier;
         this.storageLocation = storageLocation;
     }
+
+
 
     public String getShipmentId() {
         return shipmentId;
@@ -105,7 +133,7 @@ public class Shipment implements Serializable {
     public Warehouse getStorageLocation() {
         return storageLocation;
     }
-
+    public int getVehicleCount(){return vehicles != null ? vehicles.size() : 0;}
     public void setStorageLocation(Warehouse storageLocation) {
         this.storageLocation = storageLocation;
     }
@@ -125,4 +153,8 @@ public class Shipment implements Serializable {
             throw new RuntimeException(e);
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> dabb4713cabffc76f86dbaa1becdfdbb933c0f18

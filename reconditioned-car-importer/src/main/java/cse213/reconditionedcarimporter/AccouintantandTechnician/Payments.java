@@ -2,7 +2,7 @@ package cse213.reconditionedcarimporter.AccouintantandTechnician;
 import java.time.LocalDate;
 
 public class Payments {
-    private String paymentId;
+    private String paymentID;
     private float amount;
     private LocalDate date;
     private String method;
@@ -12,19 +12,19 @@ public class Payments {
         this.userId = userId;
     }
 
-    public Payments(String paymentId, float amount, LocalDate date, String method) {
-        this.paymentId = paymentId;
+    public Payments(String paymentID, float amount, String date, String method) {
+        this.paymentID = paymentID;
         this.amount = amount;
-        this.date = date;
+        this.date = LocalDate.parse(date);
         this.method = method;
     }
 
-    public String getpaymentId() {
-        return paymentId;
+    public String getPaymentID() {
+        return paymentID;
     }
 
-    public void setpaymentId(String paymentId) {
-        this.paymentId = paymentId;
+    public void setPaymentID(String paymentID) {
+        this.paymentID = paymentID;
     }
 
     public float getAmount() {

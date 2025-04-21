@@ -3,9 +3,10 @@ package cse213.reconditionedcarimporter.InventoryAndQuality;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Shipment;
 import cse213.reconditionedcarimporter.ImportManagerAndCustomer.Vehicle;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Warehouse extends Location{
+public class Warehouse extends Location implements Serializable {
     private ArrayList<Vehicle> vehicles;
 
     public Warehouse(ArrayList<Vehicle> vehicles) {
@@ -13,6 +14,9 @@ public class Warehouse extends Location{
     }
 
     public Warehouse() {
+    }
+
+    public Warehouse(String warehouseName) {
     }
 
     @Override
@@ -34,7 +38,9 @@ public class Warehouse extends Location{
     public ArrayList<Vehicle> getVehicles() {
         return vehicles;
     }
-
+    public int getcurrentCount(){
+        return getVehicles().size();
+    }
     public void setVehicles(ArrayList<Vehicle> vehicles) {
         this.vehicles = vehicles;
     }

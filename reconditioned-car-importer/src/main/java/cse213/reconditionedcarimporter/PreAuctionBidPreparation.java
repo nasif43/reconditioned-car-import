@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import cse213.reconditionedcarimporter.AuctionAndSales.BidProposal;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,8 +18,6 @@ public class PreAuctionBidPreparation
     private TextField vinTextField;
     @javafx.fxml.FXML
     private DatePicker auctionDateDatePicker;
-    @javafx.fxml.FXML
-    private Button clearAllFieldsButtonOnAction;
     @javafx.fxml.FXML
     private TextField conditionRatingTextField;
     @javafx.fxml.FXML
@@ -41,6 +40,7 @@ public class PreAuctionBidPreparation
 
     @javafx.fxml.FXML
     public void previewButtonOnAction(ActionEvent actionEvent) {
+        if (validateInputs()){
         BidProposal tempBidProposal = new BidProposal("Preview",
                 auctionHouseNameTextField.getText(),
                 Integer.parseInt(lotNumberTextField.getText()),
@@ -52,7 +52,12 @@ public class PreAuctionBidPreparation
                 inspectionDateDatePicker.getValue());
 
         tempBidProposal.previewBidProposal();
-        loadFxml();
+        loadFxml();}
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Please update all the fields to preview!");}
     }
 
     @javafx.fxml.FXML
@@ -61,14 +66,14 @@ public class PreAuctionBidPreparation
             // Create the BidProposal object when the save button is clicked
             BidProposal newBidProposal = new BidProposal(generateId(),
                 auctionHouseNameTextField.getText(),
-                Integer.parseInt(lotNumberTextField.getText()), 
-                vinTextField.getText(), 
-                conditionRatingTextField.getText(), 
-                letterGradeComboBox.getValue(), 
-                evaluationCommentsTextArea.getText(), 
-                auctionDateDatePicker.getValue(), 
+                Integer.parseInt(lotNumberTextField.getText()),
+                vinTextField.getText(),
+                conditionRatingTextField.getText(),
+                letterGradeComboBox.getValue(),
+                evaluationCommentsTextArea.getText(),
+                auctionDateDatePicker.getValue(),
                 inspectionDateDatePicker.getValue());
-                
+
             newBidProposal.saveBidProposal();
             System.out.println("Save completed successfully");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -76,6 +81,7 @@ public class PreAuctionBidPreparation
             alert.setHeaderText(null);
             alert.setContentText("Successfully saved the bid proposal");
             alert.showAndWait();
+            clearAllFieldsButtonOnAction(actionEvent);
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -88,14 +94,12 @@ public class PreAuctionBidPreparation
     public String generateId(){
         String vin = vinTextField.getText();
         String lotNumber = lotNumberTextField.getText();
-        LocalDate auctionDate = auctionDateDatePicker.getValue();
-        if (vin == null || vin.isEmpty() || lotNumber == null || lotNumber.isEmpty() || auctionDate == null) {
+        if (vin == null || vin.isEmpty() || lotNumber == null || lotNumber.isEmpty()) {
             return "INVALID_INPUT";
         }
-        String dateStr = auctionDate.toString();
         String vinPart = vin.length() > 4 ? vin.substring(0, 4) : vin;
         String lotPart = lotNumber.length() > 3 ? lotNumber.substring(0, 3) : lotNumber;
-        String id = dateStr + "-" + lotPart + "-" + vinPart;
+        String id = lotPart + vinPart;
 
         return id;
     }
@@ -108,7 +112,22 @@ public class PreAuctionBidPreparation
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException e) {
-            System.err.println("Error loading " + "PreparedBidDetailsView.fxml" + ": " + e.getMessage());
+            System.out.println("Error loading fxml");
         }
+    }
+    private Boolean validateInputs(){
+        if (auctionDateDatePicker.getValue() == null || inspectionDateDatePicker.getValue() == null || letterGradeComboBox.getValue() == null || letterGradeComboBox.getValue().isEmpty() || evaluationCommentsTextArea.getText() == null || evaluationCommentsTextArea.getText().isEmpty() || vinTextField.getText().isEmpty() || lotNumberTextField.getText().isEmpty()) {
+            return false;
+        }
+        else{return true;}
+    }
+    @javafx.fxml.FXML
+    private void clearAllFieldsButtonOnAction(ActionEvent actionEvent) {
+        auctionHouseNameTextField.clear();
+        lotNumberTextField.clear();
+        vinTextField.clear();
+        conditionRatingTextField.clear();
+        evaluationCommentsTextArea.clear();
+        letterGradeComboBox.getItems().clear();
     }
 }
